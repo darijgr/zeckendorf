@@ -50,7 +50,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 21:29:57}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 21:34:17}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -214,7 +214,25 @@ n\geq3\right)  $).
 \end{definition}
 
 (Here and in the following, $\mathbb{N}$ denotes the set $\left\{
-0,1,2,\ldots\right\} $.)
+0,1,2,\ldots\right\}  $.)
+
+In \cite{1}, Wood and Zeilberger discuss bijective proofs of the so-called
+\textit{Zeckendorf family identities}. These identities are a family of
+identities for Fibonacci numbers (one for each positive integer); the first
+seven of these identities are%
+\begin{align*}
+1f_{n} &  =f_{n}\text{ for all }n\geq1;\\
+2f_{n} &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
+3f_{n} &  =f_{n-2}+f_{n+2}\text{ for all }n\geq3;\\
+4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\text{ for all }n\geq3;\\
+5f_{n} &  =f_{n-4}+f_{n-1}+f_{n+3}\text{ for all }n\geq5;\\
+6f_{n} &  =f_{n-4}+f_{n+1}+f_{n+3}\text{ for all }n\geq5;\\
+7f_{n} &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
+\end{align*}
+In general, for each positive integer $k$, the $k$-th Zeckendorf family
+identity expresses $kf_{n}$ (for each sufficiently large integer $n$) as a sum
+of the form $\sum\limits_{s\in S}f_{n+s}$, where $S$ is a finite lacunar
+subset of $\mathbb{Z}$. Of course, the subset $S$ does not depend on $n$.
 
 Our main theorem is the following:
 
@@ -242,9 +260,8 @@ such that\footnotemark%
 $0$.}
 
 \begin{remark}
-\textbf{1)} Theorem~\ref{thm.1} generalizes the so-called \textit{Zeckendorf
-family identities} (which correspond to the case when all $a_{t}$ are $=0$),
-which were discussed in \cite{1}.\footnotemark
+\textbf{1)} Theorem~\ref{thm.1} generalizes the Zeckendorf family identities
+(which correspond to the case when all $a_{t}$ are $=0$).
 
 \textbf{2)} The condition $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} is just
@@ -254,18 +271,6 @@ well-defined. (If we would define the Fibonacci numbers $f_{n}$ for integers
 $n\leq0$ by extending the recurrence relation $f_{n}=f_{n-1}+f_{n-2}$ ``to the
 left'', then we could drop this condition.)
 \end{remark}
-
-\footnotetext{The first seven of these identities are%
-\begin{align*}
-1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
-2f_{n}  &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
-3f_{n}  &  =f_{n-2}+f_{n+2}\text{ for all }n\geq3;\\
-4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\text{ for all }n\geq3;\\
-5f_{n}  &  =f_{n-4}+f_{n-1}+f_{n+3}\text{ for all }n\geq5;\\
-6f_{n}  &  =f_{n-4}+f_{n+1}+f_{n+3}\text{ for all }n\geq5;\\
-7f_{n}  &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
-\end{align*}
-}
 
 The proof we shall give for Theorem~\ref{thm.1} is not combinatorial. It will
 use inequalities and the properties of the golden ratio; in a sense, its
