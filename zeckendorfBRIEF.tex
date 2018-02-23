@@ -50,7 +50,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 21:33:41}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 21:37:14}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -220,13 +220,13 @@ In \cite{1}, Wood and Zeilberger discuss bijective proofs of the so-called
 identities for Fibonacci numbers (one for each positive integer); the first
 seven of these identities are%
 \begin{align*}
-1f_{n} &  =f_{n}\text{ for all }n\geq1;\\
-2f_{n} &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
-3f_{n} &  =f_{n-2}+f_{n+2}\text{ for all }n\geq3;\\
-4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\text{ for all }n\geq3;\\
-5f_{n} &  =f_{n-4}+f_{n-1}+f_{n+3}\text{ for all }n\geq5;\\
-6f_{n} &  =f_{n-4}+f_{n+1}+f_{n+3}\text{ for all }n\geq5;\\
-7f_{n} &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
+1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
+2f_{n}  &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
+3f_{n}  &  =f_{n-2}+f_{n+2}\text{ for all }n\geq3;\\
+4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\text{ for all }n\geq3;\\
+5f_{n}  &  =f_{n-4}+f_{n-1}+f_{n+3}\text{ for all }n\geq5;\\
+6f_{n}  &  =f_{n-4}+f_{n+1}+f_{n+3}\text{ for all }n\geq5;\\
+7f_{n}  &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
 \end{align*}
 In general, for each positive integer $k$, the $k$-th Zeckendorf family
 identity expresses $kf_{n}$ (for each sufficiently large integer $n$) as a sum
@@ -280,13 +280,13 @@ results from analysis).
 
 We begin with some lemmas and notations:
 
-We denote by $\mathbb{N}$ the set $\left\{  0,1,2,\ldots\right\}  $ (and not the
-set $\left\{  1,2,3,\ldots\right\}  $, like some other authors do). Also, we
-denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,\ldots\right\}  =\mathbb{N}%
-\setminus\left\{  0,1\right\}  $.
+We denote by $\mathbb{N}$ the set $\left\{  0,1,2,\ldots\right\}  $ (and not
+the set $\left\{  1,2,3,\ldots\right\}  $, like some other authors do). Also,
+we denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,\ldots\right\}
+=\mathbb{N}\setminus\left\{  0,1\right\}  $.
 
-Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618\ldots$
-and that $\phi^{2}=\phi+1$.
+Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx
+1.618\ldots$ and that $\phi^{2}=\phi+1$.
 
 First, some basic (and known) lemmas on the Fibonacci sequence:
 
@@ -381,9 +381,9 @@ than the second smallest element by at least $2$), and so on. Since
 $\mathbb{N}\rightarrow\mathbb{R}$, $s\mapsto\left(  \phi-1\right)  ^{s}$ is a
 weakly decreasing function (as $0\leq\phi-1\leq1$), we thus have%
 \[
-\sum_{s\in S}\left(  \phi-1\right)  ^{s}\leq\sum_{s\in\left\{
-2,4,6,\ldots\right\}  }\left(  \phi-1\right)  ^{s}=\sum_{t\in\left\{
-1,2,3,\ldots\right\}  }\left(  \phi-1\right)  ^{2t}=\phi-1
+\sum_{s\in S}\left(  \phi-1\right)  ^{s}\leq\sum_{s\in\left\{  2,4,6,\ldots
+\right\}  }\left(  \phi-1\right)  ^{s}=\sum_{t\in\left\{  1,2,3,\ldots
+\right\}  }\left(  \phi-1\right)  ^{2t}=\phi-1
 \]
 (by the formula for the sum of the geometric series, along with some
 computations). This proves Lemma~\ref{lem.7}.

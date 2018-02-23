@@ -50,7 +50,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 21:34:17}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 21:37:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -221,13 +221,13 @@ In \cite{1}, Wood and Zeilberger discuss bijective proofs of the so-called
 identities for Fibonacci numbers (one for each positive integer); the first
 seven of these identities are%
 \begin{align*}
-1f_{n} &  =f_{n}\text{ for all }n\geq1;\\
-2f_{n} &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
-3f_{n} &  =f_{n-2}+f_{n+2}\text{ for all }n\geq3;\\
-4f_{n} &  =f_{n-2}+f_{n}+f_{n+2}\text{ for all }n\geq3;\\
-5f_{n} &  =f_{n-4}+f_{n-1}+f_{n+3}\text{ for all }n\geq5;\\
-6f_{n} &  =f_{n-4}+f_{n+1}+f_{n+3}\text{ for all }n\geq5;\\
-7f_{n} &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
+1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
+2f_{n}  &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
+3f_{n}  &  =f_{n-2}+f_{n+2}\text{ for all }n\geq3;\\
+4f_{n}  &  =f_{n-2}+f_{n}+f_{n+2}\text{ for all }n\geq3;\\
+5f_{n}  &  =f_{n-4}+f_{n-1}+f_{n+3}\text{ for all }n\geq5;\\
+6f_{n}  &  =f_{n-4}+f_{n+1}+f_{n+3}\text{ for all }n\geq5;\\
+7f_{n}  &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
 \end{align*}
 In general, for each positive integer $k$, the $k$-th Zeckendorf family
 identity expresses $kf_{n}$ (for each sufficiently large integer $n$) as a sum
@@ -281,29 +281,29 @@ results from analysis).
 
 We begin with some lemmas and notations:
 
-We denote by $\mathbb{N}$ the set $\left\{  0,1,2,\ldots\right\}  $ (and not the
-set $\left\{  1,2,3,\ldots\right\}  $, like some other authors do). Also, we
-denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,\ldots\right\}  =\mathbb{N}%
-\setminus\left\{  0,1\right\}  $.
+We denote by $\mathbb{N}$ the set $\left\{  0,1,2,\ldots\right\}  $ (and not
+the set $\left\{  1,2,3,\ldots\right\}  $, like some other authors do). Also,
+we denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,\ldots\right\}
+=\mathbb{N}\setminus\left\{  0,1\right\}  $.
 
-Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618\ldots$
-and that $\phi^{2}=\phi+1$. Binet's formula states that $f_{n}=\dfrac{\phi
-^{n}-\phi^{-n}}{\sqrt{5}}$ for every positive integer $n$.
+Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx
+1.618\ldots$ and that $\phi^{2}=\phi+1$. Binet's formula states that
+$f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}$ for every positive integer $n$.
 
-We observe that the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)
-$ consists of positive integers (indeed, its two starting values $f_{1}=1$ and
-$f_{2}=1$ are positive integers, and thus the recurrence relation
-$f_{n}=f_{n-1}+f_{n-2}$ clearly ensures that all the following values are also
-positive integers). Thus, $f_{n} > 0$ for each positive integer $n$. Now, for
-each integer $n \geq2$, we have $f_{n-1} > 0$ (since the Fibonacci sequence
-$\left(  f_{1},f_{2},f_{3},\ldots\right)  $ consists of positive integers). The
-recurrence relation of the Fibonacci sequence shows that for each integer $n
-\geq2$, we have $f_{n+1} = f_{n} + f_{n-1} > f_{n}$ (because $f_{n-1} > 0$),
-so that $f_{n} < f_{n+1}$. In other words, $f_{2} < f_{3} < f_{4} < \cdots$.
-In other words, the Fibonacci sequence is strictly increasing beginning with
-its second term $f_{2}$. Furthermore, $f_{1} = 1 = f_{2}$, so that $f_{1} =
-f_{2} < f_{2} < f_{3} < f_{4} < \cdots$. Hence, the Fibonacci sequence is
-weakly increasing.
+We observe that the Fibonacci sequence $\left(  f_{1},f_{2},f_{3}%
+,\ldots\right)  $ consists of positive integers (indeed, its two starting
+values $f_{1}=1$ and $f_{2}=1$ are positive integers, and thus the recurrence
+relation $f_{n}=f_{n-1}+f_{n-2}$ clearly ensures that all the following values
+are also positive integers). Thus, $f_{n} > 0$ for each positive integer $n$.
+Now, for each integer $n \geq2$, we have $f_{n-1} > 0$ (since the Fibonacci
+sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ consists of positive
+integers). The recurrence relation of the Fibonacci sequence shows that for
+each integer $n \geq2$, we have $f_{n+1} = f_{n} + f_{n-1} > f_{n}$ (because
+$f_{n-1} > 0$), so that $f_{n} < f_{n+1}$. In other words, $f_{2} < f_{3} <
+f_{4} < \cdots$. In other words, the Fibonacci sequence is strictly increasing
+beginning with its second term $f_{2}$. Furthermore, $f_{1} = 1 = f_{2}$, so
+that $f_{1} = f_{2} < f_{2} < f_{3} < f_{4} < \cdots$. Hence, the Fibonacci
+sequence is weakly increasing.
 
 We recall some known facts about the Fibonacci sequence:
 
@@ -321,20 +321,21 @@ Every $t\in\mathbb{N}_{2}$ satisfies $f_{t+1}=f_{t}+f_{t-1}$ (due to the
 relation $f_{n}=f_{n-1}+f_{n-2}$, applied to $n=t+1$), so that $f_{t}%
 =f_{t+1}-f_{t-1}$.
 
-Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}
-$, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{t\in S}f_{t}%
-=\sum\limits_{i=1}^{k}f_{s_{i}}$ and $s_{k}=\max S$. On the other hand, every
-$i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}%
+Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots
+,s_{k}\right\}  $, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{t\in
+S}f_{t}=\sum\limits_{i=1}^{k}f_{s_{i}}$ and $s_{k}=\max S$. On the other hand,
+every $i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}%
 $\ \ \ \ \footnote{\textit{Proof.} The set $S$ is lacunar, and thus $s+1\notin
 S$ for every $s\in S$. Applying this to $s=s_{i}$, we get $s_{i}+1\notin S$,
 so that $s_{i}+1\neq s_{i+1}$ (since $s_{i+1}\in S$).
 \par
-Since $s_{1}<s_{2}<\cdots<s_{k}$, we have $s_{i}<s_{i+1}$, so that $s_{i}+1\leq
-s_{i+1}$ (because $s_{i}$ and $s_{i+1}$ are integers). Since $s_{i}+1\neq
-s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+2\leq s_{i+1}$
-(because $s_{i}$ and $s_{i+1}$ are integers).} and thus $s_{i}+1\leq
+Since $s_{1}<s_{2}<\cdots<s_{k}$, we have $s_{i}<s_{i+1}$, so that
+$s_{i}+1\leq s_{i+1}$ (because $s_{i}$ and $s_{i+1}$ are integers). Since
+$s_{i}+1\neq s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+2\leq
+s_{i+1}$ (because $s_{i}$ and $s_{i+1}$ are integers).} and thus $s_{i}+1\leq
 s_{i+1}-1$, so that $f_{s_{i}+1}\leq f_{s_{i+1}-1}$ (since the Fibonacci
-sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing). Thus,%
+sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing).
+Thus,%
 \begin{align*}
 \sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}f_{s_{i}}=\sum
 \limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right) \\
@@ -484,9 +485,9 @@ numbers $f_{t}$ are all nonnegative. Thus, from $\max T \in T$, we obtain
 $f_{\max T}\leq\sum\limits_{t\in T}f_{t}=\nu=\sum\limits_{t\in T^{\prime}%
 }f_{t}<f_{\max T^{\prime}+1}$ (by Lemma~\ref{lem.2}, applied to $S=T^{\prime}%
 $). Hence, $\max T<\max T^{\prime}+1$ (since the Fibonacci sequence $\left(
-f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing), so that $\max T\leq\max
-T^{\prime}$ (since $\max T$ and $\max T^{\prime}$ are integers). The same
-argument (with the roles of $T$ and $T^{\prime}$ interchanged) shows that
+f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing), so that $\max
+T\leq\max T^{\prime}$ (since $\max T$ and $\max T^{\prime}$ are integers). The
+same argument (with the roles of $T$ and $T^{\prime}$ interchanged) shows that
 $\max T^{\prime}\leq\max T$. Combining this with $\max T\leq\max T^{\prime}$,
 we get $\max T=\max T^{\prime}$. Let $\mu$ denote the number $\max T=\max
 T^{\prime}$. Then, $\mu=\max T\in T$ and $\mu=\max T^{\prime}\in T^{\prime}$.
@@ -610,14 +611,15 @@ $0<\psi<1$. Also, $\psi=\phi-1$ yields $\psi^{2}=\left(  \phi-1\right)
 -2\phi+1=2-\phi$ and thus $1-\psi^{2}=1-\left(  2-\phi\right)  =\phi-1=\psi$,
 so that $\dfrac{\psi^{2}}{1-\psi^{2}}=\dfrac{\psi^{2}}{\psi}=\psi$.
 
-Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}
-$, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{s\in S}\psi^{s}%
-=\sum\limits_{i=1}^{k}\psi^{s_{k}}$. On the other hand, every $i\in\left\{
-1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}$ (this was proven during
-the proof of Lemma~\ref{lem.2}) and thus $\psi^{s_{i}+2}\geq\psi^{s_{i}+1}$
-(since $0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in S\subseteq
-\mathbb{N}_{2}$) and thus $\psi^{s_{1}}\leq\psi^{2}$ (since $0<\psi<1$). Now,
-$\sum\limits_{s\in S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{k}}$ yields%
+Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots
+,s_{k}\right\}  $, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{s\in
+S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{k}}$. On the other hand, every
+$i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}$ (this
+was proven during the proof of Lemma~\ref{lem.2}) and thus $\psi^{s_{i}+2}%
+\geq\psi^{s_{i}+1}$ (since $0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in
+S\subseteq\mathbb{N}_{2}$) and thus $\psi^{s_{1}}\leq\psi^{2}$ (since
+$0<\psi<1$). Now, $\sum\limits_{s\in S}\psi^{s}=\sum\limits_{i=1}^{k}%
+\psi^{s_{k}}$ yields%
 \begin{align*}
 \left(  1-\psi^{2}\right)  \sum\limits_{s\in S}\psi^{s}  &  =\left(
 1-\psi^{2}\right)  \sum\limits_{i=1}^{k}\psi^{s_{i}}=\underbrace{\sum
