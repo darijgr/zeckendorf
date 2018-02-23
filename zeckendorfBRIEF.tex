@@ -50,7 +50,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 21:37:14}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 22:08:09}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -206,14 +206,30 @@ $\left(  s+1\notin S\text{ for every }s\in S\right)  $.
 \end{definition}
 
 \begin{definition}
-Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the Fibonacci sequence
-(defined by $f_{1}=f_{2}=1$ and the recurrence relation $\left(  f_{n}%
-=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{ satisfying }%
-n\geq3\right)  $).
+\label{def.fib}Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the
+Fibonacci sequence. This is a sequence of positive integers defined
+recursively by the initial values $f_{1}=1$ and $f_{2}=1$ and the recurrence
+relation $\left(  f_{n}=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{
+satisfying }n\geq3\right)  $.
 \end{definition}
 
 (Here and in the following, $\mathbb{N}$ denotes the set $\left\{
 0,1,2,\ldots\right\}  $.)
+
+\begin{remark}
+Many authors define the Fibonacci sequence slightly differently: They define
+it as a sequence $\left(  f_{0},f_{1},f_{2},\ldots\right)  $ of nonnegative
+integers defined recursively by the initial values $f_{0}=0$ and $f_{1}=1$ and
+the recurrence relation $\left(  f_{n}=f_{n-1}+f_{n-2}\text{ for all }%
+n\in\mathbb{N}\text{ satisfying }n\geq2\right)  $. Thus, this sequence begins
+with a $0$, unlike the Fibonacci sequence defined in our Definition
+\ref{def.fib}. However, starting at its second term $f_{1}=1$, this sequence
+takes precisely the same values as the Fibonacci sequence defined in our
+Definition \ref{def.fib} (because both sequences satisfy $f_{1}=1$ and
+$f_{2}=1$, and from here on the recurrence relation ensures that their values
+remain equal). So it differs from the latter sequence only in the presence of
+one extra term $f_{0}=0$ at the front.
+\end{remark}
 
 In \cite{1}, Wood and Zeilberger discuss bijective proofs of the so-called
 \textit{Zeckendorf family identities}. These identities are a family of
@@ -260,8 +276,8 @@ $0$.}
 
 \begin{remark}
 \begin{enumerate}
-\item The \textit{Zeckendorf family identities}\ from \cite{1} are the
-result of applying Theorem~\ref{thm.1} to the case when all $a_{t}$ are $=0$.
+\item The \textit{Zeckendorf family identities}\ from \cite{1} are the result
+of applying Theorem~\ref{thm.1} to the case when all $a_{t}$ are $=0$.
 
 \item The condition $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} is just
