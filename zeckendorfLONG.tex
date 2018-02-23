@@ -14,7 +14,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 20:39:49}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 20:43:36}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -111,7 +111,8 @@
 \maketitle
 
 \begin{abstract}
-In [1], Philip Matchett Wood and Doron Zeilberger have constructed identities
+\textbf{Abstract.}
+In \cite{1}, Philip Matchett Wood and Doron Zeilberger have constructed identities
 for the Fibonacci numbers $f_{n}$ of the form%
 \begin{align*}
 1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
@@ -142,11 +143,11 @@ would be interesting to find a purely combinatorial proof.
 %NOT proofreading completed
 
 
-\bigskip
+\hrule
 
 \begin{statement}
-This is a detailed version of my text [2]. It contains the proof outlined in
-[2] in much more detail and was written for the purpose of persuading myself
+This is a detailed version of my note \cite{this.short}. It contains the proof outlined in
+\cite{this.short} in much more detail and was written for the purpose of persuading myself
 that my proofs are correct.
 
 This note has never been proofread by myself or anyone else. If you find any
@@ -193,7 +194,7 @@ to be $0$.}
 
 \textbf{1)} Theorem 1 generalizes the so-called \textit{Zeckendorf family
 identities} (which correspond to the case when all $a_{t}$ are $=0$), which
-were discussed in [1].\footnote{The first seven of these identities are%
+were discussed in \cite{1}.\footnote{The first seven of these identities are%
 \begin{align*}
 1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
 2f_{n}  &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
@@ -272,8 +273,8 @@ s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+2\leq s_{i+1}$
 s_{i+1}-1$, so that $f_{s_{i}+1}\leq f_{s_{i+1}-1}$ (since the Fibonacci
 sequence $\left(  f_{1},f_{2},f_{3},...\right)  $ is weakly increasing). Thus,%
 \begin{align*}
-\sum\limits_{t\in S}f_{t} &  =\sum\limits_{i=1}^{k}f_{s_{i}}=\sum
-\limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right)  \\
+\sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}f_{s_{i}}=\sum
+\limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -281,22 +282,22 @@ sequence $\left(  f_{1},f_{2},f_{3},...\right)  $ is weakly increasing). Thus,%
 =f_{t+1}-f_{t-1}\text{,}\\
 \text{applied to }t=s_{i}\text{)}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}+1}}_{=\sum\limits_{i=1}%
 ^{k-1}f_{s_{i}+1}+f_{s_{k}+1}}-\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}-1}%
 }_{=f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}}\\
 &  =\left(  \sum\limits_{i=1}^{k-1}\underbrace{f_{s_{i}+1}}_{\leq
 f_{s_{i+1}-1}}+f_{s_{k}+1}\right)  -\left(  f_{s_{1}-1}+\sum\limits_{i=2}%
-^{k}f_{s_{i}-1}\right)  \\
+^{k}f_{s_{i}-1}\right) \\
 &  \leq\left(  \sum\limits_{i=1}^{k-1}f_{s_{i+1}-1}+f_{s_{k}+1}\right)
--\left(  f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right)  \\
+-\left(  f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 &  =\left(  \sum\limits_{i=2}^{k}f_{s_{i}-1}+f_{s_{k}+1}\right)  -\left(
-f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right)  \\
+f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
-}i+1\text{ in the first sum}\right)  \\
+}i+1\text{ in the first sum}\right) \\
 &  =f_{s_{k}+1}-f_{s_{1}-1}<f_{s_{k}+1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f_{s_{1}-1}>0\text{, because
-}s_{1}-1>0\text{, since }s_{1}\in S\subseteq\mathbb{N}_{2}\right)  \\
+}s_{1}-1>0\text{, since }s_{1}\in S\subseteq\mathbb{N}_{2}\right) \\
 &  =f_{\max S+1}%
 \end{align*}
 (since $s_{k}=\max S$). This proves Lemma 2.
@@ -482,23 +483,23 @@ f_{n+1}=\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 \]
 These two equalities yield%
 \begin{align*}
-f_{n+1}-\phi f_{n} &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
+f_{n+1}-\phi f_{n}  &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\underbrace{\phi\cdot\dfrac{1}{\sqrt{5}}\phi^{n}%
-}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right)  \\
+}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 }\right)  -\dfrac{1}{\sqrt{5}}\underbrace{\phi\phi^{n}}_{=\phi^{n+1}}\left(
-1-\phi^{-2n}\right)  \\
+1-\phi^{-2n}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
-}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right)  \\
+}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \underbrace{\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\left(  1-\phi^{-2n}\right)  }_{=\phi^{-2n}%
--\phi^{-2\left(  n+1\right)  }}\right)  \\
+-\phi^{-2\left(  n+1\right)  }}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\underbrace{\phi
-^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}=\phi^{-2n}\phi^{-2}}\right)  \\
+^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}=\phi^{-2n}\phi^{-2}}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\phi^{-2n}\phi
 ^{-2}\right)  =\dfrac{1}{\sqrt{5}}\underbrace{\phi^{n+1}\phi^{-2n}}%
 _{=\phi^{\left(  n+1\right)  +\left(  -2n\right)  }=\phi^{-\left(  n-1\right)
-}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right)  \\
+}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\left(  \underbrace{\phi^{-1}}_{\substack{=\phi-1\text{
 (as can be}\\\text{easily seen)}}}\right)  ^{n-1}\underbrace{\left(
 1-\phi^{-2}\right)  }_{\substack{=\phi-1\text{ (as can be}\\\text{easily
@@ -865,7 +866,7 @@ $n=\lambda+s+2$, we obtain $f_{\lambda+s}=\underbrace{f_{\lambda+s+2}%
 }=f_{\lambda+2+s}-f_{\lambda+1+s}$ for every $s\in S$. Thus,%
 \begin{align*}
 \sum\limits_{t\in T}\underbrace{f_{\lambda+a_{t}}}_{=f_{\lambda+2+a_{t}%
-}-f_{\lambda+1+a_{t}}} &  =\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}%
+}-f_{\lambda+1+a_{t}}}  &  =\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}%
 }-f_{\lambda+1+a_{t}}\right)  =\underbrace{\sum\limits_{t\in T}f_{\lambda
 +2+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+2+s}}-\underbrace{\sum
 \limits_{t\in T}f_{\lambda+1+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+1+s}}\\
@@ -925,15 +926,15 @@ S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.
 \]
 Then,%
 \begin{align*}
-n  & >\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
-S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  \\
-& \geq\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
-S\right\}  \right)  ,
+n  &  >\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid
+s\in S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right) \\
+&  \geq\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid
+s\in S\right\}  \right)  ,
 \end{align*}
 so that%
 \begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}} &  =\sum\limits_{s\in S}f_{n+s}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma 9}\right)  \\
+\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma 9}\right) \\
 &  =\sum\limits_{t\in S+n}f_{t}\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -969,10 +970,10 @@ Applying Lemma 4 to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in T}f_{n+a_{t}%
 $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$).
 Hence,%
 \begin{align*}
-S  & =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
+S  &  =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
 n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
-}+n}+\left(  -n\right)  \\
-& =\left(  S^{\prime}+n\right)  +\left(  -n\right)  =S^{\prime}%
+}+n}+\left(  -n\right) \\
+&  =\left(  S^{\prime}+n\right)  +\left(  -n\right)  =S^{\prime}%
 +\underbrace{\left(  n+\left(  -n\right)  \right)  }_{=0}=S^{\prime
 }+0=S^{\prime}.
 \end{align*}
@@ -994,16 +995,17 @@ $\mathbb{Z}$ such that
 (according to Theorem 8), and such a subset is unique (because any two such
 subsets are equal, according to Lemma 9). This proves Theorem 1.
 
-\begin{center}
-\textbf{References}
-\end{center}
+\begin{thebibliography}{9}                                                                                                %
+\bibitem[1]{1}Philip Matchett Wood, Doron Zeilberger, \textit{A translation
+method for finding combinatorial bijections}, Annals of Combinatorics
+\textbf{13} (2009), pp. 383--402. \newline\url{http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/trans-method.html}
 
-[1] Philip Matchett Wood, Doron Zeilberger, \textit{A translation method for
-finding combinatorial bijections}, Annals of Combinatorics \textbf{13} (2009),
-pp. 383--402. \newline\url{http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/trans-method.html}
-
-[2] Darij Grinberg, \textit{Zeckendorf family identities generalized}, version
-7, 22 March 2011 *brief version*.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfBRIEF.pdf}
+\bibitem[2]{this.short}Darij Grinberg, \textit{Zeckendorf family identities
+generalized}, version 7, 22 March 2011 *brief version*.\newline%
+\url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfBRIEF.pdf}\newline Also
+available as \href{https://arxiv.org/abs/1103.4507v2}{arXiv preprint
+arXiv:1103.4507v2}.
+\end{thebibliography}
 
 
 \end{document}

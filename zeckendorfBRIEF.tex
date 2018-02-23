@@ -14,7 +14,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 20:41:34}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 20:43:46}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -111,7 +111,8 @@
 \maketitle
 
 \begin{abstract}
-In [1], Philip Matchett Wood and Doron Zeilberger have constructed identities
+\textbf{Abstract.}
+In \cite{1}, Philip Matchett Wood and Doron Zeilberger have constructed identities
 for the Fibonacci numbers $f_{n}$ of the form%
 \begin{align*}
 1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
@@ -141,10 +142,11 @@ would be interesting to find a purely combinatorial proof.
 
 %NOT proofreading completed
 
+\hrule
 
 \begin{statement}
-This is a brief version of my text [2]. For more detailed proofs, see [2] (but
-beware that [2] is sometimes over-precise and very boring).
+This is a brief version of my note \cite{this.long}. For more detailed proofs, see \cite{this.long} (but
+beware that \cite{this.long} is sometimes over-precise and very boring).
 
 This note has never been proofread by myself or anyone else. If you find any
 mistakes or typos, please inform me at $\Delta\Gamma$\texttt{@gmail.com} where
@@ -153,10 +155,11 @@ $\Delta=$\texttt{darij }and $\Gamma=$\texttt{grinberg} Thank you!
 
 \hrule
 
+
 \bigskip
 
 The purpose of this note is to establish a generalization of the so-called
-\textit{Zeckendorf family identities} which were discussed in [1]. First, some definitions:
+\textit{Zeckendorf family identities} which were discussed in \cite{1}. First, some definitions:
 
 \begin{quote}
 \textbf{Definitions.} \textbf{1)} A subset $S$ of $\mathbb{Z}$ is called
@@ -190,8 +193,6 @@ to be $0$.}
 \right)  .
 \]
 
-
-
 \end{quote}
 
 \textbf{Remarks.}
@@ -207,7 +208,7 @@ of these identities are%
 6f_{n}  &  =f_{n-4}+f_{n+1}+f_{n+3}\text{ for all }n\geq5;\\
 7f_{n}  &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
 \end{align*}
-} from [1] are the result of applying Theorem 1 to the case when all $a_{t}$
+} from \cite{1} are the result of applying Theorem 1 to the case when all $a_{t}$
 are $=0$.
 
 \textbf{2)} The condition $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
@@ -261,7 +262,7 @@ $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$.
 \textit{Proof.} Induction over $n$. The main idea here is to let $t_{1}$ be
 the maximal $\tau\in\mathbb{N}_{2}$ satisfying $f_{\tau}\leq n$, and apply
 Lemma 3 to $n-t_{1}$ instead of $n$. The details are left to the reader (and
-can be found in [2]).
+can be found in \cite{this.long}).
 
 \begin{quote}
 \textbf{Lemma 4 (uniqueness part of the Zeckendorf theorem).} Let
@@ -381,10 +382,10 @@ but (fortunately!) only if the $N$'s are too small. If we take $N$ high
 enough, the set $S$ that we obtained turns out to be \textit{universal}, i. e.
 it satisfies
 \begin{align}
-\sum\limits_{t\in T}f_{n+a_{t}}  & =\sum\limits_{s\in S}f_{n+s}%
+\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\nonumber\\
-\text{satisfies }n  & >\max\left(  \left\{  -a_{t}\mid t\in T\right\}
-\cup\left\{  -s\mid s\in S\right\}  \right)  .\label{BigLemma}%
+\text{satisfies }n  &  >\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)  . \label{BigLemma}%
 \end{align}
 We are now going to prove this.
 
@@ -572,16 +573,19 @@ Lemma 9.
 Now, Theorem 1 is clear, since the existence follows from\ Theorem 8 and the
 uniqueness from Lemma 9.
 
-\begin{center}
-\textbf{References}
-\end{center}
+\begin{thebibliography}{9}                                                                                                %
 
-[1] Philip Matchett Wood, Doron Zeilberger, \textit{A translation method for
-finding combinatorial bijections}, Annals of Combinatorics \textbf{13} (2009),
-pp. 383--402. \newline\url{http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/trans-method.html}
 
-[2] Darij Grinberg, \textit{Zeckendorf family identities generalized}, version
-7, 22 March 2011 *long version*.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfLONG.pdf}
+\bibitem[1]{1}Philip Matchett Wood, Doron Zeilberger, \textit{A translation
+method for finding combinatorial bijections}, Annals of Combinatorics
+\textbf{13} (2009), pp. 383--402. \newline\url{http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/trans-method.html}
+
+\bibitem[2]{this.long}Darij Grinberg, \textit{Zeckendorf family identities
+generalized}, version 7, 22 March 2011 *long version*.\newline%
+\url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfLONG.pdf}\newline Also
+available as an ancillary file to
+\href{https://arxiv.org/abs/1103.4507v2}{arXiv preprint arXiv:1103.4507v2}.
+\end{thebibliography}
 
 
 \end{document}
