@@ -14,7 +14,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 20:48:41}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 21:12:25}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -164,21 +164,20 @@ $\Delta=$\texttt{darij }and $\Gamma=$\texttt{grinberg }Thank you!
 
 
 \begin{definition}
-A subset $S$ of $\mathbb{Z}$ is called
-\textit{lacunar} if it satisfies $\left(  s+1\notin S\text{ for every }s\in
-S\right)  $.
+A subset $S$ of $\mathbb{Z}$ is called \textit{lacunar} if it satisfies
+$\left(  s+1\notin S\text{ for every }s\in S\right)  $.
 \end{definition}
 
 \begin{definition}
-Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the Fibonacci
-sequence (defined by $f_{1}=f_{2}=1$ and the recurrence relation $\left(
-f_{n}=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{ satisfying }%
+Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the Fibonacci sequence
+(defined by $f_{1}=f_{2}=1$ and the recurrence relation $\left(  f_{n}%
+=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{ satisfying }%
 n\geq3\right)  $).
 \end{definition}
 
-\begin{theorem}[generalized Zeckendorf family identities]\label{thm.1}
-Let $T$ be a
-finite set, and $a_{t}$ be an integer for every $t\in T$.
+\begin{theorem}
+[generalized Zeckendorf family identities]\label{thm.1} Let $T$ be a finite
+set, and $a_{t}$ be an integer for every $t\in T$.
 
 Then, there exists one and only one finite lacunar subset $S$ of $\mathbb{Z}$
 such that\footnote{Here and in the following, $\max\varnothing$ is understood
@@ -198,9 +197,10 @@ to be $0$.}
 \end{theorem}
 
 \begin{remark}
-\textbf{1)} Theorem~\ref{thm.1} generalizes the so-called \textit{Zeckendorf family
-identities} (which correspond to the case when all $a_{t}$ are $=0$), which
-were discussed in \cite{1}.\footnote{The first seven of these identities are%
+\textbf{1)} Theorem~\ref{thm.1} generalizes the so-called \textit{Zeckendorf
+family identities} (which correspond to the case when all $a_{t}$ are $=0$),
+which were discussed in \cite{1}.\footnote{The first seven of these identities
+are%
 \begin{align*}
 1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
 2f_{n}  &  =f_{n-2}+f_{n+1}\text{ for all }n\geq3;\\
@@ -213,8 +213,8 @@ were discussed in \cite{1}.\footnote{The first seven of these identities are%
 }
 
 \textbf{2)} The condition $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
-\cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} is just a
-technical condition made in order to ensure that the Fibonacci numbers
+\cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} is just
+a technical condition made in order to ensure that the Fibonacci numbers
 $f_{n+a_{t}}$ for all $t\in T$ and $f_{n+s}$ for all $s\in S$ are
 well-defined. (If we would define the Fibonacci numbers $f_{n}$ for integers
 $n\leq0$ by extending the recurrence relation $f_{n}=f_{n-1}+f_{n-2}$ ``to the
@@ -233,9 +233,8 @@ denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,...\right\}  =\mathbb{N}%
 \setminus\left\{  0,1\right\}  $.
 
 Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618...$
-and that $\phi^{2}=\phi+1$.
-Binet's formula states that $f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}$ for
-every positive integer $n$.
+and that $\phi^{2}=\phi+1$. Binet's formula states that $f_{n}=\dfrac{\phi
+^{n}-\phi^{-n}}{\sqrt{5}}$ for every positive integer $n$.
 
 We observe that the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},...\right)
 $ consists of positive integers (indeed, its two starting values $f_{1}=1$ and
@@ -254,14 +253,15 @@ weakly increasing.
 
 We recall some known facts about the Fibonacci sequence:
 
-\begin{lemma} \label{lem.2}
-If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
+\begin{lemma}
+\label{lem.2} If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
 $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 \end{lemma}
 
-\begin{proof}[Proof of Lemma~\ref{lem.2}.] We WLOG assume that $S$ is nonempty (since
-otherwise, Lemma~\ref{lem.2} follows easily from our convention that $\max\varnothing=
-0$).
+\begin{proof}
+[Proof of Lemma~\ref{lem.2}.]We WLOG assume that $S$ is nonempty (since
+otherwise, Lemma~\ref{lem.2} follows easily from our convention that
+$\max\varnothing= 0$).
 
 Every $t\in\mathbb{N}_{2}$ satisfies $f_{t+1}=f_{t}+f_{t-1}$ (due to the
 relation $f_{n}=f_{n-1}+f_{n-2}$, applied to $n=t+1$), so that $f_{t}%
@@ -312,22 +312,24 @@ f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 (since $s_{k}=\max S$). This proves Lemma~\ref{lem.2}.
 \end{proof}
 
-\begin{lemma}[existence part of the Zeckendorf theorem] \label{lem.3}
-For every
-nonnegative integer $n$, there exists a finite lacunar subset $T$ of
-$\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$.
+\begin{lemma}
+[existence part of the Zeckendorf theorem]\label{lem.3} For every nonnegative
+integer $n$, there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
+that $n=\sum\limits_{t\in T}f_{t}$.
 \end{lemma}
 
-\begin{proof}[Proof of Lemma~\ref{lem.3}.] We are going to prove Lemma~\ref{lem.3} by strong induction
-over $n$:
+\begin{proof}
+[Proof of Lemma~\ref{lem.3}.]We are going to prove Lemma~\ref{lem.3} by strong
+induction over $n$:
 
 \textit{Induction base:} Let $n=0$. Then, there exists a finite lacunar subset
 $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$ (namely,
-$T=\varnothing$), and thus Lemma~\ref{lem.3} holds for $n=0$, and the induction base is completed.
+$T=\varnothing$), and thus Lemma~\ref{lem.3} holds for $n=0$, and the
+induction base is completed.
 
 \textit{Induction step:} Let $\nu\in\mathbb{N}$ be such that $\nu>0$. Assume
-that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$. We must now prove
-that Lemma~\ref{lem.3} holds for $n=\nu$.
+that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$. We must
+now prove that Lemma~\ref{lem.3} holds for $n=\nu$.
 
 In fact, let $t_{1}$ be the maximal integer $\tau$ from $\mathbb{N}_{2}$
 satisfying $f_{\tau}\leq\nu$\ \ \ \ \footnote{Such an integer $t_{1}$ exists,
@@ -336,11 +338,11 @@ strictly increasing beginning with $f_{2}$ and therefore unbounded from above
 (because every strictly increasing sequence of integers is unbounded from
 above).}. Then, $f_{t_{1}}\leq\nu$ but $f_{t_{1}+1}>\nu$. Then, $\nu-f_{t_{1}%
 }$ is a nonnegative integer (since $f_{t_{1}}\leq\nu$) and $<\nu$ (since
-$f_{t_{1}}>0$). Thus, Lemma~\ref{lem.3} holds for $n=\nu-f_{t_{1}}$ (since we assumed
-that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$). In other words,
-there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that
-$\nu-f_{t_{1}}=\sum\limits_{t\in T}f_{t}$. We rename this subset $T$ as $S$
-(so as not to confuse it with the set $T$ that we want to construct for
+$f_{t_{1}}>0$). Thus, Lemma~\ref{lem.3} holds for $n=\nu-f_{t_{1}}$ (since we
+assumed that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$).
+In other words, there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$
+such that $\nu-f_{t_{1}}=\sum\limits_{t\in T}f_{t}$. We rename this subset $T$
+as $S$ (so as not to confuse it with the set $T$ that we want to construct for
 $n=\nu$). Thus, we have a finite lacunar subset $S$ of $\mathbb{N}_{2}$ such
 that $\nu-f_{t_{1}}=\sum\limits_{t\in S}f_{t}$.
 
@@ -392,30 +394,31 @@ lacunar set. Clearly, $T$ is a finite set (since $S$ is finite) and satisfies%
 }\ \ \ \ \ \ \ \ \ \ \left(  \text{since }t_{1}\notin S\right) \\
 &  =\nu.
 \end{align*}
-Thus, Lemma~\ref{lem.3} is proven for the case $n=\nu$. This completes the induction
-step, and thus the induction proof of Lemma~\ref{lem.3} is complete.
+Thus, Lemma~\ref{lem.3} is proven for the case $n=\nu$. This completes the
+induction step, and thus the induction proof of Lemma~\ref{lem.3} is complete.
 \end{proof}
 
-\begin{lemma}[uniqueness part of the Zeckendorf theorem] \label{lem.4}
-Let
-$n\in\mathbb{N}$, and let $T$ and $T^{\prime}$ be two finite lacunar subsets
-of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum
-\limits_{t\in T^{\prime}}f_{t}$. Then, $T=T^{\prime}$.
+\begin{lemma}
+[uniqueness part of the Zeckendorf theorem]\label{lem.4} Let $n\in\mathbb{N}$,
+and let $T$ and $T^{\prime}$ be two finite lacunar subsets of $\mathbb{N}_{2}$
+such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum\limits_{t\in T^{\prime}%
+}f_{t}$. Then, $T=T^{\prime}$.
 \end{lemma}
 
-\begin{proof}[Proof of Lemma~\ref{lem.4}.] We are going to prove Lemma~\ref{lem.4} by strong induction
-over $n$:
+\begin{proof}
+[Proof of Lemma~\ref{lem.4}.]We are going to prove Lemma~\ref{lem.4} by strong
+induction over $n$:
 
 \textit{Induction base:} Let $n=0$. Then, $n=\sum\limits_{t\in T}f_{t}$
 becomes $0=\sum\limits_{t\in T}f_{t}$, and this yields $T=\varnothing$ (since
 otherwise, $T\neq\varnothing$ and thus $\sum\limits_{t\in T}f_{t}>0$ because
 the Fibonacci numbers $f_{t}$ are positive). Similarly, $T^{\prime
-}=\varnothing$. Hence, $T=T^{\prime}$, and thus Lemma~\ref{lem.4} holds for $n=0$, and
-the induction base is completed.
+}=\varnothing$. Hence, $T=T^{\prime}$, and thus Lemma~\ref{lem.4} holds for
+$n=0$, and the induction base is completed.
 
 \textit{Induction step:} Let $\nu\in\mathbb{N}$ be such that $\nu>0$. Assume
-that Lemma~\ref{lem.4} holds for every nonnegative integer $n<\nu$. We must now prove
-that Lemma~\ref{lem.4} holds for $n=\nu$.
+that Lemma~\ref{lem.4} holds for every nonnegative integer $n<\nu$. We must
+now prove that Lemma~\ref{lem.4} holds for $n=\nu$.
 
 So let $T$ and $T^{\prime}$ be two lacunar subsets of $\mathbb{N}_{2}$ such
 that $\nu=\sum\limits_{t\in T}f_{t}$ and $\nu=\sum\limits_{t\in T^{\prime}%
@@ -425,9 +428,9 @@ Since $\sum\limits_{t\in T}f_{t}=\nu>0$, we have $T\neq\varnothing$. Thus,
 $\max T\in T$. Similarly, $\max T^{\prime}\in T^{\prime}$. But the Fibonacci
 numbers $f_{t}$ are all nonnegative. Thus, from $\max T \in T$, we obtain
 $f_{\max T}\leq\sum\limits_{t\in T}f_{t}=\nu=\sum\limits_{t\in T^{\prime}%
-}f_{t}<f_{\max T^{\prime}+1}$ (by Lemma~\ref{lem.2}, applied to $S=T^{\prime}$). Hence,
-$\max T<\max T^{\prime}+1$ (since the Fibonacci sequence $\left(  f_{1}%
-,f_{2},f_{3},...\right)  $ is weakly increasing), so that $\max T\leq\max
+}f_{t}<f_{\max T^{\prime}+1}$ (by Lemma~\ref{lem.2}, applied to $S=T^{\prime}%
+$). Hence, $\max T<\max T^{\prime}+1$ (since the Fibonacci sequence $\left(
+f_{1},f_{2},f_{3},...\right)  $ is weakly increasing), so that $\max T\leq\max
 T^{\prime}$ (since $\max T$ and $\max T^{\prime}$ are integers). The same
 argument (with the roles of $T$ and $T^{\prime}$ interchanged) shows that
 $\max T^{\prime}\leq\max T$. Combining this with $\max T\leq\max T^{\prime}$,
@@ -448,42 +451,46 @@ T\setminus\left\{  \mu\right\}  }f_{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
 =\sum\limits_{t\in S^{\prime}}f_{t}$. Since $\nu-f_{\mu}$ is a nonnegative
 integer (because $\nu-f_{\mu}=\sum\limits_{t\in S^{\prime}}f_{t}$, and since
 all $f_{t}$ are nonnegative) and satisfies $\nu-f_{\mu}<\nu$ (because $f_{\mu
-}> 0$), we can thus apply Lemma~\ref{lem.4} to $\nu-f_{\mu}$ instead of $n$ and to the
-lacunar subsets $S$ and $S^{\prime}$ instead of $T$ and $T^{\prime}$ (since we
-assumed that Lemma~\ref{lem.4} holds for every nonnegative integer $n<\nu$), and we
-obtain $S=S^{\prime}$. Now, $S=T\setminus\left\{  \mu\right\}  $ yields
-$T=S\cup\left\{  \mu\right\}  $ (since $\mu\in T$), and similarly $T^{\prime
-}=S^{\prime}\cup\left\{  \mu\right\}  $, so that $T=\underbrace{S}%
-_{=S^{\prime}}\cup\left\{  \mu\right\}  =S^{\prime}\cup\left\{  \mu\right\}
-=T^{\prime}$. This proves Lemma~\ref{lem.4} for the case $n=\nu$. Thus, the induction
-step is completed, and the induction proof of Lemma~\ref{lem.4} is done.
+}> 0$), we can thus apply Lemma~\ref{lem.4} to $\nu-f_{\mu}$ instead of $n$
+and to the lacunar subsets $S$ and $S^{\prime}$ instead of $T$ and $T^{\prime
+}$ (since we assumed that Lemma~\ref{lem.4} holds for every nonnegative
+integer $n<\nu$), and we obtain $S=S^{\prime}$. Now, $S=T\setminus\left\{
+\mu\right\}  $ yields $T=S\cup\left\{  \mu\right\}  $ (since $\mu\in T$), and
+similarly $T^{\prime}=S^{\prime}\cup\left\{  \mu\right\}  $, so that
+$T=\underbrace{S}_{=S^{\prime}}\cup\left\{  \mu\right\}  =S^{\prime}%
+\cup\left\{  \mu\right\}  =T^{\prime}$. This proves Lemma~\ref{lem.4} for the
+case $n=\nu$. Thus, the induction step is completed, and the induction proof
+of Lemma~\ref{lem.4} is done.
 \end{proof}
 
-\begin{theorem}[Zeckendorf theorem] \label{thm.5}
-For every nonnegative integer $n$,
-there exists one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$
-such that $n=\sum\limits_{t\in T}f_{t}$.
+\begin{theorem}
+[Zeckendorf theorem]\label{thm.5} For every nonnegative integer $n$, there
+exists one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
+that $n=\sum\limits_{t\in T}f_{t}$.
 
 We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
 f_{t}$.
 \end{theorem}
 
-\begin{proof}[Proof of Theorem~\ref{thm.5}.]Fix some $n\in\mathbb{N}$. Then, there exists a
+\begin{proof}
+[Proof of Theorem~\ref{thm.5}.]Fix some $n\in\mathbb{N}$. Then, there exists a
 finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in
-T}f_{t}$ (according to Lemma~\ref{lem.3}), and such a subset is unique (because any two
-such subsets are equal, according to Lemma~\ref{lem.4}). This proves Theorem~\ref{thm.5}.
+T}f_{t}$ (according to Lemma~\ref{lem.3}), and such a subset is unique
+(because any two such subsets are equal, according to Lemma~\ref{lem.4}). This
+proves Theorem~\ref{thm.5}.
 \end{proof}
 
 Several books should have this and similar proofs of Theorem~\ref{thm.5}.
 
 Now for something completely straightforward:
 
-\begin{theorem} \label{thm.6}
-For every $n\in\mathbb{N}_{2}$, we have $\left\vert
-f_{n+1}-\phi f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
+\begin{theorem}
+\label{thm.6} For every $n\in\mathbb{N}_{2}$, we have $\left\vert f_{n+1}-\phi
+f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
 \end{theorem}
 
-\begin{proof}[Proof of Theorem~\ref{thm.6}.] By Binet's formula,%
+\begin{proof}
+[Proof of Theorem~\ref{thm.6}.]By Binet's formula,%
 \[
 f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}=\dfrac{\phi^{n}\left(  1-\phi
 ^{-2n}\right)  }{\sqrt{5}}=\dfrac{1}{\sqrt{5}}\phi^{n}\left(  1-\phi
@@ -533,12 +540,13 @@ and Theorem~\ref{thm.6} is proven.
 
 Let us show yet another lemma for later use:
 
-\begin{lemma} \label{lem.7}
-If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$,
-then $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
+\begin{lemma}
+\label{lem.7} If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
+$\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 \end{lemma}
 
-\begin{proof}[Proof of Lemma~\ref{lem.7}.] Let $\psi=\phi-1$. It is easily seen that
+\begin{proof}
+[Proof of Lemma~\ref{lem.7}.]Let $\psi=\phi-1$. It is easily seen that
 $0<\psi<1$. Also, $\psi=\phi-1$ yields $\psi^{2}=\left(  \phi-1\right)
 ^{2}=\underbrace{\phi^{2}}_{=\phi+1}-2\phi+1=\left(  \phi+1\right)
 -2\phi+1=2-\phi$ and thus $1-\psi^{2}=1-\left(  2-\phi\right)  =\phi-1=\psi$,
@@ -548,10 +556,10 @@ Let us write the set $S$ in the form $\left\{  s_{1},s_{2},...,s_{k}\right\}
 $, where $s_{1}<s_{2}<...<s_{k}$. Then, $\sum\limits_{s\in S}\psi^{s}%
 =\sum\limits_{i=1}^{k}\psi^{s_{k}}$. On the other hand, every $i\in\left\{
 1,2,...,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}$ (this was proven during
-the proof of Lemma~\ref{lem.2}) and thus $\psi^{s_{i}+2}\geq\psi^{s_{i}+1}$ (since
-$0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in S\subseteq\mathbb{N}_{2}$)
-and thus $\psi^{s_{1}}\leq\psi^{2}$ (since $0<\psi<1$). Now, $\sum
-\limits_{s\in S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{k}}$ yields%
+the proof of Lemma~\ref{lem.2}) and thus $\psi^{s_{i}+2}\geq\psi^{s_{i}+1}$
+(since $0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in S\subseteq
+\mathbb{N}_{2}$) and thus $\psi^{s_{1}}\leq\psi^{2}$ (since $0<\psi<1$). Now,
+$\sum\limits_{s\in S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{k}}$ yields%
 \begin{align*}
 \left(  1-\psi^{2}\right)  \sum\limits_{s\in S}\psi^{s}  &  =\left(
 1-\psi^{2}\right)  \sum\limits_{i=1}^{k}\psi^{s_{i}}=\underbrace{\sum
@@ -578,13 +586,12 @@ inequality (since $\psi=\phi-1$), we rewrite it as $\sum\limits_{s\in
 S}\left(  \phi-1\right)  ^{s}\leq\phi-1$. This proves Lemma~\ref{lem.7}.
 \end{proof}
 
-Let us now come to the proof of Theorem~\ref{thm.1}. First, we formulate the existence
-part of this theorem:
+Let us now come to the proof of Theorem~\ref{thm.1}. First, we formulate the
+existence part of this theorem:
 
-\begin{theorem}[existence part of the generalized Zeckendorf family
-identities] \label{thm.8}
-Let $T$ be a finite set, and $a_{t}$ be an integer for every
-$t\in T$.
+\begin{theorem}
+[existence part of the generalized Zeckendorf family identities]\label{thm.8}
+Let $T$ be a finite set, and $a_{t}$ be an integer for every $t\in T$.
 
 Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 \[
@@ -604,9 +611,8 @@ Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 Before we start proving this, let us introduce a notation:
 
 \begin{definition}
-Let $K$ be a subset of $\mathbb{Z}$, and $a\in\mathbb{Z}%
-$. Then, $K+a$ will denote the subset $\left\{  k+a\ \mid\ k\in K\right\}  $
-of $\mathbb{Z}$.
+Let $K$ be a subset of $\mathbb{Z}$, and $a\in\mathbb{Z}$. Then, $K+a$ will
+denote the subset $\left\{  k+a\ \mid\ k\in K\right\}  $ of $\mathbb{Z}$.
 \end{definition}
 
 Clearly, $\left(  K+a\right)  +b=K+\left(  a+b\right)  $ for any two integers
@@ -628,7 +634,8 @@ this to $s=k$, we get $k+1\notin K$. But $\ell+a=\underbrace{s}_{=k+a}%
 $\ell\in K$. This contradiction shows that our assumption $s+1\in K+a$ was
 wrong. Hence, $s+1\notin K+a$ is proven.}).
 
-\begin{proof}[Proof of Theorem~\ref{thm.8}.] Let us define a real constant $C$ by
+\begin{proof}
+[Proof of Theorem~\ref{thm.8}.]Let us define a real constant $C$ by
 $C=\sum\limits_{t\in T}\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{a_{t}}$.
 Clearly, $C\geq0$ (since $\phi-1>0$).
 
@@ -655,13 +662,13 @@ exactly the reason why we have required $N>\max\left\{  -a_{t}\mid t\in
 T\right\}  $. The reason for the second condition $\left(  \phi-1\right)
 ^{N}C<2-\phi$ will become clear later in the proof.)
 
-Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, Lemma~\ref{lem.3} (applied to $\nu$
-instead of $n$) yields that there exists a finite lacunar subset $Z_{\nu}$ of
-$\mathbb{N}_{2}$ such that $\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$. Let
-$S=Z_{\nu}+\left(  -N\right)  $. Then, the set $S=Z_{\nu}+\left(  -N\right)  $
-is lacunar (by (\ref{lacunar-plus}) (applied to $K=Z_{\nu}$ and $a=-N$),
-because $Z_{\nu}$ is a lacunar subset of $\mathbb{Z}$) and finite (since
-$Z_{\nu}$ is finite), and satisfies%
+Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, Lemma~\ref{lem.3} (applied to
+$\nu$ instead of $n$) yields that there exists a finite lacunar subset
+$Z_{\nu}$ of $\mathbb{N}_{2}$ such that $\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$.
+Let $S=Z_{\nu}+\left(  -N\right)  $. Then, the set $S=Z_{\nu}+\left(
+-N\right)  $ is lacunar (by (\ref{lacunar-plus}) (applied to $K=Z_{\nu}$ and
+$a=-N$), because $Z_{\nu}$ is a lacunar subset of $\mathbb{Z}$) and finite
+(since $Z_{\nu}$ is finite), and satisfies%
 \begin{align*}
 \nu &  =\sum\limits_{t\in Z_{\nu}}f_{t}=\sum\limits_{s\in Z_{\nu}+\left(
 -N\right)  }f_{N+s}\ \ \ \ \ \ \ \ \ \ \left(
@@ -732,8 +739,8 @@ Now, the triangle inequality yields%
 }\right)  \right\vert \\
 &  \leq\sum\limits_{t\in T}\underbrace{\left\vert f_{m+a_{t}+1}-\phi
 f_{m+a_{t}}\right\vert }_{\substack{=\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)
-^{m+a_{t}}\\\text{(by Theorem~\ref{thm.6}, applied to}\\m+a_{t}\text{ instead of
-}n\text{)}}}=\sum\limits_{t\in T}\dfrac{1}{\sqrt{5}}\underbrace{\left(
+^{m+a_{t}}\\\text{(by Theorem~\ref{thm.6}, applied to}\\m+a_{t}\text{ instead
+of }n\text{)}}}=\sum\limits_{t\in T}\dfrac{1}{\sqrt{5}}\underbrace{\left(
 \phi-1\right)  ^{m+a_{t}}}_{=\left(  \phi-1\right)  ^{m}\left(  \phi-1\right)
 ^{a_{t}}}=\left(  \phi-1\right)  ^{m}\underbrace{\sum\limits_{t\in T}\dfrac
 {1}{\sqrt{5}}\left(  \phi-1\right)  ^{a_{t}}}_{=C}\\
@@ -754,8 +761,8 @@ instead of $K$ and $a$), and besides $\underbrace{S}_{=Z_{\nu}+\left(
 every $z\in Z_{\nu}$ satisfies $\underbrace{z}_{\geq2}+\left(  \left(
 -N\right)  +\underbrace{m}_{\geq N}\right)  \geq2+\left(  \left(  -N\right)
 +N\right)  =2$ and thus $z\in\mathbb{N}_{2}$). Thus, $S+m$ is a lacunar finite
-subset of $\mathbb{N}_{2}$. Hence, Lemma~\ref{lem.7} (applied to $S+m$ instead of $S$)
-yields $\sum\limits_{s\in S+m}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
+subset of $\mathbb{N}_{2}$. Hence, Lemma~\ref{lem.7} (applied to $S+m$ instead
+of $S$) yields $\sum\limits_{s\in S+m}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 
 The triangle inequality yields%
 \begin{align*}
@@ -763,9 +770,9 @@ The triangle inequality yields%
 \right\vert \\
 &  \leq\sum\limits_{s\in S}\underbrace{\left\vert f_{m+s+1}-\phi
 f_{m+s}\right\vert }_{\substack{=\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)
-^{m+s}\\\text{(by Theorem~\ref{thm.6}, applied to}\\m+s\text{ instead of }n\text{)}%
-}}=\sum\limits_{s\in S}\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{m+s}%
-=\dfrac{1}{\sqrt{5}}\sum\limits_{s\in S}\left(  \phi-1\right)  ^{m+s}\\
+^{m+s}\\\text{(by Theorem~\ref{thm.6}, applied to}\\m+s\text{ instead of
+}n\text{)}}}=\sum\limits_{s\in S}\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)
+^{m+s}=\dfrac{1}{\sqrt{5}}\sum\limits_{s\in S}\left(  \phi-1\right)  ^{m+s}\\
 &  =\dfrac{1}{\sqrt{5}}\underbrace{\sum\limits_{s\in S+m}\left(
 \phi-1\right)  ^{s}}_{\leq\phi-1}\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
@@ -899,12 +906,12 @@ T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $. Consequently,
 Theorem~\ref{thm.8} is proven.
 \end{proof}
 
-All that remains now is the (rather trivial) uniqueness part of Theorem~\ref{thm.1}:
+All that remains now is the (rather trivial) uniqueness part of
+Theorem~\ref{thm.1}:
 
-\begin{lemma}[uniqueness part of the generalized Zeckendorf family
-identities] \label{lem.9}
-Let $T$ be a finite set, and $a_{t}$ be an integer for every
-$t\in T$.
+\begin{lemma}
+[uniqueness part of the generalized Zeckendorf family identities]\label{lem.9}
+Let $T$ be a finite set, and $a_{t}$ be an integer for every $t\in T$.
 
 Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
@@ -933,7 +940,8 @@ every }n\in\mathbb{Z}\text{ which}\\
 Then, $S=S^{\prime}$.
 \end{lemma}
 
-\begin{proof}[Proof of Lemma~\ref{lem.9}.] Let%
+\begin{proof}
+[Proof of Lemma~\ref{lem.9}.]Let%
 \[
 n=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
 S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.
@@ -948,7 +956,8 @@ s\in S\right\}  \right)  ,
 so that%
 \begin{align*}
 \sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma~\ref{lem.9}}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma~\ref{lem.9}%
+}\right) \\
 &  =\sum\limits_{t\in S+n}f_{t}\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -979,10 +988,10 @@ S+n=\left\{  s+n\ \mid\ s\in S\right\}  \subseteq\mathbb{N}_{2}.
 \]
 }. In other words, $S+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
 Similarly, $S^{\prime}+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
-Applying Lemma~\ref{lem.4} to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in T}f_{n+a_{t}%
-}$ instead of $T$, $T^{\prime}$ and $n$ yields that $S+n=S^{\prime}+n$
-(because $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S+n}f_{t}$ and
-$\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$).
+Applying Lemma~\ref{lem.4} to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in
+T}f_{n+a_{t}}$ instead of $T$, $T^{\prime}$ and $n$ yields that $S+n=S^{\prime
+}+n$ (because $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S+n}f_{t}$
+and $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$).
 Hence,%
 \begin{align*}
 S  &  =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
@@ -995,8 +1004,9 @@ n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
 This proves Lemma~\ref{lem.9}.
 \end{proof}
 
-\begin{proof}[Proof of Theorem~\ref{thm.1}.] Then, there exists a finite lacunar subset $S$ of
-$\mathbb{Z}$ such that
+\begin{proof}
+[Proof of Theorem~\ref{thm.1}.]Then, there exists a finite lacunar subset $S$
+of $\mathbb{Z}$ such that
 \[
 \left(
 \begin{array}
@@ -1008,8 +1018,9 @@ $\mathbb{Z}$ such that
 \end{array}
 \right)
 \]
-(according to Theorem~\ref{thm.8}), and such a subset is unique (because any two such
-subsets are equal, according to Lemma~\ref{lem.9}). This proves Theorem~\ref{thm.1}.
+(according to Theorem~\ref{thm.8}), and such a subset is unique (because any
+two such subsets are equal, according to Lemma~\ref{lem.9}). This proves
+Theorem~\ref{thm.1}.
 \end{proof}
 
 \begin{thebibliography}{9}                                                                                                %
