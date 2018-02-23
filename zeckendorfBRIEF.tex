@@ -198,12 +198,11 @@ $\Delta=$\texttt{darij }and $\Gamma=$\texttt{grinberg} Thank you!
 
 \hrule
 
-
-\bigskip
+\section{The main result}
 
 The purpose of this note is to establish a generalization of the so-called
-\textit{Zeckendorf family identities} which were discussed in \cite{1}. First,
-some definitions:
+\textit{Zeckendorf family identities} which were discussed in \cite{1}.
+Before we can state it, we need a few definitions:
 
 \begin{definition}
 A subset $S$ of $\mathbb{Z}$ is called \textit{lacunar} if it satisfies
@@ -217,7 +216,10 @@ Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the Fibonacci sequence
 n\geq3\right)  $).
 \end{definition}
 
-Our main theorem is:
+(Here and in the following, $\mathbb{N}$ denotes the set
+$\left\{0,1,2,\ldots\right\}$.)
+
+Our main theorem is the following:
 
 \begin{theorem}
 [generalized Zeckendorf family identities]\label{thm.1} Let $T$ be a finite
@@ -264,12 +266,14 @@ $n\leq0$ by extending the recurrence relation $f_{n}=f_{n-1}+f_{n-2}$ ``to the
 left'', then we could drop this condition.)
 \end{remark}
 
-The following is my proof of Theorem~\ref{thm.1}. It does not even try to be
-combinatorial - it is pretty much the opposite. Technically, it is completely
-elementary and does not resort to any theorems from analysis; but the method
-used (choosing a ``large enough'' $N$ to make an estimate work) is an analytic one.
+The proof we shall give for Theorem~\ref{thm.1} is not combinatorial.
+It will use inequalities and the properties of the golden ratio; in a sense,
+its underlying ideas come from analysis (although it will not actually use
+any results from analysis).
 
-First, some lemmas and notations:
+\section{Basics on the Fibonacci sequence}
+
+We begin with some lemmas and notations:
 
 We denote by $\mathbb{N}$ the set $\left\{  0,1,2,...\right\}  $ (and not the
 set $\left\{  1,2,3,...\right\}  $, like some other authors do). Also, we
@@ -339,7 +343,11 @@ We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
 f_{t}$.
 \end{theorem}
 
-Now for something completely trivial:
+\section{Inequalities for the golden ratio}
+
+Next, we state a completely straightforward (and well-known) theorem,
+which shows that the Fibonacci sequence grows roughly exponentially
+(with the exponent being the golden ratio $\phi$):
 
 \begin{theorem}
 \label{thm.6} For every $n\in\mathbb{N}_{2}$, we have $\left\vert f_{n+1}-\phi
@@ -375,6 +383,8 @@ weakly decreasing function (as $0\leq\phi-1\leq1$), we thus have%
 (by the formula for the sum of the geometric series, along with some
 computations). This proves Lemma~\ref{lem.7}.
 \end{proof}
+
+\section{Proving Theorem~\ref{thm.1}}
 
 Let us now come to the proof of Theorem~\ref{thm.1}. First, we formulate the
 existence part of this theorem:
