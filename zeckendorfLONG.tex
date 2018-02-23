@@ -14,7 +14,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 20:47:52}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 20:48:41}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -107,7 +107,12 @@
 
 \title{Zeckendorf family identities generalized}
 \author{Darij Grinberg}
-\date{22 March 2011, long version}
+\date{
+%TCIMACRO{\TeXButton{today}{\today}}%
+%BeginExpansion
+\today
+%EndExpansion
+, long version}
 \maketitle
 
 \begin{abstract}
@@ -185,6 +190,8 @@ to be $0$.}
 \end{array}
 \right)  .
 \]
+
+
 
 \end{quote}
 
@@ -582,8 +589,6 @@ Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 \right)  .
 \]
 
-
-
 \end{quote}
 
 Before we start proving this, let us introduce a notation:
@@ -969,9 +974,9 @@ Applying Lemma 4 to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in T}f_{n+a_{t}%
 $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$).
 Hence,%
 \begin{align*}
-S &  =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
+S  &  =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
 n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
-}+n}+\left(  -n\right)  \\
+}+n}+\left(  -n\right) \\
 &  =\left(  S^{\prime}+n\right)  +\left(  -n\right)  =S^{\prime}%
 +\underbrace{\left(  n+\left(  -n\right)  \right)  }_{=0}=S^{\prime
 }+0=S^{\prime}.
@@ -1002,7 +1007,12 @@ method for finding combinatorial bijections}, Annals of Combinatorics
 \textbf{13} (2009), pp. 383--402. \newline\url{http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/trans-method.html}
 
 \bibitem[2]{this.short}Darij Grinberg, \textit{Zeckendorf family identities
-generalized}, version 7, 22 March 2011 *brief version*.\newline%
+generalized},
+%TCIMACRO{\TeXButton{today}{\today}}%
+%BeginExpansion
+\today
+%EndExpansion
+, *brief version*.\newline%
 \url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfBRIEF.pdf}\newline Also
 available as \href{https://arxiv.org/abs/1103.4507v2}{arXiv preprint
 arXiv:1103.4507v2}.
