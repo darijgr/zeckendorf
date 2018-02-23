@@ -253,7 +253,8 @@ If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
 $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 \end{lemma}
 
-\textit{Proof.} This is rather clear either by a telescoping sum argument
+\begin{proof}
+This is rather clear either by a telescoping sum argument
 (write the set $S$ in the form $\left\{  s_{1},s_{2},...,s_{k}\right\}  $ with
 $s_{1}<s_{2}<...<s_{k}$, notice that
 \[
@@ -264,6 +265,7 @@ f_{s_{i}+1}-f_{s_{i+1}-1}\right)  +\underbrace{f_{s_{k}+1}}_{=f_{\max S+1}%
 \]
 and use $s_{i}+1\leq s_{i+1}-1$ since the set $S$ is lacunar) or by induction
 over $\max S$ (use $f_{\max S+1}=f_{\max S}+f_{\max S-1}$ here).
+\end{proof}
 
 \begin{lemma}[existence part of the Zeckendorf theorem] \label{lem.3}
 For every
@@ -271,10 +273,12 @@ nonnegative integer $n$, there exists a finite lacunar subset $T$ of
 $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$.
 \end{lemma}
 
-\textit{Proof.} Induction over $n$. The main idea here is to let $t_{1}$ be
+\begin{proof}
+Induction over $n$. The main idea here is to let $t_{1}$ be
 the maximal $\tau\in\mathbb{N}_{2}$ satisfying $f_{\tau}\leq n$, and apply
 Lemma~\ref{lem.3} to $n-t_{1}$ instead of $n$. The details are left to the reader (and
 can be found in \cite{this.long}).
+\end{proof}
 
 \begin{lemma}[uniqueness part of the Zeckendorf theorem] \label{lem.4}
 Let
@@ -283,11 +287,13 @@ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum
 \limits_{t\in T^{\prime}}f_{t}$. Then, $T=T^{\prime}$.
 \end{lemma}
 
-\textit{Proof.} Induction over $n$. Use Lemma~\ref{lem.2} to show that $\max T<\max
+\begin{proof}
+Induction over $n$. Use Lemma~\ref{lem.2} to show that $\max T<\max
 T^{\prime}+1$ and $\max T^{\prime}<\max T+1$, resulting in $\max T=\max
 T^{\prime}$. Hence, the sets $T$ and $T^{\prime}$ have an element in common,
 and we can reduce the situation to one with a smaller $n$ by removing this
 common element from both sets.
+\end{proof}
 
 Lemmata~\ref{lem.3} and~\ref{lem.4} together yield the following theorem:
 
@@ -307,9 +313,11 @@ For every $n\in\mathbb{N}_{2}$, we have $\left\vert
 f_{n+1}-\phi f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
 \end{theorem}
 
-\textit{Proof.} Binet's formula yields $f_{n}=\dfrac{\phi^{n}-\phi^{-n}}%
+\begin{proof}
+Binet's formula yields $f_{n}=\dfrac{\phi^{n}-\phi^{-n}}%
 {\sqrt{5}}$ and $f_{n+1}=\dfrac{\phi^{n+1}-\phi^{-\left(  n+1\right)  }}%
 {\sqrt{5}}$; the rest is computation.
+\end{proof}
 
 Let us show yet another lemma for later use:
 
@@ -318,7 +326,7 @@ If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$,
 then $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 \end{lemma}
 
-\textit{Proof of Lemma~\ref{lem.7}.} Since $S$ is a lacunar subset of $\mathbb{N}_{2}%
+\begin{proof}[Proof of Lemma~\ref{lem.7}.] Since $S$ is a lacunar subset of $\mathbb{N}_{2}%
 $, the smallest element of $S$ is at least $2$, the second smallest element of
 $S$ is at least $4$ (since it is larger than the smallest element by at least
 $2$), the third smallest element of $S$ is at least $6$ (since it is larger
@@ -332,6 +340,7 @@ weakly decreasing function (as $0\leq\phi-1\leq1$), we thus have%
 \]
 (by the formula for the sum of the geometric series, along with some
 computations). This proves Lemma~\ref{lem.7}.
+\end{proof}
 
 Let us now come to the proof of Theorem~\ref{thm.1}. First, we formulate the existence
 part of this theorem:
@@ -369,7 +378,7 @@ Clearly, $\left(  K+a\right)  +b=K+\left(  a+b\right)  $ for any two integers
 $a$ and $b$. Also, $K+0=K$. Finally, if $K$ is a lacunar subset of
 $\mathbb{Z}$, and if $a\in\mathbb{Z}$, then $K+a$ is lacunar as well.
 
-\textit{Proof of Theorem~\ref{thm.8}.} Choose a high enough integer $N$. What exactly
+\begin{proof}[Proof of Theorem~\ref{thm.8}.] Choose a high enough integer $N$. What exactly
 ``high enough'' means we will see later; at the moment, we only require
 $N\in\mathbb{N}_{2}$ and $N>\max\left\{  -a_{t}\mid t\in T\right\}  $. We
 might later want $N$ to be even higher, however.
@@ -519,6 +528,7 @@ $\left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum
 integer). In other words, $\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}%
 }=\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}$. This completes the proof of
 Assertion 1, and, with it, the proof of Theorem~\ref{thm.8}.
+\end{proof}
 
 All that remains now is the (rather trivial) uniqueness part of Theorem~\ref{thm.1}:
 
@@ -554,7 +564,7 @@ every }n\in\mathbb{Z}\text{ which}\\
 Then, $S=S^{\prime}$.
 \end{lemma}
 
-\textit{Proof of Lemma~\ref{lem.9}.} Let%
+\begin{proof}[Proof of Lemma~\ref{lem.9}.] Let%
 \begin{equation}
 n=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
 S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.
@@ -580,9 +590,12 @@ are $S$ and $S^{\prime}$) and finite (since so are $S$ and $S^{\prime}$), and
 are subsets of $\mathbb{N}_{2}$ (here is where we use (\ref{l7})), we can now
 conclude from Lemma~\ref{lem.4} that $S+n=S^{\prime}+n$, so that $S=S^{\prime}$, proving
 Lemma~\ref{lem.9}.
+\end{proof}
 
+\begin{proof}[Proof of Theorem~\ref{thm.1}.]
 Now, Theorem~\ref{thm.1} is clear, since the existence follows from Theorem~\ref{thm.8} and the
 uniqueness from Lemma~\ref{lem.9}.
+\end{proof}
 
 \begin{thebibliography}{9}                                                                                                %
 

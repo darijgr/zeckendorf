@@ -257,7 +257,7 @@ If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
 $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 \end{lemma}
 
-\textit{Proof of Lemma~\ref{lem.2}.} We WLOG assume that $S$ is nonempty (since
+\begin{proof}[Proof of Lemma~\ref{lem.2}.] We WLOG assume that $S$ is nonempty (since
 otherwise, Lemma~\ref{lem.2} follows easily from our convention that $\max\varnothing=
 0$).
 
@@ -308,6 +308,7 @@ f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 &  =f_{\max S+1}%
 \end{align*}
 (since $s_{k}=\max S$). This proves Lemma~\ref{lem.2}.
+\end{proof}
 
 \begin{lemma}[existence part of the Zeckendorf theorem] \label{lem.3}
 For every
@@ -315,7 +316,7 @@ nonnegative integer $n$, there exists a finite lacunar subset $T$ of
 $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$.
 \end{lemma}
 
-\textit{Proof of Lemma~\ref{lem.3}.} We are going to prove Lemma~\ref{lem.3} by strong induction
+\begin{proof}[Proof of Lemma~\ref{lem.3}.] We are going to prove Lemma~\ref{lem.3} by strong induction
 over $n$:
 
 \textit{Induction base:} Let $n=0$. Then, there exists a finite lacunar subset
@@ -391,6 +392,7 @@ lacunar set. Clearly, $T$ is a finite set (since $S$ is finite) and satisfies%
 \end{align*}
 Thus, Lemma~\ref{lem.3} is proven for the case $n=\nu$. This completes the induction
 step, and thus the induction proof of Lemma~\ref{lem.3} is complete.
+\end{proof}
 
 \begin{lemma}[uniqueness part of the Zeckendorf theorem] \label{lem.4}
 Let
@@ -399,7 +401,7 @@ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum
 \limits_{t\in T^{\prime}}f_{t}$. Then, $T=T^{\prime}$.
 \end{lemma}
 
-\textit{Proof of Lemma~\ref{lem.4}.} We are going to prove Lemma~\ref{lem.4} by strong induction
+\begin{proof}[Proof of Lemma~\ref{lem.4}.] We are going to prove Lemma~\ref{lem.4} by strong induction
 over $n$:
 
 \textit{Induction base:} Let $n=0$. Then, $n=\sum\limits_{t\in T}f_{t}$
@@ -453,6 +455,7 @@ $T=S\cup\left\{  \mu\right\}  $ (since $\mu\in T$), and similarly $T^{\prime
 _{=S^{\prime}}\cup\left\{  \mu\right\}  =S^{\prime}\cup\left\{  \mu\right\}
 =T^{\prime}$. This proves Lemma~\ref{lem.4} for the case $n=\nu$. Thus, the induction
 step is completed, and the induction proof of Lemma~\ref{lem.4} is done.
+\end{proof}
 
 \begin{theorem}[Zeckendorf theorem] \label{thm.5}
 For every nonnegative integer $n$,
@@ -463,10 +466,11 @@ We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
 f_{t}$.
 \end{theorem}
 
-\textit{Proof of Theorem~\ref{thm.5}.} Fix some $n\in\mathbb{N}$. Then, there exists a
+\begin{proof}[Proof of Theorem~\ref{thm.5}.]Fix some $n\in\mathbb{N}$. Then, there exists a
 finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in
 T}f_{t}$ (according to Lemma~\ref{lem.3}), and such a subset is unique (because any two
 such subsets are equal, according to Lemma~\ref{lem.4}). This proves Theorem~\ref{thm.5}.
+\end{proof}
 
 Several books should have this and similar proofs of Theorem~\ref{thm.5}.
 
@@ -477,7 +481,7 @@ For every $n\in\mathbb{N}_{2}$, we have $\left\vert
 f_{n+1}-\phi f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
 \end{theorem}
 
-\textit{Proof of Theorem~\ref{thm.6}.} By Binet's formula,%
+\begin{proof}[Proof of Theorem~\ref{thm.6}.] By Binet's formula,%
 \[
 f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}=\dfrac{\phi^{n}\left(  1-\phi
 ^{-2n}\right)  }{\sqrt{5}}=\dfrac{1}{\sqrt{5}}\phi^{n}\left(  1-\phi
@@ -523,6 +527,7 @@ so that%
 {5}}\left(  \phi-1\right)  ^{n}\geq0\right)  ,
 \]
 and Theorem~\ref{thm.6} is proven.
+\end{proof}
 
 Let us show yet another lemma for later use:
 
@@ -531,7 +536,7 @@ If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$,
 then $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 \end{lemma}
 
-\textit{Proof of Lemma~\ref{lem.7}.} Let $\psi=\phi-1$. It is easily seen that
+\begin{proof}[Proof of Lemma~\ref{lem.7}.] Let $\psi=\phi-1$. It is easily seen that
 $0<\psi<1$. Also, $\psi=\phi-1$ yields $\psi^{2}=\left(  \phi-1\right)
 ^{2}=\underbrace{\phi^{2}}_{=\phi+1}-2\phi+1=\left(  \phi+1\right)
 -2\phi+1=2-\phi$ and thus $1-\psi^{2}=1-\left(  2-\phi\right)  =\phi-1=\psi$,
@@ -569,6 +574,7 @@ which follows from $0<\psi<1$), we get $\sum\limits_{s\in S}\psi^{s}\leq
 \dfrac{\psi^{2}}{1-\psi^{2}}=\psi$. Replacing $\psi$ by $\phi-1$ in this
 inequality (since $\psi=\phi-1$), we rewrite it as $\sum\limits_{s\in
 S}\left(  \phi-1\right)  ^{s}\leq\phi-1$. This proves Lemma~\ref{lem.7}.
+\end{proof}
 
 Let us now come to the proof of Theorem~\ref{thm.1}. First, we formulate the existence
 part of this theorem:
@@ -620,7 +626,7 @@ this to $s=k$, we get $k+1\notin K$. But $\ell+a=\underbrace{s}_{=k+a}%
 $\ell\in K$. This contradiction shows that our assumption $s+1\in K+a$ was
 wrong. Hence, $s+1\notin K+a$ is proven.}).
 
-\textit{Proof of Theorem~\ref{thm.8}.} Let us define a real constant $C$ by
+\begin{proof}[Proof of Theorem~\ref{thm.8}.] Let us define a real constant $C$ by
 $C=\sum\limits_{t\in T}\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{a_{t}}$.
 Clearly, $C\geq0$ (since $\phi-1>0$).
 
@@ -889,6 +895,7 @@ $n>M$. Since $M=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{
 (\ref{main}) holds for every $n>\max\left(  \left\{  -a_{t}\mid t\in
 T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $. Consequently,
 Theorem~\ref{thm.8} is proven.
+\end{proof}
 
 All that remains now is the (rather trivial) uniqueness part of Theorem~\ref{thm.1}:
 
@@ -924,7 +931,7 @@ every }n\in\mathbb{Z}\text{ which}\\
 Then, $S=S^{\prime}$.
 \end{lemma}
 
-\textit{Proof of Lemma~\ref{lem.9}.} Let%
+\begin{proof}[Proof of Lemma~\ref{lem.9}.] Let%
 \[
 n=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
 S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.
@@ -984,8 +991,9 @@ n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
 }+0=S^{\prime}.
 \end{align*}
 This proves Lemma~\ref{lem.9}.
+\end{proof}
 
-\textit{Proof of Theorem~\ref{thm.1}.} Then, there exists a finite lacunar subset $S$ of
+\begin{proof}[Proof of Theorem~\ref{thm.1}.] Then, there exists a finite lacunar subset $S$ of
 $\mathbb{Z}$ such that
 \[
 \left(
@@ -1000,6 +1008,7 @@ $\mathbb{Z}$ such that
 \]
 (according to Theorem~\ref{thm.8}), and such a subset is unique (because any two such
 subsets are equal, according to Lemma~\ref{lem.9}). This proves Theorem~\ref{thm.1}.
+\end{proof}
 
 \begin{thebibliography}{9}                                                                                                %
 
