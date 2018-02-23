@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 17:49:15}
+%TCIDATA{LastRevised=Friday, February 23, 2018 17:49:50}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -319,16 +319,14 @@ sequence is weakly increasing.
 We recall some known facts about the Fibonacci sequence:
 
 \begin{lemma}
-\label{lem.2} If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
+\label{lem.2} Let $S$ be a finite lacunar subset of $\mathbb{N}_{2}$. Then,
 $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma~\ref{lem.2}.]Let $S$ be a finite lacunar subset of
-$\mathbb{N}_{2}$. We must prove that $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
-
-We WLOG assume that $S$ is nonempty (since otherwise, Lemma~\ref{lem.2}
-follows easily from our convention that $\max\varnothing=0$).
+[Proof of Lemma~\ref{lem.2}.]We WLOG assume that $S$ is nonempty (since
+otherwise, Lemma~\ref{lem.2} follows easily from our convention that
+$\max\varnothing=0$).
 
 Every $t\in\mathbb{N}_{2}$ satisfies $f_{t+1}=f_{t}+f_{t-1}$ (due to the
 relation $f_{n}=f_{n-1}+f_{n-2}$, applied to $n=t+1$), so that
@@ -486,25 +484,25 @@ s+1\notin S\cup\left\{  t_{1}\right\}  \ \ \ \ \ \ \ \ \ \ \text{for every
 \end{equation}
 
 
-Hence, $s + 1 \notin S \cup\left\{  t_{1} \right\} $ for every $s \in S
-\cup\left\{  t_{1} \right\} $\ \ \ \ \footnote{\textit{Proof.} Let $s \in S
-\cup\left\{  t_{1} \right\} $. We must prove that $s + 1 \notin S \cup\left\{
-t_{1} \right\} $.
+Hence, $s + 1 \notin S \cup\left\{  t_{1} \right\}  $ for every $s \in S
+\cup\left\{  t_{1} \right\}  $\ \ \ \ \footnote{\textit{Proof.} Let $s \in S
+\cup\left\{  t_{1} \right\}  $. We must prove that $s + 1 \notin S
+\cup\left\{  t_{1} \right\}  $.
 \par
 If $s \in S$, then this follows immediately from (\ref{pf.lem.3.notin1}).
 Thus, we can WLOG assume that $s \notin S$. Assume this. Combining $s \in S
-\cup\left\{  t_{1} \right\} $ with $s \notin S$, we obtain $s \in\left( S
-\cup\left\{  t_{1} \right\} \right)  \setminus S \subseteq\left\{  t_{1}
-\right\} $. Therefore, $s = t_{1}$. Hence, $s + 1 = t_{1} + 1 \notin S
-\cup\left\{  t_{1} \right\} $. This proves $s + 1 \notin S \cup\left\{  t_{1}
-\right\} $.}. In other words, the set $S\cup\left\{  t_{1}\right\}  $ is
+\cup\left\{  t_{1} \right\}  $ with $s \notin S$, we obtain $s \in\left(  S
+\cup\left\{  t_{1} \right\}  \right)  \setminus S \subseteq\left\{  t_{1}
+\right\}  $. Therefore, $s = t_{1}$. Hence, $s + 1 = t_{1} + 1 \notin S
+\cup\left\{  t_{1} \right\}  $. This proves $s + 1 \notin S \cup\left\{  t_{1}
+\right\}  $.}. In other words, the set $S\cup\left\{  t_{1}\right\}  $ is
 lacunar. Denoting this set $S\cup\left\{  t_{1}\right\}  $ by $Q$, we thus
 have shown that the set $Q$ is lacunar. Clearly, $Q$ is a finite set (since
 $S$ is finite). Moreover, $\left\{  t_{1} \right\}  \subseteq\mathbb{N}_{2}$
 (since $t_{1} \in\mathbb{N}_{2}$), so that $Q = \underbrace{S}_{\subseteq
-\mathbb{N}_{2}} \cup\underbrace{\left\{  t_{1} \right\} }_{\subseteq
+\mathbb{N}_{2}} \cup\underbrace{\left\{  t_{1} \right\}  }_{\subseteq
 \mathbb{N}_{2}} \subseteq\mathbb{N}_{2} \cup\mathbb{N}_{2} = \mathbb{N}_{2}$.
-From $Q = S \cup\left\{  t_{1} \right\} $, we obtain $Q \setminus\left\{
+From $Q = S \cup\left\{  t_{1} \right\}  $, we obtain $Q \setminus\left\{
 t_{1} \right\}  = \left(  S \cup\left\{  t_{1} \right\}  \right)
 \setminus\left\{  t_{1} \right\}  = S$ (since $t_{1} \notin S$). Also, $t_{1}
 \in\left\{  t_{1} \right\}  \subseteq S \cup\left\{  t_{1} \right\}  = Q$.
@@ -514,7 +512,7 @@ Therefore,
 t_{1}\right\}  }f_{t} + f_{t_{1}} = \underbrace{\sum\limits_{t\in S}f_{t}%
 }_{=\nu-f_{t_{1}}} +f_{t_{1}} \ \ \ \ \ \ \ \ \ \ \left(  \text{since } Q
 \setminus\left\{  t_{1} \right\}  = S \right) \\
-&  = \left( \nu- f_{t_{1}}\right)  + f_{t_{1}} = \nu.
+&  = \left(  \nu- f_{t_{1}}\right)  + f_{t_{1}} = \nu.
 \end{align*}
 Hence, we have found a finite lacunar subset $Q$ of $\mathbb{N}_{2}$ such that
 $\nu= \sum\limits_{t \in Q} f_{t}$. Hence, there exists a finite lacunar
@@ -637,8 +635,8 @@ proof of it here.
 
 \begin{proof}
 [Proof of Theorem~\ref{thm.6}.]It is easy to see that $\phi^{-1}=\phi-1$ and
-$1-\phi^{-2}=\phi-1$. Also, $\left( \phi-1\right) ^{n} \geq0$ (since $\phi-1
-\geq0$) and thus $\dfrac{1}{\sqrt{5}} \left( \phi-1\right) ^{n} \geq0$.
+$1-\phi^{-2}=\phi-1$. Also, $\left(  \phi-1\right)  ^{n} \geq0$ (since $\phi-1
+\geq0$) and thus $\dfrac{1}{\sqrt{5}} \left(  \phi-1\right)  ^{n} \geq0$.
 
 Let $n\in\mathbb{N}_{2}$. By Binet's formula, we have%
 \[
@@ -688,7 +686,7 @@ and Theorem~\ref{thm.6} is proven.
 Let us show yet another lemma for later use:
 
 \begin{lemma}
-\label{lem.7} If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
+\label{lem.7} Let $S$ be a finite lacunar subset of $\mathbb{N}_{2}$. Then,
 $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 \end{lemma}
 
@@ -814,8 +812,8 @@ T\right\}  $. The reason for the second condition $\left(  \phi-1\right)
 
 If $u$ and $v$ are two real numbers, then
 \begin{equation}
-\left|  u-v \right|  \leq\left| u\right|  + \left| v\right|
-.\label{pf.thm.8.triangle1}%
+\left|  u-v \right|  \leq\left|  u\right|  + \left|  v\right|  .
+\label{pf.thm.8.triangle1}%
 \end{equation}
 (Indeed, this is one of the forms of the triangle inequality.)
 
@@ -891,8 +889,8 @@ so that%
 f_{m+s}\right)  \right\vert \label{Estimate1}%
 \end{align}
 (by (\ref{pf.thm.8.triangle1}), applied to $u = \sum\limits_{t\in T}\left(
-f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right) $ and $v = \sum\limits_{s\in S}\left(
-f_{m+s+1}-\phi f_{m+s}\right) $).
+f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right)  $ and $v = \sum\limits_{s\in S}\left(
+f_{m+s+1}-\phi f_{m+s}\right)  $).
 
 Now, the triangle inequality yields%
 \begin{align*}
