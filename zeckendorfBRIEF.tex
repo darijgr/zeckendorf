@@ -169,11 +169,11 @@ no two elements of this set are consecutive integers) depending only on $k$.
 sure that all addends $f_{n+s}$ are well-defined. If the Fibonacci sequence is
 properly continued to the negative, this condition drops out.)\newline In this
 note we prove a generalization of these identities: For any family $\left(
-a_{1},a_{2},...,a_{p}\right)  $ of integers, there exists one and only one
+a_{1},a_{2},\ldots,a_{p}\right)  $ of integers, there exists one and only one
 finite lacunar set $S$ of integers such that every $n$ (high enough to make
 the Fibonacci numbers in the equation below well-defined) satisfies
 \[
-f_{n+a_{1}}+f_{n+a_{2}}+...+f_{n+a_{p}}=\sum\limits_{s\in S}f_{n+s}.
+f_{n+a_{1}}+f_{n+a_{2}}+\cdots+f_{n+a_{p}}=\sum\limits_{s\in S}f_{n+s}.
 \]
 The proof uses the Fibonacci-approximating properties of the golden ratio. It
 would be interesting to find a purely combinatorial proof.
@@ -280,12 +280,12 @@ results from analysis).
 
 We begin with some lemmas and notations:
 
-We denote by $\mathbb{N}$ the set $\left\{  0,1,2,...\right\}  $ (and not the
-set $\left\{  1,2,3,...\right\}  $, like some other authors do). Also, we
-denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,...\right\}  =\mathbb{N}%
+We denote by $\mathbb{N}$ the set $\left\{  0,1,2,\ldots\right\}  $ (and not the
+set $\left\{  1,2,3,\ldots\right\}  $, like some other authors do). Also, we
+denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,\ldots\right\}  =\mathbb{N}%
 \setminus\left\{  0,1\right\}  $.
 
-Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618...$
+Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618\ldots$
 and that $\phi^{2}=\phi+1$.
 
 First, some basic (and known) lemmas on the Fibonacci sequence:
@@ -297,8 +297,8 @@ $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 
 \begin{proof}
 This is rather clear either by a telescoping sum argument (write the set $S$
-in the form $\left\{  s_{1},s_{2},...,s_{k}\right\}  $ with $s_{1}%
-<s_{2}<...<s_{k}$, notice that
+in the form $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  $ with $s_{1}%
+<s_{2}<\cdots<s_{k}$, notice that
 \[
 \sum\limits_{t\in S}f_{t}=\sum\limits_{i=1}^{k}f_{s_{i}}=\sum\limits_{i=1}%
 ^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right)  =\sum\limits_{i=1}^{k-1}\left(
@@ -382,8 +382,8 @@ $\mathbb{N}\rightarrow\mathbb{R}$, $s\mapsto\left(  \phi-1\right)  ^{s}$ is a
 weakly decreasing function (as $0\leq\phi-1\leq1$), we thus have%
 \[
 \sum_{s\in S}\left(  \phi-1\right)  ^{s}\leq\sum_{s\in\left\{
-2,4,6,...\right\}  }\left(  \phi-1\right)  ^{s}=\sum_{t\in\left\{
-1,2,3,...\right\}  }\left(  \phi-1\right)  ^{2t}=\phi-1
+2,4,6,\ldots\right\}  }\left(  \phi-1\right)  ^{s}=\sum_{t\in\left\{
+1,2,3,\ldots\right\}  }\left(  \phi-1\right)  ^{2t}=\phi-1
 \]
 (by the formula for the sum of the geometric series, along with some
 computations). This proves Lemma~\ref{lem.7}.

@@ -169,11 +169,11 @@ no two elements of this set are consecutive integers) depending only on $k$.
 sure that all addends $f_{n+s}$ are well-defined. If the Fibonacci sequence is
 properly continued to the negative, this condition drops out.)\newline In this
 note we prove a generalization of these identities: For any family $\left(
-a_{1},a_{2},...,a_{p}\right)  $ of integers, there exists one and only one
+a_{1},a_{2},\ldots,a_{p}\right)  $ of integers, there exists one and only one
 finite lacunar set $S$ of integers such that every $n$ (high enough to make
 the Fibonacci numbers in the equation below well-defined) satisfies
 \[
-f_{n+a_{1}}+f_{n+a_{2}}+...+f_{n+a_{p}}=\sum\limits_{s\in S}f_{n+s}.
+f_{n+a_{1}}+f_{n+a_{2}}+\cdots+f_{n+a_{p}}=\sum\limits_{s\in S}f_{n+s}.
 \]
 The proof uses the Fibonacci-approximating properties of the golden ratio. It
 would be interesting to find a purely combinatorial proof.
@@ -281,22 +281,22 @@ results from analysis).
 
 We begin with some lemmas and notations:
 
-We denote by $\mathbb{N}$ the set $\left\{  0,1,2,...\right\}  $ (and not the
-set $\left\{  1,2,3,...\right\}  $, like some other authors do). Also, we
-denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,...\right\}  =\mathbb{N}%
+We denote by $\mathbb{N}$ the set $\left\{  0,1,2,\ldots\right\}  $ (and not the
+set $\left\{  1,2,3,\ldots\right\}  $, like some other authors do). Also, we
+denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,\ldots\right\}  =\mathbb{N}%
 \setminus\left\{  0,1\right\}  $.
 
-Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618...$
+Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618\ldots$
 and that $\phi^{2}=\phi+1$. Binet's formula states that $f_{n}=\dfrac{\phi
 ^{n}-\phi^{-n}}{\sqrt{5}}$ for every positive integer $n$.
 
-We observe that the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},...\right)
+We observe that the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)
 $ consists of positive integers (indeed, its two starting values $f_{1}=1$ and
 $f_{2}=1$ are positive integers, and thus the recurrence relation
 $f_{n}=f_{n-1}+f_{n-2}$ clearly ensures that all the following values are also
 positive integers). Thus, $f_{n} > 0$ for each positive integer $n$. Now, for
 each integer $n \geq2$, we have $f_{n-1} > 0$ (since the Fibonacci sequence
-$\left(  f_{1},f_{2},f_{3},...\right)  $ consists of positive integers). The
+$\left(  f_{1},f_{2},f_{3},\ldots\right)  $ consists of positive integers). The
 recurrence relation of the Fibonacci sequence shows that for each integer $n
 \geq2$, we have $f_{n+1} = f_{n} + f_{n-1} > f_{n}$ (because $f_{n-1} > 0$),
 so that $f_{n} < f_{n+1}$. In other words, $f_{2} < f_{3} < f_{4} < \cdots$.
@@ -321,20 +321,20 @@ Every $t\in\mathbb{N}_{2}$ satisfies $f_{t+1}=f_{t}+f_{t-1}$ (due to the
 relation $f_{n}=f_{n-1}+f_{n-2}$, applied to $n=t+1$), so that $f_{t}%
 =f_{t+1}-f_{t-1}$.
 
-Let us write the set $S$ in the form $\left\{  s_{1},s_{2},...,s_{k}\right\}
-$, where $s_{1}<s_{2}<...<s_{k}$. Then, $\sum\limits_{t\in S}f_{t}%
+Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}
+$, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{t\in S}f_{t}%
 =\sum\limits_{i=1}^{k}f_{s_{i}}$ and $s_{k}=\max S$. On the other hand, every
-$i\in\left\{  1,2,...,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}%
+$i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}%
 $\ \ \ \ \footnote{\textit{Proof.} The set $S$ is lacunar, and thus $s+1\notin
 S$ for every $s\in S$. Applying this to $s=s_{i}$, we get $s_{i}+1\notin S$,
 so that $s_{i}+1\neq s_{i+1}$ (since $s_{i+1}\in S$).
 \par
-Since $s_{1}<s_{2}<...<s_{k}$, we have $s_{i}<s_{i+1}$, so that $s_{i}+1\leq
+Since $s_{1}<s_{2}<\cdots<s_{k}$, we have $s_{i}<s_{i+1}$, so that $s_{i}+1\leq
 s_{i+1}$ (because $s_{i}$ and $s_{i+1}$ are integers). Since $s_{i}+1\neq
 s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+2\leq s_{i+1}$
 (because $s_{i}$ and $s_{i+1}$ are integers).} and thus $s_{i}+1\leq
 s_{i+1}-1$, so that $f_{s_{i}+1}\leq f_{s_{i+1}-1}$ (since the Fibonacci
-sequence $\left(  f_{1},f_{2},f_{3},...\right)  $ is weakly increasing). Thus,%
+sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing). Thus,%
 \begin{align*}
 \sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}f_{s_{i}}=\sum
 \limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right) \\
@@ -387,7 +387,7 @@ now prove that Lemma~\ref{lem.3} holds for $n=\nu$.
 
 In fact, let $t_{1}$ be the maximal integer $\tau$ from $\mathbb{N}_{2}$
 satisfying $f_{\tau}\leq\nu$\ \ \ \ \footnote{Such an integer $t_{1}$ exists,
-since the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},...\right)  $ is
+since the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is
 strictly increasing beginning with $f_{2}$ and therefore unbounded from above
 (because every strictly increasing sequence of integers is unbounded from
 above).}. Then, $f_{t_{1}}\leq\nu$ but $f_{t_{1}+1}>\nu$. Then, $\nu-f_{t_{1}%
@@ -416,7 +416,7 @@ f_{t_{1}+1}=f_{t_{1}}+f_{t_{1}-1}\text{, so that }f_{t_{1}+1}-f_{t_{1}%
 \right)
 \end{align*}
 and thus $s<t_{1}-1$ (since the Fibonacci sequence $\left(  f_{1},f_{2}%
-,f_{3},...\right)  $ is weakly increasing), which rewrites as $s+1<t_{1}$.
+,f_{3},\ldots\right)  $ is weakly increasing), which rewrites as $s+1<t_{1}$.
 Thus, $s+1\neq t_{1}$; in other words $s+1\notin\left\{  t_{1}\right\}  $.
 Applying $s+1<t_{1}$ to $s=\max S$, we get $\max S+1<t_{1}$ (since $\max S \in
 S$) \ \ \ \ \footnote{Strictly speaking, this argument only works when $S$ is
@@ -484,7 +484,7 @@ numbers $f_{t}$ are all nonnegative. Thus, from $\max T \in T$, we obtain
 $f_{\max T}\leq\sum\limits_{t\in T}f_{t}=\nu=\sum\limits_{t\in T^{\prime}%
 }f_{t}<f_{\max T^{\prime}+1}$ (by Lemma~\ref{lem.2}, applied to $S=T^{\prime}%
 $). Hence, $\max T<\max T^{\prime}+1$ (since the Fibonacci sequence $\left(
-f_{1},f_{2},f_{3},...\right)  $ is weakly increasing), so that $\max T\leq\max
+f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing), so that $\max T\leq\max
 T^{\prime}$ (since $\max T$ and $\max T^{\prime}$ are integers). The same
 argument (with the roles of $T$ and $T^{\prime}$ interchanged) shows that
 $\max T^{\prime}\leq\max T$. Combining this with $\max T\leq\max T^{\prime}$,
@@ -610,10 +610,10 @@ $0<\psi<1$. Also, $\psi=\phi-1$ yields $\psi^{2}=\left(  \phi-1\right)
 -2\phi+1=2-\phi$ and thus $1-\psi^{2}=1-\left(  2-\phi\right)  =\phi-1=\psi$,
 so that $\dfrac{\psi^{2}}{1-\psi^{2}}=\dfrac{\psi^{2}}{\psi}=\psi$.
 
-Let us write the set $S$ in the form $\left\{  s_{1},s_{2},...,s_{k}\right\}
-$, where $s_{1}<s_{2}<...<s_{k}$. Then, $\sum\limits_{s\in S}\psi^{s}%
+Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}
+$, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{s\in S}\psi^{s}%
 =\sum\limits_{i=1}^{k}\psi^{s_{k}}$. On the other hand, every $i\in\left\{
-1,2,...,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}$ (this was proven during
+1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}$ (this was proven during
 the proof of Lemma~\ref{lem.2}) and thus $\psi^{s_{i}+2}\geq\psi^{s_{i}+1}$
 (since $0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in S\subseteq
 \mathbb{N}_{2}$) and thus $\psi^{s_{1}}\leq\psi^{2}$ (since $0<\psi<1$). Now,
