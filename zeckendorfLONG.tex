@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 10:10:57}
+%TCIDATA{LastRevised=Friday, February 23, 2018 10:35:37}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -444,41 +444,63 @@ $f_{t_{1}+1}=f_{t_{1}}+f_{t_{1}-1}$, so that $f_{t_{1}+1}-f_{t_{1}}%
 =f_{t_{1}-1}$. Now, from $\nu<f_{t_{1}+1}$, we obtain $\nu-f_{t_{1}}%
 <f_{t_{1}+1}-f_{t_{1}}=f_{t_{1}-1}$.
 
-Since $f_{t}$ is nonnegative for every $t\in S$, it is clear that every $s\in
-S$ satisfies%
+Since the set $S$ is lacunar, we know that
+\begin{equation}
+s+1\notin S\ \ \ \ \ \ \ \ \ \ \text{ for every }s\in S.\label{pf.lem.3.lac}%
+\end{equation}
+
+
+Now, let $s\in S$. Then, $f_{s}$ is an addend of the sum $\sum\limits_{t\in
+S}f_{t}$. Since $f_{t}$ is nonnegative for every $t\in S$, we thus have%
 \[
 f_{s}\leq\sum\limits_{t\in S}f_{t}=\nu-f_{t_{1}}<f_{t_{1}-1}%
 \]
 and thus $s<t_{1}-1$ (since the Fibonacci sequence $\left(  f_{1},f_{2}%
-,f_{3},\ldots\right)  $ is weakly increasing), which rewrites as $s+1<t_{1}$.
-Thus, $s+1\neq t_{1}$; in other words $s+1\notin\left\{  t_{1}\right\}  $.
-Applying $s+1<t_{1}$ to $s=\max S$, we get $\max S+1<t_{1}$ (since $\max S\in
-S$) \ \ \ \ \footnote{Strictly speaking, this argument only works when $S$ is
+,f_{3},\ldots\right)  $ is weakly increasing). This rewrites as $s+1<t_{1}$.
+
+Now, forget that we fixed $s$. We thus have proven that
+\begin{equation}
+s+1<t_{1}\ \ \ \ \ \ \ \ \ \ \text{for each }s\in S.\label{pf.lem.3.ineq1}%
+\end{equation}
+Applying this to $s=\max S$, we get $\max S+1<t_{1}$ (since $\max S\in S$)
+\ \ \ \ \footnote{Strictly speaking, this argument only works when $S$ is
 nonempty. But when $S$ is empty, the inequality $\max S+1<t_{1}$ is obvious
 for a different reason: Namely, in this case, we have $\max S=\max
 \varnothing=0$, so that $\max S+1=1<2\leq t_{1}$ (since $t_{1}\in
-\mathbb{N}_{2}$).}. Hence, $t_{1}>\max S+1>\max S$, and thus $t_{1}\notin S$.
+\mathbb{N}_{2}$).}. Hence, $t_{1}>\max S+1>\max S$, and thus $t_{1}\notin S$
+(because if an integer $x$ satisfies $x>\max S$, then $x\notin S$). Also,
+$t_{1}+1>t_{1}>\max S$, so that $t_{1}+1\notin S$ (because if an integer $x$
+satisfies $x>\max S$, then $x\notin S$). Combining $t_{1}+1\notin S$ with
+$t_{1}+1\notin\left\{  t_{1}\right\}  $ (which is obvious), we obtain
+$t_{1}+1\notin S\cup\left\{  t_{1}\right\}  $.
 
-Since the set $S$ is lacunar, we know that $s+1\notin S$ for every $s\in S$.
-Combining this with $s+1\notin\left\{  t_{1}\right\}  $, we get $s+1\notin
-S\cup\left\{  t_{1}\right\}  $ for every $s\in S$.
+Again, let $s\in S$. From (\ref{pf.lem.3.ineq1}), we obtain $s+1<t_{1}$. Thus,
+$s+1\neq t_{1}$; in other words $s+1\notin\left\{  t_{1}\right\}  $. But
+(\ref{pf.lem.3.lac}) yields $s+1\notin S$. Combining this with $s+1\notin%
+\left\{  t_{1}\right\}  $, we get $s+1\notin S\cup\left\{  t_{1}\right\}  $.
+
+Now, forget that we fixed $s$. We thus have proven that%
+\begin{equation}
+s+1\notin S\cup\left\{  t_{1}\right\}  \ \ \ \ \ \ \ \ \ \ \text{for every
+}s\in S.\label{pf.lem.3.notin1}%
+\end{equation}
+
 
 On the other hand, $s+1\notin S\cup\left\{  t_{1}\right\}  $ for every
 $s\in\left\{  t_{1}\right\}  $.$\ \ \ \ $\footnote{In fact, this is just a
 complicated way to state that $t_{1}+1\notin S\cup\left\{  t_{1}\right\}  $,
-which is rather obvious (because $t_{1}+1\notin S$ (since $t_{1}+1>t_{1}>\max
-S+1>\max S$) and $t_{1}+1\notin\left\{  t_{1}\right\}  $).} Thus, $s+1\notin
-S\cup\left\{  t_{1}\right\}  $ for every $s\in S\cup\left\{  t_{1}\right\}  $
-(because $s\in S\cup\left\{  t_{1}\right\}  $ yields that one of the two cases
-$s\in S$ and $s\in\left\{  t_{1}\right\}  $ must hold, but in each of these
-two cases we have proved that $s+1\notin S\cup\left\{  t_{1}\right\}  $). In
-other words, the set $S\cup\left\{  t_{1}\right\}  $ is lacunar. Denoting this
-set $S\cup\left\{  t_{1}\right\}  $ by $T$, we thus have shown that $T$ is a
-lacunar set. Clearly, $T$ is a finite set (since $S$ is finite) and satisfies%
+which has already been proven.} Thus, $s+1\notin S\cup\left\{  t_{1}\right\}
+$ for every $s\in S\cup\left\{  t_{1}\right\}  $ (because $s\in S\cup\left\{
+t_{1}\right\}  $ yields that one of the two cases $s\in S$ and $s\in\left\{
+t_{1}\right\}  $ must hold, but in each of these two cases we have proved that
+$s+1\notin S\cup\left\{  t_{1}\right\}  $). In other words, the set
+$S\cup\left\{  t_{1}\right\}  $ is lacunar. Denoting this set $S\cup\left\{
+t_{1}\right\}  $ by $T$, we thus have shown that $T$ is a lacunar set.
+Clearly, $T$ is a finite set (since $S$ is finite) and satisfies%
 \begin{align*}
-\sum\limits_{t\in T}f_{t}  &  =\sum\limits_{t\in S\cup\left\{  t_{1}\right\}
+\sum\limits_{t\in T}f_{t} &  =\sum\limits_{t\in S\cup\left\{  t_{1}\right\}
 }f_{t}=\underbrace{\sum\limits_{t\in S}f_{t}}_{=\nu-f_{t_{1}}}+f_{t_{1}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }t_{1}\notin S\right) \\
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }t_{1}\notin S\right)  \\
 &  =\nu.
 \end{align*}
 Thus, Lemma~\ref{lem.3} is proven for the case $n=\nu$. This completes the
