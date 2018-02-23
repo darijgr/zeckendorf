@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 10:35:37}
+%TCIDATA{LastRevised=Friday, February 23, 2018 17:49:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -389,9 +389,9 @@ f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 \end{proof}
 
 \begin{lemma}
-[existence part of the Zeckendorf theorem]\label{lem.3} Let $n \in \mathbb{N}$.
-Then, there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
-that $n=\sum\limits_{t\in T}f_{t}$.
+[existence part of the Zeckendorf theorem]\label{lem.3} Let $n \in\mathbb{N}$.
+Then, there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that
+$n=\sum\limits_{t\in T}f_{t}$.
 \end{lemma}
 
 \begin{proof}
@@ -446,7 +446,7 @@ $f_{t_{1}+1}=f_{t_{1}}+f_{t_{1}-1}$, so that $f_{t_{1}+1}-f_{t_{1}}%
 
 Since the set $S$ is lacunar, we know that
 \begin{equation}
-s+1\notin S\ \ \ \ \ \ \ \ \ \ \text{ for every }s\in S.\label{pf.lem.3.lac}%
+s+1\notin S\ \ \ \ \ \ \ \ \ \ \text{ for every }s\in S. \label{pf.lem.3.lac}%
 \end{equation}
 
 
@@ -460,7 +460,7 @@ and thus $s<t_{1}-1$ (since the Fibonacci sequence $\left(  f_{1},f_{2}%
 
 Now, forget that we fixed $s$. We thus have proven that
 \begin{equation}
-s+1<t_{1}\ \ \ \ \ \ \ \ \ \ \text{for each }s\in S.\label{pf.lem.3.ineq1}%
+s+1<t_{1}\ \ \ \ \ \ \ \ \ \ \text{for each }s\in S. \label{pf.lem.3.ineq1}%
 \end{equation}
 Applying this to $s=\max S$, we get $\max S+1<t_{1}$ (since $\max S\in S$)
 \ \ \ \ \footnote{Strictly speaking, this argument only works when $S$ is
@@ -482,49 +482,46 @@ $s+1\neq t_{1}$; in other words $s+1\notin\left\{  t_{1}\right\}  $. But
 Now, forget that we fixed $s$. We thus have proven that%
 \begin{equation}
 s+1\notin S\cup\left\{  t_{1}\right\}  \ \ \ \ \ \ \ \ \ \ \text{for every
-}s\in S.\label{pf.lem.3.notin1}%
+}s\in S. \label{pf.lem.3.notin1}%
 \end{equation}
 
-Hence, $s + 1 \notin S \cup \left\{ t_1 \right\}$ for every
-$s \in S \cup \left\{ t_1 \right\}$\ \ \ \ \footnote{\textit{Proof.}
-Let $s \in S \cup \left\{ t_1 \right\}$. We must prove that
-$s + 1 \notin S \cup \left\{ t_1 \right\}$.
 
-If $s \in S$, then this follows immediately from
-(\ref{pf.lem.3.notin1}). Thus, we can WLOG assume that $s \notin S$.
-Assume this. Combining $s \in S \cup \left\{ t_1 \right\}$ with $s \notin S$,
-we obtain $s \in \left(S \cup \left\{ t_1 \right\}\right) \setminus S
-\subseteq \left\{ t_1 \right\}$. Therefore, $s = t_1$.
-Hence, $s + 1 = t_1 + 1 \notin S \cup \left\{ t_1 \right\}$.
-This proves $s + 1 \notin S \cup \left\{ t_1 \right\}$.}.
-In other words, the set
-$S\cup\left\{  t_{1}\right\}  $ is lacunar. Denoting this set $S\cup\left\{
-t_{1}\right\}  $ by $Q$, we thus have shown that the set $Q$ is lacunar.
-Clearly, $Q$ is a finite set (since $S$ is finite).
-Moreover, $\left\{ t_1 \right\} \subseteq \mathbb{N}_2$ (since
-$t_1 \in \mathbb{N}_2$), so that
-$Q = \underbrace{S}_{\subseteq \mathbb{N}_2}
-\cup \underbrace{\left\{ t_1 \right\}}_{\subseteq \mathbb{N}_2}
-\subseteq \mathbb{N}_2 \cup \mathbb{N}_2 = \mathbb{N}_2$.
-From $Q = S \cup \left\{ t_1 \right\}$, we obtain
-$Q \setminus \left\{ t_1 \right\} = \left( S \cup \left\{ t_1 \right\} \right)
-\setminus \left\{ t_1 \right\} = S$ (since $t_1 \notin S$).
-Also, $t_1 \in \left\{ t_1 \right\} \subseteq S \cup \left\{ t_1 \right\} = Q$.
+Hence, $s + 1 \notin S \cup\left\{  t_{1} \right\} $ for every $s \in S
+\cup\left\{  t_{1} \right\} $\ \ \ \ \footnote{\textit{Proof.} Let $s \in S
+\cup\left\{  t_{1} \right\} $. We must prove that $s + 1 \notin S \cup\left\{
+t_{1} \right\} $.
+\par
+If $s \in S$, then this follows immediately from (\ref{pf.lem.3.notin1}).
+Thus, we can WLOG assume that $s \notin S$. Assume this. Combining $s \in S
+\cup\left\{  t_{1} \right\} $ with $s \notin S$, we obtain $s \in\left( S
+\cup\left\{  t_{1} \right\} \right)  \setminus S \subseteq\left\{  t_{1}
+\right\} $. Therefore, $s = t_{1}$. Hence, $s + 1 = t_{1} + 1 \notin S
+\cup\left\{  t_{1} \right\} $. This proves $s + 1 \notin S \cup\left\{  t_{1}
+\right\} $.}. In other words, the set $S\cup\left\{  t_{1}\right\}  $ is
+lacunar. Denoting this set $S\cup\left\{  t_{1}\right\}  $ by $Q$, we thus
+have shown that the set $Q$ is lacunar. Clearly, $Q$ is a finite set (since
+$S$ is finite). Moreover, $\left\{  t_{1} \right\}  \subseteq\mathbb{N}_{2}$
+(since $t_{1} \in\mathbb{N}_{2}$), so that $Q = \underbrace{S}_{\subseteq
+\mathbb{N}_{2}} \cup\underbrace{\left\{  t_{1} \right\} }_{\subseteq
+\mathbb{N}_{2}} \subseteq\mathbb{N}_{2} \cup\mathbb{N}_{2} = \mathbb{N}_{2}$.
+From $Q = S \cup\left\{  t_{1} \right\} $, we obtain $Q \setminus\left\{
+t_{1} \right\}  = \left(  S \cup\left\{  t_{1} \right\}  \right)
+\setminus\left\{  t_{1} \right\}  = S$ (since $t_{1} \notin S$). Also, $t_{1}
+\in\left\{  t_{1} \right\}  \subseteq S \cup\left\{  t_{1} \right\}  = Q$.
 Therefore,
 \begin{align*}
-\sum\limits_{t\in Q}f_{t}
-&  = \sum\limits_{t\in Q \setminus \left\{  t_{1}\right\} }f_{t} + f_{t_1}
-= \underbrace{\sum\limits_{t\in S}f_{t}}_{=\nu-f_{t_{1}}}
-+f_{t_{1}}
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since } Q \setminus \left\{ t_1 \right\} = S \right)  \\
-&  = \left(\nu - f_{t_1}\right) + f_{t_1} = \nu.
+\sum\limits_{t\in Q}f_{t}  &  = \sum\limits_{t\in Q \setminus\left\{
+t_{1}\right\}  }f_{t} + f_{t_{1}} = \underbrace{\sum\limits_{t\in S}f_{t}%
+}_{=\nu-f_{t_{1}}} +f_{t_{1}} \ \ \ \ \ \ \ \ \ \ \left(  \text{since } Q
+\setminus\left\{  t_{1} \right\}  = S \right) \\
+&  = \left( \nu- f_{t_{1}}\right)  + f_{t_{1}} = \nu.
 \end{align*}
-Hence, we have found a finite lacunar subset $Q$ of $\mathbb{N}_2$ such
-that $\nu = \sum\limits_{t \in Q} f_t$.
-Hence, there exists a finite lacunar subset $T$ of $\mathbb{N}_2$ such that
-$\nu = \sum\limits_{t \in T} f_t$ (namely, $T = Q$).
-This proves Lemma~\ref{lem.3} for the case $n=\nu$. This completes the
-induction step, and thus the induction proof of Lemma~\ref{lem.3} is complete.
+Hence, we have found a finite lacunar subset $Q$ of $\mathbb{N}_{2}$ such that
+$\nu= \sum\limits_{t \in Q} f_{t}$. Hence, there exists a finite lacunar
+subset $T$ of $\mathbb{N}_{2}$ such that $\nu= \sum\limits_{t \in T} f_{t}$
+(namely, $T = Q$). This proves Lemma~\ref{lem.3} for the case $n=\nu$. This
+completes the induction step, and thus the induction proof of
+Lemma~\ref{lem.3} is complete.
 \end{proof}
 
 \begin{lemma}
@@ -538,18 +535,15 @@ such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum\limits_{t\in T^{\prime}%
 [Proof of Lemma~\ref{lem.4}.]We are going to prove Lemma~\ref{lem.4} by strong
 induction over $n$:
 
-\textit{Induction base:} Let $n=0$. Then, $n=\sum\limits_{t\in T}f_{t}$
-yields
-$T=\varnothing$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary.
-Thus, $T \neq \varnothing$. Hence, $\sum\limits_{t\in T}f_{t}$ is a nonempty
-sum of positive integers (since the Fibonacci numbers $f_t$ are positive),
-and thus itself is a positive integer. Thus,
-$\sum\limits_{t\in T}f_{t} > 0$. This contradicts
-$\sum\limits_{t\in T}f_{t} = n = 0$. This contradiction shows that our assumption
-was wrong, qed.}. Similarly, $T^{\prime
-}=\varnothing$. Comparing this with $T = \varnothing$, we obtain
-$T=T^{\prime}$. Hence, we have shown that Lemma~\ref{lem.4} holds for
-$n=0$, and the induction base is completed.
+\textit{Induction base:} Let $n=0$. Then, $n=\sum\limits_{t\in T}f_{t}$ yields
+$T=\varnothing$\ \ \ \ \footnote{\textit{Proof.} Assume the contrary. Thus, $T
+\neq\varnothing$. Hence, $\sum\limits_{t\in T}f_{t}$ is a nonempty sum of
+positive integers (since the Fibonacci numbers $f_{t}$ are positive), and thus
+itself is a positive integer. Thus, $\sum\limits_{t\in T}f_{t} > 0$. This
+contradicts $\sum\limits_{t\in T}f_{t} = n = 0$. This contradiction shows that
+our assumption was wrong, qed.}. Similarly, $T^{\prime}=\varnothing$.
+Comparing this with $T = \varnothing$, we obtain $T=T^{\prime}$. Hence, we
+have shown that Lemma~\ref{lem.4} holds for $n=0$, and the induction base is completed.
 
 \textit{Induction step:} Let $\nu\in\mathbb{N}$ be such that $\nu>0$. Assume
 that Lemma~\ref{lem.4} holds for every nonnegative integer $n<\nu$. We must
@@ -562,29 +556,26 @@ that $\nu=\sum\limits_{t\in T}f_{t}$ and $\nu=\sum\limits_{t\in T^{\prime}%
 Since $\sum\limits_{t\in T}f_{t}=\nu>0$, we have $T\neq\varnothing$. Thus,
 $\max T\in T$. Similarly, $\max T^{\prime}\in T^{\prime}$.
 
-But $f_{\max T}$ is an addend in the sum $\sum\limits_{t\in T}f_{t}$
-(since $\max T \in T$). Since the Fibonacci
-numbers $f_{t}$ are all nonnegative, we thus obtain
-$f_{\max T}\leq\sum\limits_{t\in T}f_{t}=\nu=\sum\limits_{t\in T^{\prime}%
-}f_{t}<f_{\max T^{\prime}+1}$ (by Lemma~\ref{lem.2}, applied to $S=T^{\prime}%
-$). Hence, $\max T<\max T^{\prime}+1$ (since the Fibonacci sequence $\left(
-f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing), so that $\max
-T\leq\max T^{\prime}$ (since $\max T$ and $\max T^{\prime}$ are integers). The
-same argument (with the roles of $T$ and $T^{\prime}$ interchanged) shows that
-$\max T^{\prime}\leq\max T$. Combining this with $\max T\leq\max T^{\prime}$,
-we get $\max T=\max T^{\prime}$. Let $\mu$ denote the number $\max T=\max
-T^{\prime}$. Then, $\mu=\max T\in T$ and $\mu=\max T^{\prime}\in T^{\prime}$.
-Let $S=T\setminus\left\{  \mu\right\}  $ and $S^{\prime}=T^{\prime}%
-\setminus\left\{  \mu\right\}  $. Clearly, $S$ is a finite subset of
-$\mathbb{N}_{2}$. Furthermore, $S$ is a subset of the lacunar subset $T$ of
-$\mathbb{Z}$
-(because $S=T\setminus\left\{  \mu\right\} \subseteq T$), and thus itself
-is lacunar (since every subset of a lacunar subset of $\mathbb{Z}$ is lacunar).
-Thus, $S$ is a finite lacunar subset of $\mathbb{N}_2$.
-Similarly,
-$S^{\prime}$ is a finite lacunar subset of $\mathbb{N}_{2}$.
-Obviously, $\sum\limits_{t\in S}f_{t} \geq 0$ (since all $f_t$ are nonnegative).
-Now,%
+But $f_{\max T}$ is an addend in the sum $\sum\limits_{t\in T}f_{t}$ (since
+$\max T \in T$). Since the Fibonacci numbers $f_{t}$ are all nonnegative, we
+thus obtain $f_{\max T}\leq\sum\limits_{t\in T}f_{t}=\nu=\sum\limits_{t\in
+T^{\prime}}f_{t}<f_{\max T^{\prime}+1}$ (by Lemma~\ref{lem.2}, applied to
+$S=T^{\prime}$). Hence, $\max T<\max T^{\prime}+1$ (since the Fibonacci
+sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing), so
+that $\max T\leq\max T^{\prime}$ (since $\max T$ and $\max T^{\prime}$ are
+integers). The same argument (with the roles of $T$ and $T^{\prime}$
+interchanged) shows that $\max T^{\prime}\leq\max T$. Combining this with
+$\max T\leq\max T^{\prime}$, we get $\max T=\max T^{\prime}$. Let $\mu$ denote
+the number $\max T=\max T^{\prime}$. Then, $\mu=\max T\in T$ and $\mu=\max
+T^{\prime}\in T^{\prime}$. Let $S=T\setminus\left\{  \mu\right\}  $ and
+$S^{\prime}=T^{\prime}\setminus\left\{  \mu\right\}  $. Clearly, $S$ is a
+finite subset of $\mathbb{N}_{2}$. Furthermore, $S$ is a subset of the lacunar
+subset $T$ of $\mathbb{Z}$ (because $S=T\setminus\left\{  \mu\right\}
+\subseteq T$), and thus itself is lacunar (since every subset of a lacunar
+subset of $\mathbb{Z}$ is lacunar). Thus, $S$ is a finite lacunar subset of
+$\mathbb{N}_{2}$. Similarly, $S^{\prime}$ is a finite lacunar subset of
+$\mathbb{N}_{2}$. Obviously, $\sum\limits_{t\in S}f_{t} \geq0$ (since all
+$f_{t}$ are nonnegative). Now,%
 \begin{align*}
 \nu-f_{\mu}  &  =\sum\limits_{t\in T}f_{t}-f_{\mu}=\sum\limits_{t\in
 T\setminus\left\{  \mu\right\}  }f_{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
@@ -593,37 +584,35 @@ T\setminus\left\{  \mu\right\}  }f_{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
 \end{align*}
 (since $T\setminus\left\{  \mu\right\}  =S$) and similarly $\nu-f_{\mu}%
 =\sum\limits_{t\in S^{\prime}}f_{t}$. Since $\nu-f_{\mu}$ is a nonnegative
-integer (because $\nu-f_{\mu}=\sum\limits_{t\in S}f_{t} \geq 0$)
-and satisfies $\nu-f_{\mu}<\nu$ (because $f_{\mu
-}> 0$), we can thus apply Lemma~\ref{lem.4} to $\nu-f_{\mu}$ instead of $n$
-and to the lacunar subsets $S$ and $S^{\prime}$ instead of $T$ and $T^{\prime
-}$ (since we assumed that Lemma~\ref{lem.4} holds for every nonnegative
-integer $n<\nu$), and we obtain $S=S^{\prime}$. Now, $S=T\setminus\left\{
-\mu\right\}  $ yields $T=S\cup\left\{  \mu\right\}  $ (since $\mu\in T$), and
-similarly $T^{\prime}=S^{\prime}\cup\left\{  \mu\right\}  $, so that
-$T=\underbrace{S}_{=S^{\prime}}\cup\left\{  \mu\right\}  =S^{\prime}%
-\cup\left\{  \mu\right\}  =T^{\prime}$. This proves Lemma~\ref{lem.4} for the
-case $n=\nu$. Thus, the induction step is completed, and the induction proof
-of Lemma~\ref{lem.4} is done.
+integer (because $\nu-f_{\mu}=\sum\limits_{t\in S}f_{t} \geq0$) and satisfies
+$\nu-f_{\mu}<\nu$ (because $f_{\mu}> 0$), we can thus apply Lemma~\ref{lem.4}
+to $\nu-f_{\mu}$ instead of $n$ and to the lacunar subsets $S$ and $S^{\prime
+}$ instead of $T$ and $T^{\prime}$ (since we assumed that Lemma~\ref{lem.4}
+holds for every nonnegative integer $n<\nu$), and we obtain $S=S^{\prime}$.
+Now, $S=T\setminus\left\{  \mu\right\}  $ yields $T=S\cup\left\{  \mu\right\}
+$ (since $\mu\in T$), and similarly $T^{\prime}=S^{\prime}\cup\left\{
+\mu\right\}  $, so that $T=\underbrace{S}_{=S^{\prime}}\cup\left\{
+\mu\right\}  =S^{\prime}\cup\left\{  \mu\right\}  =T^{\prime}$. This proves
+Lemma~\ref{lem.4} for the case $n=\nu$. Thus, the induction step is completed,
+and the induction proof of Lemma~\ref{lem.4} is done.
 \end{proof}
 
 \begin{theorem}
-[Zeckendorf theorem]\label{thm.5} Let $n \in \mathbb{N}$. Then, there
-exists one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
-that $n=\sum\limits_{t\in T}f_{t}$.
+[Zeckendorf theorem]\label{thm.5} Let $n \in\mathbb{N}$. Then, there exists
+one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that
+$n=\sum\limits_{t\in T}f_{t}$.
 
 We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
 f_{t}$.
 \end{theorem}
 
 \begin{proof}
-[Proof of Theorem~\ref{thm.5}.]There exists a
-finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in
-T}f_{t}$ (according to Lemma~\ref{lem.3}), and such a subset is unique
-(because any two such subsets are equal (according to Lemma~\ref{lem.4})).
-Thus, there exists \textbf{one and only one} finite lacunar subset $T$ of
-$\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$.
-This proves Theorem~\ref{thm.5}.
+[Proof of Theorem~\ref{thm.5}.]There exists a finite lacunar subset $T$ of
+$\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$ (according to
+Lemma~\ref{lem.3}), and such a subset is unique (because any two such subsets
+are equal (according to Lemma~\ref{lem.4})). Thus, there exists \textbf{one
+and only one} finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that
+$n=\sum\limits_{t\in T}f_{t}$. This proves Theorem~\ref{thm.5}.
 \end{proof}
 
 Theorem~\ref{thm.5} is a classical result known as the \textit{Zeckendorf
@@ -648,9 +637,8 @@ proof of it here.
 
 \begin{proof}
 [Proof of Theorem~\ref{thm.6}.]It is easy to see that $\phi^{-1}=\phi-1$ and
-$1-\phi^{-2}=\phi-1$.
-Also, $\left(\phi-1\right)^n \geq 0$ (since $\phi-1 \geq 0$) and thus
-$\dfrac{1}{\sqrt{5}} \left(\phi-1\right)^n \geq 0$.
+$1-\phi^{-2}=\phi-1$. Also, $\left( \phi-1\right) ^{n} \geq0$ (since $\phi-1
+\geq0$) and thus $\dfrac{1}{\sqrt{5}} \left( \phi-1\right) ^{n} \geq0$.
 
 Let $n\in\mathbb{N}_{2}$. By Binet's formula, we have%
 \[
@@ -826,8 +814,8 @@ T\right\}  $. The reason for the second condition $\left(  \phi-1\right)
 
 If $u$ and $v$ are two real numbers, then
 \begin{equation}
-\left| u-v \right| \leq \left|u\right| + \left|v\right| .
- \label{pf.thm.8.triangle1}
+\left|  u-v \right|  \leq\left| u\right|  + \left| v\right|
+.\label{pf.thm.8.triangle1}%
 \end{equation}
 (Indeed, this is one of the forms of the triangle inequality.)
 
@@ -902,11 +890,9 @@ so that%
 }\right)  \right\vert +\left\vert \sum\limits_{s\in S}\left(  f_{m+s+1}-\phi
 f_{m+s}\right)  \right\vert \label{Estimate1}%
 \end{align}
-(by (\ref{pf.thm.8.triangle1}), applied to
-$u = \sum\limits_{t\in T}\left(  f_{m+a_{t}+1}-\phi f_{m+a_{t}%
-}\right)$ and
-$v = \sum\limits_{s\in S}\left(  f_{m+s+1}-\phi
-f_{m+s}\right)$).
+(by (\ref{pf.thm.8.triangle1}), applied to $u = \sum\limits_{t\in T}\left(
+f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right) $ and $v = \sum\limits_{s\in S}\left(
+f_{m+s+1}-\phi f_{m+s}\right) $).
 
 Now, the triangle inequality yields%
 \begin{align*}
