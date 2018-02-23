@@ -50,7 +50,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 22:08:09}
+%TCIDATA{LastRevised=Friday, February 23, 2018 09:39:50}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -205,6 +205,9 @@ A subset $S$ of $\mathbb{Z}$ is called \textit{lacunar} if it satisfies
 $\left(  s+1\notin S\text{ for every }s\in S\right)  $.
 \end{definition}
 
+In other words, a subset $S$ of $\mathbb{Z}$ is lacunar if and only if it
+contains no two consecutive integers.
+
 \begin{definition}
 \label{def.fib}Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the
 Fibonacci sequence. This is a sequence of positive integers defined
@@ -230,6 +233,13 @@ $f_{2}=1$, and from here on the recurrence relation ensures that their values
 remain equal). So it differs from the latter sequence only in the presence of
 one extra term $f_{0}=0$ at the front.
 \end{remark}
+
+The Fibonacci sequence is one of the best known integer sequences from
+combinatorics. It has had conferences, books and a journal devoted to it. By
+way of example, let us only mention Vorobiev's book \cite{Vorobi02}, which is
+entirely concerned with Fibonacci numbers, and Benjamin's and Quinn's text
+\cite{BenQui03} on bijective proofs, which includes many identities for
+Fibonacci numbers.
 
 In \cite{1}, Wood and Zeilberger discuss bijective proofs of the so-called
 \textit{Zeckendorf family identities}. These identities are a family of
@@ -303,8 +313,9 @@ the set $\left\{  1,2,3,\ldots\right\}  $, like some other authors do). Also,
 we denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,\ldots\right\}
 =\mathbb{N}\setminus\left\{  0,1\right\}  $.
 
-Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx
-1.618\ldots$ and that $\phi^{2}=\phi+1$.
+Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. This number $\phi$ is the famous
+\textit{golden ratio}. It satisfies $\phi\approx1.618\ldots$ and $\phi
+^{2}=\phi+1$.
 
 First, some basic (and known) lemmas on the Fibonacci sequence:
 
@@ -368,9 +379,9 @@ f_{t}$.
 
 \section{Inequalities for the golden ratio}
 
-Next, we state a completely straightforward (and well-known) theorem, which
-shows that the Fibonacci sequence grows roughly exponentially (with the
-exponent being the golden ratio $\phi$):
+Next, we state a completely straightforward (and well-known, cf. \cite[Chapter
+9, Corollary 34]{BenQui03}) theorem, which shows that the Fibonacci sequence
+grows roughly exponentially (with the exponent being the golden ratio $\phi$):
 
 \begin{theorem}
 \label{thm.6} For every $n\in\mathbb{N}_{2}$, we have $\left\vert f_{n+1}-\phi
@@ -378,7 +389,8 @@ f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
 \end{theorem}
 
 \begin{proof}
-Binet's formula yields $f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}$ and
+Binet's formula (see, e.g., \cite[Identity 240]{BenQui03} or \cite[(1.20)]%
+{Vorobi02}) yields $f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}$ and
 $f_{n+1}=\dfrac{\phi^{n+1}-\phi^{-\left(  n+1\right)  }}{\sqrt{5}}$; the rest
 is computation.
 \end{proof}
@@ -665,15 +677,15 @@ existence follows from Theorem~\ref{thm.8} and the uniqueness from
 Lemma~\ref{lem.9}.
 \end{proof}
 
-\begin{thebibliography}{9}                                                                                                %
+\begin{thebibliography}{99999999}                                                                                         %
 
 
-\bibitem[1]{1}Philip Matchett Wood, Doron Zeilberger, \textit{A translation
-method for finding combinatorial bijections}, Annals of Combinatorics
-\textbf{13} (2009), pp. 383--402. \newline\url{http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/trans-method.html}
+\bibitem[BenQui03]{BenQui03}Arthur T. Benjamin and Jennifer J. Quinn,
+\textit{Proofs that Really Count: The Art of Combinatorial Proof}, The
+Mathematical Association of America, 2003.
 
-\bibitem[2]{this.long}Darij Grinberg, \textit{Zeckendorf family identities
-generalized},
+\bibitem[Grinbe11]{this.long}Darij Grinberg, \textit{Zeckendorf family
+identities generalized},
 %TCIMACRO{\TeXButton{today}{\today}}%
 %BeginExpansion
 \today
@@ -682,6 +694,13 @@ generalized},
 \url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfLONG.pdf}\newline Also
 available as an ancillary file to
 \href{https://arxiv.org/abs/1103.4507v2}{arXiv preprint arXiv:1103.4507v2}.
+
+\bibitem[Vorobi02]{Vorobi02}Nicolai N. Vorobiev, \textit{Fibonacci numbers},
+translated from the Russian by Mircea Martin, Springer 2002.
+
+\bibitem[WooZei09]{1}Philip Matchett Wood, Doron Zeilberger, \textit{A
+translation method for finding combinatorial bijections}, Annals of
+Combinatorics \textbf{13} (2009), pp. 383--402. \newline\url{http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimhtml/trans-method.html}
 \end{thebibliography}
 
 
