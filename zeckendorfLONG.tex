@@ -31,14 +31,14 @@ for the Fibonacci numbers $f_{n}$ of the form%
 kf_{n} &  =\sum_{s\in S_{k}}f_{n+s}\text{ for all }n>\max\left\{  -s\mid s\in
 S_{k}\right\}  \text{,}%
 \end{align*}
-where $S_{k}$ is a fixed ``holey'' set of integers (``holey'' means that no two
+where $S_{k}$ is a fixed ``lacunar'' set of integers (``lacunar'' means that no two
 elements of this set are consecutive integers) depending only on $k$. (The
 condition $n>\max\left\{  -s\mid s\in S_{k}\right\}  $ is only to make sure
 that all addends $f_{n+s}$ are well-defined. If the Fibonacci sequence is
 properly continued to the negative, this condition drops out.)\newline In this
 note we prove a generalization of these identities: For any family $\left(
 a_{1},a_{2},...,a_{p}\right)  $ of integers, there exists one and only one
-finite holey set $S$ of integers such that every $n$ (high enough to make the
+finite lacunar set $S$ of integers such that every $n$ (high enough to make the
 Fibonacci numbers in the equation below well-defined) satisfies
 \[
 f_{n+a_{1}}+f_{n+a_{2}}+...+f_{n+a_{p}}=\sum\limits_{s\in S}f_{n+s}.
@@ -66,7 +66,7 @@ Thank you!\\\hline\hline
 
 \begin{quote}
 \textbf{Definitions.} \textbf{1)} A subset $S$ of $\mathbb{Z}$ is called
-\textit{holey} if it satisfies $\left(  s+1\notin S\text{ for every }s\in
+\textit{lacunar} if it satisfies $\left(  s+1\notin S\text{ for every }s\in
 S\right)  $.
 
 \textbf{2)} Let $\left(  f_{1},f_{2},f_{3},...\right)  $ be the Fibonacci
@@ -77,7 +77,7 @@ n\geq3\right)  $).
 \textbf{Theorem 1 (generalized Zeckendorf family identities).} Let $T$ be a
 finite set, and $a_{t}$ be an integer for every $t\in T$.
 
-Then, there exists one and only one finite holey subset $S$ of $\mathbb{Z}$
+Then, there exists one and only one finite lacunar subset $S$ of $\mathbb{Z}$
 such that
 \[
 \left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
@@ -130,7 +130,7 @@ and that $\phi^{2}=\phi+1$.
 We recall some known facts about the Fibonacci sequence:
 
 \begin{quote}
-\textbf{Lemma 2.} If $S$ is a finite holey subset of $\mathbb{N}_{2}$, then
+\textbf{Lemma 2.} If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
 $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 \end{quote}
 
@@ -142,7 +142,7 @@ Let us write the set $S$ in the form $\left\{  s_{1},s_{2},...,s_{k}\right\}
 $, where $s_{1}<s_{2}<...<s_{k}$. Then, $\sum\limits_{t\in S}f_{t}%
 =\sum\limits_{i=1}^{k}f_{s_{i}}$ and $s_{k}=\max S$. On the other hand, every
 $i\in\left\{  1,2,...,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}%
-$\ \ \ \ \footnote{\textit{Proof.} The set $S$ is holey, and thus $s+1\notin
+$\ \ \ \ \footnote{\textit{Proof.} The set $S$ is lacunar, and thus $s+1\notin
 S$ for every $s\in S$. Applying this to $s=s_{i}$, we get $s_{i}+1\notin S$,
 so that $s_{i}+1\neq s_{i+1}$ (since $s_{i+1}\in S$).
 \par
@@ -185,14 +185,14 @@ f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 
 \begin{quote}
 \textbf{Lemma 3 (existence part of the Zeckendorf theorem).} For every
-nonnegative integer $n$, there exists a finite holey subset $T$ of
+nonnegative integer $n$, there exists a finite lacunar subset $T$ of
 $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$.
 \end{quote}
 
 \textit{Proof of Lemma 3.} We are going to prove Lemma 3 by strong induction
 over $n$:
 
-\textit{Induction base:} Let $n=0$. Then, there exists a finite holey subset
+\textit{Induction base:} Let $n=0$. Then, there exists a finite lacunar subset
 $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$ (namely,
 $T=\varnothing$), and thus Lemma 3 holds for $n=0$, and the induction base is completed.
 
@@ -209,10 +209,10 @@ of integers is unbounded from above).}. Then, $f_{t_{1}}\leq\nu$ but
 $f_{t_{1}+1}>\nu$. Then, $\nu-f_{t_{1}}$ is a nonnegative integer (since
 $f_{t_{1}}\leq\nu$) and $<\nu$ (since $f_{t_{1}}>0$). Thus, Lemma 3 holds for
 $n=\nu-f_{t_{1}}$ (since we assumed that Lemma 3 holds for every nonnegative
-integer $n<\nu$). In other words, there exists a finite holey subset $T$ of
+integer $n<\nu$). In other words, there exists a finite lacunar subset $T$ of
 $\mathbb{N}_{2}$ such that $\nu-f_{t_{1}}=\sum\limits_{t\in T}f_{t}$. We
 rename this subset $T$ as $S$ (so as not to confuse it with the set $T$ that
-we want to construct for $n=\nu$). Thus, we have a finite holey subset $S$ of
+we want to construct for $n=\nu$). Thus, we have a finite lacunar subset $S$ of
 $\mathbb{N}_{2}$ such that $\nu-f_{t_{1}}=\sum\limits_{t\in S}f_{t}$.
 
 Since $f_{t}$ is nonnegative for every $t\in S$, it is clear that every $s\in
@@ -235,7 +235,7 @@ and thus $s<t_{1}-1$ (since the Fibonacci sequence $\left(  f_{1},f_{2}%
 $s+1<t_{1}$. Thus, $s+1\neq t_{1}$; in other words $s+1\notin\left\{
 t_{1}\right\}  $. Applying $s+1<t_{1}$ to $s=\max S$, we get $\max S+1<t_{1}$.
 
-Since the set $S$ is holey, we know that $s+1\notin S$ for every $s\in S$.
+Since the set $S$ is lacunar, we know that $s+1\notin S$ for every $s\in S$.
 Combining this with $s+1\notin\left\{  t_{1}\right\}  $, we get $s+1\notin
 S\cup\left\{  t_{1}\right\}  $ for every $s\in S$.
 
@@ -248,9 +248,9 @@ S\cup\left\{  t_{1}\right\}  $ for every $s\in S\cup\left\{  t_{1}\right\}  $
 (because $s\in S\cup\left\{  t_{1}\right\}  $ yields that one of the two cases
 $s\in S$ and $s\in\left\{  t_{1}\right\}  $ must hold, but in each of these
 two cases we have proved that $s+1\notin S\cup\left\{  t_{1}\right\}  $). In
-other words, the set $S\cup\left\{  t_{1}\right\}  $ is holey. Denoting this
+other words, the set $S\cup\left\{  t_{1}\right\}  $ is lacunar. Denoting this
 set $S\cup\left\{  t_{1}\right\}  $ by $T$, we thus have shown that $T$ is a
-holey set. Clearly, $T$ is a finite set (since $S$ is finite) and satisfies%
+lacunar set. Clearly, $T$ is a finite set (since $S$ is finite) and satisfies%
 \begin{align*}
 \sum\limits_{t\in T}f_{t}  &  =\sum\limits_{t\in S\cup\left\{  t_{1}\right\}
 }f_{t}=\underbrace{\sum\limits_{t\in S}f_{t}}_{=\nu-f_{t_{1}}}+f_{t_{1}%
@@ -263,7 +263,7 @@ step, and thus the induction proof of Lemma 3 is complete.
 
 \begin{quote}
 \textbf{Lemma 4 (uniqueness part of the Zeckendorf theorem).} Let
-$n\in\mathbb{N}$, and let $T$ and $T^{\prime}$ be two finite holey subsets of
+$n\in\mathbb{N}$, and let $T$ and $T^{\prime}$ be two finite lacunar subsets of
 $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum
 \limits_{t\in T^{\prime}}f_{t}$. Then, $T=T^{\prime}$.
 \end{quote}
@@ -282,7 +282,7 @@ the induction base is completed.
 that Lemma 4 holds for every nonnegative integer $n<\nu$. We must now prove
 that Lemma 4 holds for $n=\nu$.
 
-So let $T$ and $T^{\prime}$ be two holey subsets of $\mathbb{N}_{2}$ such that
+So let $T$ and $T^{\prime}$ be two lacunar subsets of $\mathbb{N}_{2}$ such that
 $\nu=\sum\limits_{t\in T}f_{t}$ and $\nu=\sum\limits_{t\in T^{\prime}}f_{t}$.
 Then, we want to prove that $T=T^{\prime}$.
 
@@ -298,10 +298,10 @@ are completely equal in rights). Combining this with $\max T\leq\max
 T^{\prime}$, we get $\max T=\max T^{\prime}$. Let $\mu$ denote the number
 $\max T=\max T^{\prime}$. Then, $\mu=\max T\in T$ and $\mu=\max T^{\prime}\in
 T^{\prime}$. Let $S=T\diagdown\left\{  \mu\right\}  $ and $S^{\prime
-}=T^{\prime}\diagdown\left\{  \mu\right\}  $. Clearly, $S$ is a finite holey
+}=T^{\prime}\diagdown\left\{  \mu\right\}  $. Clearly, $S$ is a finite lacunar
 subset of $\mathbb{N}_{2}$ (because $S=T\diagdown\left\{  \mu\right\}  $ is a
-subset of $T$, and every subset of a finite holey set is finite holey).
-Similarly, $S^{\prime}$ is a finite holey subset of $\mathbb{N}_{2}$. Now,%
+subset of $T$, and every subset of a finite lacunar set is finite lacunar).
+Similarly, $S^{\prime}$ is a finite lacunar subset of $\mathbb{N}_{2}$. Now,%
 \begin{align*}
 \nu-f_{\mu}  &  =\sum\limits_{t\in T}f_{t}-f_{\mu}=\sum\limits_{t\in
 T\diagdown\left\{  \mu\right\}  }f_{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
@@ -312,7 +312,7 @@ T\diagdown\left\{  \mu\right\}  }f_{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
 =\sum\limits_{t\in S^{\prime}}f_{t}$. Since $\nu-f_{\mu}$ is a nonnegative
 integer (because $\nu-f_{\mu}=\sum\limits_{t\in S^{\prime}}f_{t}$, and since
 all $f_{t}$ are nonnegative) and satisfies $\nu-f_{\mu}<\nu$, we can thus
-apply Lemma 4 to $\nu-f_{\mu}$ instead of $n$ and to the holey subsets $S$ and
+apply Lemma 4 to $\nu-f_{\mu}$ instead of $n$ and to the lacunar subsets $S$ and
 $S^{\prime}$ instead of $T$ and $T^{\prime}$ (since we assumed that Lemma 4
 holds for every nonnegative integer $n<\nu$), and we obtain $S=S^{\prime}$.
 Now, $S=T\diagdown\left\{  \mu\right\}  $ yields $T=S\cup\left\{  \mu\right\}
@@ -324,7 +324,7 @@ induction proof of Lemma 4 is done.
 
 \begin{quote}
 \textbf{Theorem 5 (Zeckendorf theorem).} For every nonnegative integer $n$,
-there exists one and only one finite holey subset $T$ of $\mathbb{N}_{2}$ such
+there exists one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
 that $n=\sum\limits_{t\in T}f_{t}$.
 
 We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
@@ -332,7 +332,7 @@ f_{t}$.
 \end{quote}
 
 \textit{Proof of Theorem 5.} Fix some $n\in\mathbb{N}$. Then, there exists a
-finite holey subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in
+finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in
 T}f_{t}$ (according to Lemma 3), and such a subset is unique (because any two
 such subsets are equal, according to Lemma 4). This proves Theorem 5.
 
@@ -394,7 +394,7 @@ and Theorem 6 is proven.
 Yet another lemma:
 
 \begin{quote}
-\textbf{Theorem 7.} If $S$ is a finite holey subset of $\mathbb{N}_{2}$, then
+\textbf{Theorem 7.} If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$, then
 $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 
 
@@ -446,7 +446,7 @@ part of this theorem:
 identities).} Let $T$ be a finite set, and $a_{t}$ be an integer for every
 $t\in T$.
 
-Then, there exists a finite holey subset $S$ of $\mathbb{Z}$ such that
+Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 \[
 \left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
 every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
@@ -468,8 +468,8 @@ of $\mathbb{Z}$.
 Clearly, $\left(  K+a\right)  +b=K+\left(  a+b\right)  $ for any two integers
 $a$ and $b$. Also, $K+0=K$. Finally,%
 \begin{equation}
-\text{if }K\text{ is a holey subset of }\mathbb{Z}\text{, and if }%
-a\in\mathbb{Z}\text{, then }K+a\text{ is holey as well} \label{holey-plus}%
+\text{if }K\text{ is a lacunar subset of }\mathbb{Z}\text{, and if }%
+a\in\mathbb{Z}\text{, then }K+a\text{ is lacunar as well} \label{lacunar-plus}%
 \end{equation}
 (because every $s\in K+a$ satisfies $s+1\notin K+a\ \ \ \ $%
 \footnote{\textit{Proof.} Assume the contrary. In other words, assume that
@@ -477,7 +477,7 @@ $s+1\in K+a$. Then, $s+1\in K+a=\left\{  k+a\ \mid\ k\in K\right\}  $, so
 there exists some $\ell\in K$ such that $s+1=\ell+a$.
 \par
 Now, $s\in K+a=\left\{  k+a\ \mid\ k\in K\right\}  $ yields that there exists
-some $k\in K$ such that $s=k+a$. Since $K$ is a holey set, we have $\left(
+some $k\in K$ such that $s=k+a$. Since $K$ is a lacunar set, we have $\left(
 s+1\notin K\text{ for every }s\in K\right)  $. Applying this to $s=k$, we get
 $k+1\notin K$. But $\ell+a=\underbrace{s}_{=k+a}+1=k+a+1$ yields $\ell=\left(
 k+a+1\right)  -a=k+1\notin K$, contradicting $\ell\in K$. This contradiction
@@ -511,11 +511,11 @@ T\right\}  $. The reason for the second condition $\left(  \phi-1\right)
 ^{N}C<2-\phi$ will become clear later in the proof.)
 
 Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, Lemma 3 (applied to $\nu$
-instead of $n$) yields that there exists a finite holey subset $Z_{\nu}$ of
+instead of $n$) yields that there exists a finite lacunar subset $Z_{\nu}$ of
 $\mathbb{N}_{2}$ such that $\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$. Let
 $S=Z_{\nu}+\left(  -N\right)  $. Then, the set $S=Z_{\nu}+\left(  -N\right)  $
-is holey (by (\ref{holey-plus}) (applied to $K=Z_{\nu}$ and $a=-N$), because
-$Z_{\nu}$ is a holey subset of $\mathbb{Z}$) and finite (since $Z_{\nu}$ is
+is lacunar (by (\ref{lacunar-plus}) (applied to $K=Z_{\nu}$ and $a=-N$), because
+$Z_{\nu}$ is a lacunar subset of $\mathbb{Z}$) and finite (since $Z_{\nu}$ is
 finite), and satisfies%
 \begin{align*}
 \nu &  =\sum\limits_{t\in Z_{\nu}}f_{t}=\sum\limits_{s\in Z_{\nu}+\left(
@@ -533,7 +533,7 @@ Z_{\nu}+\left(  -N\right)  =S\right)  .
 So now we know that $\sum\limits_{t\in T}f_{N+a_{t}}=\sum\limits_{s\in
 S}f_{N+s}$ (because both sides of this equation equal $\nu$).
 
-So, we have chosen a large $N$ and found a finite holey subset $S$ of
+So, we have chosen a large $N$ and found a finite lacunar subset $S$ of
 $\mathbb{Z}$ which satisfies $\sum\limits_{t\in T}f_{N+a_{t}}=\sum
 \limits_{s\in S}f_{N+s}$. In other words, we have showed that the equation
 \begin{equation}
@@ -601,15 +601,15 @@ f_{m+a_{t}}\right\vert }_{\substack{=\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)
 \end{align*}
 
 
-On the other hand, $S$ is a holey subset of $\mathbb{Z}$, and thus the set
-$S+m$ is holey as well (by (\ref{holey-plus}), applied to $S$ and $m$ instead
+On the other hand, $S$ is a lacunar subset of $\mathbb{Z}$, and thus the set
+$S+m$ is lacunar as well (by (\ref{lacunar-plus}), applied to $S$ and $m$ instead
 of $K$ and $a$), and besides $\underbrace{S}_{=Z_{\nu}+\left(  -N\right)
 }+m=\left(  Z_{\nu}+\left(  -N\right)  \right)  +m=Z_{\nu}+\left(  \left(
 -N\right)  +m\right)  =\left\{  z+\left(  \left(  -N\right)  +m\right)
 \ \mid\ z\in Z_{\nu}\right\}  \subseteq\mathbb{N}_{2}$ (because every $z\in
 Z_{\nu}$ satisfies $\underbrace{z}_{\geq2}+\left(  \left(  -N\right)
 +\underbrace{m}_{\geq N}\right)  \geq2+\left(  \left(  -N\right)  +N\right)
-=2$ and thus $z\in\mathbb{N}_{2}$). Thus, $S+m$ is a holey finite subset of
+=2$ and thus $z\in\mathbb{N}_{2}$). Thus, $S+m$ is a lacunar finite subset of
 $\mathbb{N}_{2}$. Hence, Theorem 7 (applied to $S+m$ instead of $S$) yields
 $\sum\limits_{s\in S+m}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 
@@ -761,13 +761,13 @@ All that remains now is the (rather trivial) uniqueness part of Theorem 1:
 identities).} Let $T$ be a finite set, and $a_{t}$ be an integer for every
 $t\in T$.
 
-Let $S$ be a finite holey subset of $\mathbb{Z}$ such that%
+Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
 \left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
 every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
 t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
 \]
-Let $S^{\prime}$ be a finite holey subset of $\mathbb{Z}$ such that%
+Let $S^{\prime}$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
 \left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S^{\prime}}%
 f_{n+s}\text{ for every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(
@@ -804,8 +804,8 @@ S\rightarrow S+n,\ s\mapsto n+s\text{ is a bijection}%
 Similarly, $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}%
 +n}f_{t}$.
 
-Now, $S+n$ is a holey set (by (\ref{holey-plus}) (applied to $K=S$ and $a=n$),
-since $S$ is a holey subset of $\mathbb{Z}$) and a subset of $\mathbb{N}_{2}%
+Now, $S+n$ is a lacunar set (by (\ref{lacunar-plus}) (applied to $K=S$ and $a=n$),
+since $S$ is a lacunar subset of $\mathbb{Z}$) and a subset of $\mathbb{N}_{2}%
 $\ \ \ \ \footnote{\textit{Proof.} Since%
 \[
 n=\underbrace{\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{
@@ -820,8 +820,8 @@ rewrites as $s+n\geq2$. Equivalently, $s+n\in\mathbb{N}_{2}$. Thus,%
 S+n=\left\{  \underbrace{s+n}_{\in\mathbb{N}_{2}}\ \mid\ s\in S\right\}
 \subseteq\mathbb{N}_{2}.
 \]
-}. In other words, $S+n$ is a finite holey subset of $\mathbb{N}_{2}$.
-Similarly, $S^{\prime}+n$ is a finite holey subset of $\mathbb{N}_{2}$.
+}. In other words, $S+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
+Similarly, $S^{\prime}+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
 Applying Lemma 4 to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in T}f_{n+a_{t}%
 }$ instead of $T$, $T^{\prime}$ and $n$ yields that $S+n=S^{\prime}+n$
 (because $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S+n}f_{t}$ and
@@ -837,7 +837,7 @@ n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
 This proves Lemma 9.
 
 \textit{Proof of Theorem 1.} Fix some $n\in\mathbb{N}$. Then, there exists a
-finite holey subset $S$ of $\mathbb{Z}$ such that
+finite lacunar subset $S$ of $\mathbb{Z}$ such that
 \[
 \left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
 every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
