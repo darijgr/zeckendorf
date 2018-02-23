@@ -50,7 +50,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 22:08:16}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 22:25:09}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -331,43 +331,50 @@ $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma~\ref{lem.2}.]We WLOG assume that $S$ is nonempty (since
-otherwise, Lemma~\ref{lem.2} follows easily from our convention that
-$\max\varnothing= 0$).
+[Proof of Lemma~\ref{lem.2}.]Let $S$ be a finite lacunar subset of
+$\mathbb{N}_{2}$. We must prove that $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
+
+We WLOG assume that $S$ is nonempty (since otherwise, Lemma~\ref{lem.2}
+follows easily from our convention that $\max\varnothing=0$).
 
 Every $t\in\mathbb{N}_{2}$ satisfies $f_{t+1}=f_{t}+f_{t-1}$ (due to the
-relation $f_{n}=f_{n-1}+f_{n-2}$, applied to $n=t+1$), so that $f_{t}%
-=f_{t+1}-f_{t-1}$.
+relation $f_{n}=f_{n-1}+f_{n-2}$, applied to $n=t+1$), so that
+\begin{equation}
+f_{t}=f_{t+1}-f_{t-1}. \label{pf.lem.2.rec-}%
+\end{equation}
+
 
 Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots
 ,s_{k}\right\}  $, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{t\in
-S}f_{t}=\sum\limits_{i=1}^{k}f_{s_{i}}$ and $s_{k}=\max S$. On the other hand,
-every $i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}%
-$\ \ \ \ \footnote{\textit{Proof.} The set $S$ is lacunar, and thus $s+1\notin
-S$ for every $s\in S$. Applying this to $s=s_{i}$, we get $s_{i}+1\notin S$,
-so that $s_{i}+1\neq s_{i+1}$ (since $s_{i+1}\in S$).
+S}f_{t}=\sum\limits_{i=1}^{k}f_{s_{i}}$ and $s_{k}=\max S$.
+
+Notice that $k\geq1$ (since $S$ is nonempty). From $s_{1}\in S\subseteq
+\mathbb{N}_{2}$, we obtain $s_{1}\geq2$ and thus $s_{1}-1\geq1$. Hence,
+$f_{s_{1}-1}>0$.
+
+On the other hand, every $i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies
+$s_{i}+1\leq s_{i+1}-1$\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{
+1,2,\ldots,k-1\right\}  $.
+\par
+The set $S$ is lacunar, and thus $s+1\notin S$ for every $s\in S$. Applying
+this to $s=s_{i}$, we get $s_{i}+1\notin S$ (since $s_{i}\in\left\{
+s_{1},s_{2},\ldots,s_{k}\right\}  =S$), so that $s_{i}+1\neq s_{i+1}$ (since
+$s_{i+1}\in\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  =S$).
 \par
 Since $s_{1}<s_{2}<\cdots<s_{k}$, we have $s_{i}<s_{i+1}$, so that
 $s_{i}+1\leq s_{i+1}$ (because $s_{i}$ and $s_{i+1}$ are integers). Since
-$s_{i}+1\neq s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+2\leq
-s_{i+1}$ (because $s_{i}$ and $s_{i+1}$ are integers).} and thus $s_{i}+1\leq
-s_{i+1}-1$, so that $f_{s_{i}+1}\leq f_{s_{i+1}-1}$ (since the Fibonacci
-sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing).
-Thus,%
+$s_{i}+1\neq s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+1\leq
+s_{i+1}-1$ (because $s_{i}$ and $s_{i+1}$ are integers).}, so that
+$f_{s_{i}+1}\leq f_{s_{i+1}-1}$ (since the Fibonacci sequence $\left(
+f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing). Thus,%
 \begin{align*}
-\sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}f_{s_{i}}=\sum
-\limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{since }f_{s_{i}}=f_{s_{i}+1}-f_{s_{i}-1}\text{ (due to }f_{t}%
-=f_{t+1}-f_{t-1}\text{,}\\
-\text{applied to }t=s_{i}\text{)}%
-\end{array}
-\right) \\
-&  =\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}+1}}_{=\sum\limits_{i=1}%
-^{k-1}f_{s_{i}+1}+f_{s_{k}+1}}-\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}-1}%
-}_{=f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}}\\
+\sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}\underbrace{f_{s_{i}}%
+}_{\substack{=f_{s_{i}+1}-f_{s_{i}-1}\\\text{(by (\ref{pf.lem.2.rec-}),
+applied to }t=s_{i}\text{)}}}=\sum\limits_{i=1}^{k}\left(  f_{s_{i}%
++1}-f_{s_{i}-1}\right)  =\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}+1}}%
+_{=\sum\limits_{i=1}^{k-1}f_{s_{i}+1}+f_{s_{k}+1}}-\underbrace{\sum
+\limits_{i=1}^{k}f_{s_{i}-1}}_{=f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}%
+}\\
 &  =\left(  \sum\limits_{i=1}^{k-1}\underbrace{f_{s_{i}+1}}_{\leq
 f_{s_{i+1}-1}}+f_{s_{k}+1}\right)  -\left(  f_{s_{1}-1}+\sum\limits_{i=2}%
 ^{k}f_{s_{i}-1}\right) \\
@@ -377,9 +384,8 @@ f_{s_{i+1}-1}}+f_{s_{k}+1}\right)  -\left(  f_{s_{1}-1}+\sum\limits_{i=2}%
 f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
 }i+1\text{ in the first sum}\right) \\
-&  =f_{s_{k}+1}-f_{s_{1}-1}<f_{s_{k}+1}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f_{s_{1}-1}>0\text{, because
-}s_{1}-1>0\text{, since }s_{1}\in S\subseteq\mathbb{N}_{2}\right) \\
+&  =f_{s_{k}+1}-f_{s_{1}-1}<f_{s_{k}+1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}f_{s_{1}-1}>0\right) \\
 &  =f_{\max S+1}%
 \end{align*}
 (since $s_{k}=\max S$). This proves Lemma~\ref{lem.2}.
@@ -404,13 +410,30 @@ induction base is completed.
 that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$. We must
 now prove that Lemma~\ref{lem.3} holds for $n=\nu$.
 
+We have $\nu>0$, so that $\nu\geq1$ (since $\nu$ is an integer). Thus,
+$f_{2}=1\leq\nu$.
+
 In fact, let $t_{1}$ be the maximal integer $\tau$ from $\mathbb{N}_{2}$
 satisfying $f_{\tau}\leq\nu$\ \ \ \ \footnote{Such an integer $t_{1}$ exists,
-since the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is
-strictly increasing beginning with $f_{2}$ and therefore unbounded from above
-(because every strictly increasing sequence of integers is unbounded from
-above).}. Then, $f_{t_{1}}\leq\nu$ but $f_{t_{1}+1}>\nu$. Then, $\nu-f_{t_{1}%
-}$ is a nonnegative integer (since $f_{t_{1}}\leq\nu$) and $<\nu$ (since
+because of the following:
+\par
+The Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is strictly
+increasing beginning with $f_{2}$ and therefore unbounded from above (because
+every strictly increasing sequence of integers is unbounded from above).
+Hence, \textquotedblleft sooner or later\textquotedblright\ this sequence will
+surpass any given integer. Thus, in particular, there are \textbf{only
+finitely many} integers $\tau$ from $\mathbb{N}_{2}$ satisfying $f_{\tau}%
+\leq\nu$.
+\par
+On the other hand, $2$ is an integer $\tau$ from $\mathbb{N}_{2}$ satisfying
+$f_{\tau}\leq\nu$ (since $f_{2}\leq\nu$). Hence, there exists \textbf{at least
+one} integer $\tau$ from $\mathbb{N}_{2}$ satisfying $f_{\tau}\leq\nu$. Thus,
+there exists a \textbf{maximal integer} $\tau$ from $\mathbb{N}_{2}$
+satisfying $f_{\tau}\leq\nu$ (because we have already shown that there are
+\textbf{only finitely many} integers $\tau$ from $\mathbb{N}_{2}$ satisfying
+$f_{\tau}\leq\nu$). This is what we wanted to prove.}. Then, $f_{t_{1}}\leq
+\nu$ but $f_{t_{1}+1}>\nu$ (since $t_{1}$ is maximal). Then, $\nu-f_{t_{1}}$
+is a nonnegative integer (since $f_{t_{1}}\leq\nu$) and $<\nu$ (since
 $f_{t_{1}}>0$). Thus, Lemma~\ref{lem.3} holds for $n=\nu-f_{t_{1}}$ (since we
 assumed that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$).
 In other words, there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$
@@ -419,31 +442,25 @@ as $S$ (so as not to confuse it with the set $T$ that we want to construct for
 $n=\nu$). Thus, we have a finite lacunar subset $S$ of $\mathbb{N}_{2}$ such
 that $\nu-f_{t_{1}}=\sum\limits_{t\in S}f_{t}$.
 
+The relation $f_{n}=f_{n-1}+f_{n-2}$ (applied to $n=t_{1}+1$) yields
+$f_{t_{1}+1}=f_{t_{1}}+f_{t_{1}-1}$, so that $f_{t_{1}+1}-f_{t_{1}}%
+=f_{t_{1}-1}$. Now, from $\nu<f_{t_{1}+1}$, we obtain $\nu-f_{t_{1}}%
+<f_{t_{1}+1}-f_{t_{1}}=f_{t_{1}-1}$.
+
 Since $f_{t}$ is nonnegative for every $t\in S$, it is clear that every $s\in
 S$ satisfies%
-\begin{align*}
-f_{s}  &  \leq\sum\limits_{t\in S}f_{t}=\nu-f_{t_{1}}<f_{t_{1}+1}-f_{t_{1}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\nu<f_{t_{1}+1}\right) \\
-&  =f_{t_{1}-1}\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{because the relation }f_{n}=f_{n-1}+f_{n-2}\text{ (applied to }%
-n=t_{1}+1\text{) yields}\\
-f_{t_{1}+1}=f_{t_{1}}+f_{t_{1}-1}\text{, so that }f_{t_{1}+1}-f_{t_{1}%
-}=f_{t_{1}-1}%
-\end{array}
-\right)
-\end{align*}
+\[
+f_{s}\leq\sum\limits_{t\in S}f_{t}=\nu-f_{t_{1}}<f_{t_{1}-1}%
+\]
 and thus $s<t_{1}-1$ (since the Fibonacci sequence $\left(  f_{1},f_{2}%
 ,f_{3},\ldots\right)  $ is weakly increasing), which rewrites as $s+1<t_{1}$.
 Thus, $s+1\neq t_{1}$; in other words $s+1\notin\left\{  t_{1}\right\}  $.
-Applying $s+1<t_{1}$ to $s=\max S$, we get $\max S+1<t_{1}$ (since $\max S \in
+Applying $s+1<t_{1}$ to $s=\max S$, we get $\max S+1<t_{1}$ (since $\max S\in
 S$) \ \ \ \ \footnote{Strictly speaking, this argument only works when $S$ is
-nonempty. But when $S$ is empty, the inequality $\max S + 1 < t_{1}$ is
-obvious for a different reason: Namely, in this case, we have $\max S =
-\max\varnothing= 0$, so that $\max S + 1 = 1 < 2 \leq t_{1}$ (since $t_{1}
-\in\mathbb{N}_{2}$).}. Hence, $t_{1} > \max S + 1 > \max S$, and thus $t_{1}
-\notin S$.
+nonempty. But when $S$ is empty, the inequality $\max S+1<t_{1}$ is obvious
+for a different reason: Namely, in this case, we have $\max S=\max
+\varnothing=0$, so that $\max S+1=1<2\leq t_{1}$ (since $t_{1}\in
+\mathbb{N}_{2}$).}. Hence, $t_{1}>\max S+1>\max S$, and thus $t_{1}\notin S$.
 
 Since the set $S$ is lacunar, we know that $s+1\notin S$ for every $s\in S$.
 Combining this with $s+1\notin\left\{  t_{1}\right\}  $, we get $s+1\notin
@@ -567,7 +584,10 @@ f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
 \end{theorem}
 
 \begin{proof}
-[Proof of Theorem~\ref{thm.6}.]By Binet's formula,%
+[Proof of Theorem~\ref{thm.6}.]It is easy to see that $\phi^{-1}=\phi-1$ and
+$1-\phi^{-2}=\phi-1$.
+
+Let $n\in\mathbb{N}_{2}$. By Binet's formula, we have%
 \[
 f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}=\dfrac{\phi^{n}\left(  1-\phi
 ^{-2n}\right)  }{\sqrt{5}}=\dfrac{1}{\sqrt{5}}\phi^{n}\left(  1-\phi
@@ -597,13 +617,10 @@ n+1\right)  }\right)  -\left(  1-\phi^{-2n}\right)  }_{=\phi^{-2n}%
 ^{-2}\right)  =\dfrac{1}{\sqrt{5}}\underbrace{\phi^{n+1}\phi^{-2n}}%
 _{=\phi^{\left(  n+1\right)  +\left(  -2n\right)  }=\phi^{-\left(  n-1\right)
 }=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right) \\
-&  =\dfrac{1}{\sqrt{5}}\left(  \underbrace{\phi^{-1}}_{\substack{=\phi-1\text{
-(as can be}\\\text{easily seen)}}}\right)  ^{n-1}\underbrace{\left(
-1-\phi^{-2}\right)  }_{\substack{=\phi-1\text{ (as can be}\\\text{easily
-seen)}}}\\
-&  =\dfrac{1}{\sqrt{5}}\underbrace{\left(  \phi-1\right)  ^{n-1}\left(
-\phi-1\right)  }_{=\left(  \phi-1\right)  ^{n}}=\dfrac{1}{\sqrt{5}}\left(
-\phi-1\right)  ^{n},
+&  =\dfrac{1}{\sqrt{5}}\left(  \underbrace{\phi^{-1}}_{=\phi-1}\right)
+^{n-1}\underbrace{\left(  1-\phi^{-2}\right)  }_{=\phi-1}=\dfrac{1}{\sqrt{5}%
+}\underbrace{\left(  \phi-1\right)  ^{n-1}\left(  \phi-1\right)  }_{=\left(
+\phi-1\right)  ^{n}}=\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n},
 \end{align*}
 so that%
 \[
@@ -776,10 +793,12 @@ $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
 S\right\}  \right)  $. In order to do this, first let us prove that
 (\ref{main}) holds for $n=N+1$. Actually, we are going to show a bit more:
 
+\begin{statement}
 \textit{Assertion }$\alpha$\textit{:} Let $m\geq N$ be an integer such that
 (\ref{main}) holds for $n=m$. Then, (\ref{main}) also holds for $n=m+1$.
+\end{statement}
 
-\textit{Proof of Assertion }$\alpha$\textit{:} Since (\ref{main}) holds for
+[\textit{Proof of Assertion }$\alpha$\textit{:} Since (\ref{main}) holds for
 $n=m$, we have $\sum\limits_{t\in T}f_{m+a_{t}}=\sum\limits_{s\in S}f_{m+s}$.
 Now,%
 \begin{align*}
@@ -860,7 +879,7 @@ f_{m+s}\right\vert }_{\substack{=\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)
 \text{here, we substituted }s\text{ for }m+s\text{, since the map}\\
 S\rightarrow S+m,\ s\mapsto m+s\text{ is a bijection}%
 \end{array}
-\right) \\
+\right)  \\
 &  \leq\underbrace{\dfrac{1}{\sqrt{5}}}_{<1}\cdot\left(  \phi-1\right)
 <\phi-1.
 \end{align*}
@@ -882,14 +901,16 @@ the only integer with an absolute value $<1$ is $0$. Thus, $\sum\limits_{t\in
 T}f_{\left(  m+1\right)  +a_{t}}-\sum\limits_{s\in S}f_{\left(  m+1\right)
 +s}=0$, so that $\sum\limits_{t\in T}f_{\left(  m+1\right)  +a_{t}}%
 =\sum\limits_{s\in S}f_{\left(  m+1\right)  +s}$. In other words, (\ref{main})
-holds for $n=m+1$. This proves Assertion $\alpha$.
+holds for $n=m+1$. This proves Assertion $\alpha$.]
 
-Assertion $\alpha$ almost immediately yields:
+Assertion $\alpha$ almost immediately yields the following:
 
+\begin{statement}
 \textit{Assertion }$\beta$\textit{:} The equation (\ref{main}) holds for every
 $n\geq N$.
+\end{statement}
 
-\textit{Proof of Assertion }$\beta$\textit{:} We are going to prove Assertion
+[\textit{Proof of Assertion }$\beta$\textit{:} We are going to prove Assertion
 $\beta$ by induction over $n$:
 
 As the \textit{induction base} we take the case $n=N$. In this case, the
@@ -901,7 +922,7 @@ $\alpha$ holds for $n=m$. In other words, the equation (\ref{main}) holds for
 $n=m$. Then, Assertion $\alpha$ yields that the equation (\ref{main}) holds
 for $n=m+1$ as well. In other words, Assertion $\alpha$ holds for $n=m+1$ as
 well. This completes the induction step, and thus Assertion $\beta$ is proven
-by induction over $n$.
+by induction over $n$.]
 
 With Assertion $\beta$ we now know that (\ref{main}) holds for all
 sufficiently high $n$, namely for all $n\geq N$. But in order to prove Theorem
@@ -946,15 +967,16 @@ f_{\lambda+2+s}$.
 Now, we are going to prove the equation $\sum\limits_{t\in T}f_{\lambda+a_{t}%
 }=\sum\limits_{s\in S}f_{\lambda+s}$. (We notice that this equation indeed
 makes sense, because the Fibonacci number $f_{\lambda+a_{t}}$ is well-defined
-for every $t\in T$\ \ \ \ \footnote{In fact, $\lambda>M=\max\left(  \left\{
--a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)
-\geq\max\left\{  -a_{t}\mid t\in T\right\}  $ yields that $\lambda>-a_{t}$ for
-every $t\in T$, so that $\lambda+a_{t}>0$, and thus $f_{\lambda+a_{t}}$ is
-well-defined.}, and because the Fibonacci number $f_{\lambda+s}$ is
-well-defined for every $s\in S$\ \ \ \ \footnote{In fact, $\lambda
+for every $t\in T$\ \ \ \ \footnote{\textit{Proof.} In fact, $\lambda
 >M=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
-S\right\}  \right)  \geq\max\left\{  -s\mid s\in S\right\}  $ yields that
-$\lambda>-s$ for every $s\in S$, so that $\lambda+s>0$, and thus
+S\right\}  \right)  \geq\max\left\{  -a_{t}\mid t\in T\right\}  $ yields that
+$\lambda>-a_{t}$ for every $t\in T$. Thus, for every $t\in T$, we have
+$\lambda+a_{t}>0$, and thus $f_{\lambda+a_{t}}$ is well-defined.}, and because
+the Fibonacci number $f_{\lambda+s}$ is well-defined for every $s\in
+S$\ \ \ \ \footnote{\textit{Proof.} In fact, $\lambda>M=\max\left(  \left\{
+-a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)
+\geq\max\left\{  -s\mid s\in S\right\}  $ yields that $\lambda>-s$ for every
+$s\in S$. Thus, for every $s\in S$, we have $\lambda+s>0$, and thus
 $f_{\lambda+s}$ is well-defined.}.) In fact, every integer $n\geq3$ satisfies
 $f_{n}=f_{n-1}+f_{n-2}$, so that $f_{n-2}=f_{n}-f_{n-1}$. Applying this to
 $n=\lambda+a_{t}+2$, we obtain $f_{\lambda+a_{t}}=\underbrace{f_{\lambda
@@ -966,7 +988,7 @@ $n=\lambda+s+2$, we obtain $f_{\lambda+s}=\underbrace{f_{\lambda+s+2}%
 }=f_{\lambda+2+s}-f_{\lambda+1+s}$ for every $s\in S$. Thus,%
 \begin{align*}
 \sum\limits_{t\in T}\underbrace{f_{\lambda+a_{t}}}_{=f_{\lambda+2+a_{t}%
-}-f_{\lambda+1+a_{t}}}  &  =\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}%
+}-f_{\lambda+1+a_{t}}} &  =\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}%
 }-f_{\lambda+1+a_{t}}\right)  =\underbrace{\sum\limits_{t\in T}f_{\lambda
 +2+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+2+s}}-\underbrace{\sum
 \limits_{t\in T}f_{\lambda+1+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+1+s}}\\
@@ -974,7 +996,7 @@ $n=\lambda+s+2$, we obtain $f_{\lambda+s}=\underbrace{f_{\lambda+s+2}%
 +1+s}=\sum\limits_{s\in S}\underbrace{\left(  f_{\lambda+2+s}-f_{\lambda
 +1+s}\right)  }_{=f_{\lambda+s}}=\sum\limits_{s\in S}f_{\lambda+s}.
 \end{align*}
-In other words, (\ref{main}) holds for $n=\lambda$. This contradicts to our
+In other words, (\ref{main}) holds for $n=\lambda$. This contradicts our
 knowledge that (\ref{main}) doesn't hold for $n=\lambda$. This contradiction
 shows that our assumption (the assumption that there exists some $n>M$ such
 that (\ref{main}) does not hold) was wrong. Hence, there exists no $n>M$ such
