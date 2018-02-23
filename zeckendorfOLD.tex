@@ -1,0 +1,326 @@
+\documentclass[12pt,final,notitlepage,onecolumn]{article}%
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}%
+\setcounter{MaxMatrixCols}{30}
+\voffset=-2.5cm
+\hoffset=-2.5cm
+\setlength\textheight{24cm}
+\setlength\textwidth{15.5cm}
+\begin{document}
+
+%NOT proofreading completed
+%not even trying to be a completely-written solution
+
+
+\begin{center}
+\textbf{Zeckendorf family identities generalized}
+
+\textbf{Darij Grinberg, version 3, 20 September 2010}
+\end{center}
+
+A subset $S$ of $\mathbb{Z}$ is called \textit{holey} if it satisfies
+$a+1\notin S$ for every $a\in S$.
+
+Let $\left(  f_{1},f_{2},f_{3},...\right)  $ be the Fibonacci sequence
+(defined by $f_{1}=f_{2}=1$ and the recurrence relation $\left(  f_{n}%
+=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{ satisfying }%
+n\geq3\right)  $).
+
+Let $T$ be a finite set, and $a_{t}$ be an integer for every $t\in T$.
+
+Prove that there exists one and only one holey subset $S$ of $\mathbb{Z}$ such
+that
+\[
+\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
+every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
+t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
+\]
+
+
+\bigskip
+
+\textbf{Remark.} This problem generalizes the so-called \textit{Zeckendorf
+family identities} (which correspond to the case when all $a_{t}$ are equal),
+which were discussed in [1].
+
+\begin{center}
+\textbf{Outline of a solution}
+\end{center}
+
+We denote by $\mathbb{N}$ the set $\left\{  0,1,2,...\right\}  $. Also, we
+denote by $\mathbb{N}_{2}$ the set $\left\{  2,3,4,...\right\}  =\mathbb{N}%
+\setminus\left\{  0,1\right\}  $.
+
+Also, let $\phi=\dfrac{1+\sqrt{5}}{2}$. We notice that $\phi\approx1.618...$.
+
+We recall some known facts about the Fibonacci sequence:
+
+\textbf{Lemma 0.} [...]
+
+\begin{quote}
+\textbf{Theorem 1 (Zeckendorf theorem).} For every nonnegative integer $n$,
+there exists one and only one finite holey subset $T$ of $\mathbb{N}_{2}$ such
+that $n=\sum\limits_{t\in T}f_{t}$.
+
+We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
+f_{t}$.
+\end{quote}
+
+\textit{Proof of Theorem 1 (sketched).} \textit{Existence of }$T$\textit{:}
+Induction on $n$. For $n=0,$ take $T=\varnothing$. Else, let $t_{1}$ be the
+maximal integer from $\mathbb{N}_{2}$ satisfying $f_{t_{1}}\leq n$, and apply
+the induction hypothesis to $n-f_{t_{1}}$ instead of $n$. So you get a finite
+holey subset $T^{\prime}$ of $\mathbb{N}_{2}$ such that $n-f_{t_{1}}%
+=\sum\limits_{t\in T^{\prime}}f_{t}$. Thus, $n=\sum\limits_{t\in T}f_{t}$,
+where $T=T^{\prime}\cup\left\{  t_{1}\right\}  $. The only thing remaining to
+be checked is that this new set $T=T^{\prime}\cup\left\{  t_{1}\right\}  $ is
+holey. But in fact, every element of $T^{\prime}$ is $<t_{1}-1$ (since
+otherwise, the sum $\sum\limits_{t\in T^{\prime}}f_{t}$ would contain an
+addend greater or equal to $f_{t_{1}-1}$, so that$\ n-f_{t_{1}}=\sum
+\limits_{t\in T^{\prime}}f_{t}\geq f_{t_{1}-1}$, and thus $n\geq f_{t_{1}%
+}+f_{t_{1}-1}=f_{t_{1}+1}$, contradicting to the maximality of $t_{1}$). So
+the existence of $T$ is proven.
+
+\textit{Uniqueness of }$T$\textit{:} Assume that there are two holey subsets
+$T$ and $T^{\prime}$ of $\mathbb{N}_{2}$ such that $\sum\limits_{t\in T}%
+f_{t}=\sum\limits_{t\in T^{\prime}}f_{t}$. We want to prove that $T=T^{\prime
+}$. In fact, assume that $\max T>\max T^{\prime}$ (in fact, if $\max T<\max
+T^{\prime}$, then we can just permute $T$ and $T^{\prime}$, and if $\max
+T=\max T^{\prime}$, then we can replace the sets $T$ and $T^{\prime}$ by the
+smaller sets $T\setminus\left\{  \max T\right\}  $ and $T^{\prime}%
+\setminus\left\{  \max T^{\prime}\right\}  $). Then, $\max T\geq\max
+T^{\prime}+1$, so that $\sum\limits_{t\in T^{\prime}}f_{t}=\sum\limits_{t\in
+T}f_{t}\geq f_{\max T}\geq f_{\max T^{\prime}+1}$. Now, in order to obtain a
+contradiction, we need a lemma: If $S$ is a holey subset of $\mathbb{N}_{2}$,
+then $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$. To prove this lemma, notice
+that $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$ is equivalent to $\sum
+\limits_{t\in S\setminus\left\{  \max S\right\}  }f_{t}<f_{\max S-1}$ (because
+$\sum\limits_{t\in S\setminus\left\{  \max S\right\}  }f_{t}=\sum\limits_{t\in
+S}f_{t}-f_{\max S}$ and $f_{\max S-1}=f_{\max S+1}-f_{\max S}$), which in turn
+follows from the lemma itself applied to $S\setminus\left\{  \max S\right\}  $
+instead of $S$ (so we get an induction step), because $\max S-1\geq\max\left(
+S\setminus\left\{  \max S\right\}  \right)  +1$ (here, we use the holeyness of
+$S$).
+
+Altogether, Theorem 1 is proven. Several books should have this proof in more detail.
+
+\begin{quote}
+\textbf{Theorem 2 (rounded Binet recurrence).} For every $n\in\mathbb{N}_{2}$,
+we have $\left\vert f_{n+1}-\phi f_{n}\right\vert =\left(  \phi-1\right)
+^{n}\leq\left(  \phi-1\right)  ^{2}<\dfrac{1}{2}$.
+\end{quote}
+
+\textit{Proof of Theorem 2.} By Binet's formula,%
+\[
+f_{n}=\dfrac{\phi^{n}-\left(  1-\phi\right)  ^{n}}{\sqrt{5}}%
+\ \ \ \ \ \ \ \ \ \ \text{and}\ \ \ \ \ \ \ \ \ \ f_{n+1}=\dfrac{\phi
+^{n+1}-\left(  1-\phi\right)  ^{n+1}}{\sqrt{5}},
+\]
+what results in%
+\begin{align*}
+\left\vert f_{n+1}-\phi f_{n}\right\vert  &  =\left\vert \dfrac{\phi\left(
+1-\phi\right)  ^{n}-\left(  1-\phi\right)  ^{n+1}}{\sqrt{5}}\right\vert
+=\left\vert \dfrac{\left(  2\phi-1\right)  \left(  1-\phi\right)  ^{n}}%
+{\sqrt{5}}\right\vert =\dfrac{\left\vert 2\phi-1\right\vert \cdot\left\vert
+1-\phi\right\vert ^{n}}{\sqrt{5}}\\
+&  =\left\vert 1-\phi\right\vert ^{n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\left\vert 2\phi-1\right\vert =\sqrt{5}\right) \\
+&  =\left(  \phi-1\right)  ^{n}\leq\left(  \phi-1\right)  ^{2}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }0\leq\phi-1\leq1\text{ and }%
+n\geq2\right) \\
+&  <\dfrac{1}{2}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1=\left(
+\phi-1\right)  ^{2}+\underbrace{\left(  \phi-1\right)  }_{\substack{>\left(
+\phi-1\right)  ^{2},\\\text{since }0<\phi-1<1}}>2\left(  \phi-1\right)
+^{2}\right)  ,
+\end{align*}
+and Theorem 2 is proven.
+
+Yet another lemma:
+
+\begin{quote}
+\textbf{Theorem 3.} If $S$ is a holey subset of $\mathbb{N}_{2}$, then%
+\[
+\sum_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1<1.
+\]
+
+
+
+\end{quote}
+
+\textit{Proof of Theorem 3.} Since $S$ is a holey subset of $\mathbb{N}_{2}$,
+the smallest element of $S$ is at least $2$, the second smallest element of
+$S$ is at least $4$ (since it is larger than the smallest element by at least
+$2$), the third smallest element of $S$ is at least $6$ (since it is larger
+than the second smallest element by at least $2$), and so on. Since
+$\mathbb{N}\rightarrow\mathbb{R}$, $s\mapsto\left(  \phi-1\right)  ^{s}$ is a
+monotonically decreasing function (as $0\leq\phi-1\leq1$), we thus have%
+\begin{align*}
+\sum_{s\in S}\left(  \phi-1\right)  ^{s}  &  \leq\sum_{s\in\left\{
+2,4,6,...\right\}  }\left(  \phi-1\right)  ^{s}=\sum_{t\in\left\{
+1,2,3,...\right\}  }\left(  \phi-1\right)  ^{2t}=\sum_{t=0}^{\infty}\left(
+\phi-1\right)  ^{2t}-1\\
+&  =\sum_{t=0}^{\infty}\left(  \left(  \phi-1\right)  ^{2}\right)
+^{t}-1=\dfrac{1}{1-\left(  \phi-1\right)  ^{2}}-1=\dfrac{1}{\phi
+-1}-1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }1-\left(  \phi-1\right)
+^{2}=\phi-1\right) \\
+&  =\phi-1<1,
+\end{align*}
+and Theorem 3 is proven.
+
+Let us now solve the problem.
+
+Choose a large enough integer $N$. What exactly "large enough" means we will
+see later; at the moment, we only require $N\in\mathbb{N}_{2}$ and
+$N>\max\left\{  -a_{t}\mid t\in T\right\}  $. We will later want $N$ to be
+even bigger, however.
+
+Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, Theorem 1 yields $\nu
+=\sum\limits_{t\in Z_{\nu}}f_{t}$ for a finite holey subset $Z_{\nu}$ of
+$\mathbb{N}_{2}$. Let $S=\left\{  t-N\ \mid\ t\in Z_{\nu}\right\}  $. Then,
+$S$ is a finite holey subset of $\mathbb{Z}$, and $\nu=\sum\limits_{t\in
+Z_{\nu}}f_{t}$ becomes $\nu=\sum\limits_{s\in S}f_{N+s}$. So now we know that
+$\sum\limits_{t\in T}f_{N+a_{t}}=\sum\limits_{s\in S}f_{N+s}$ (because both
+sides of this equation equal $\nu$).
+
+So, we have chosen a large $N$ and found a finite holey subset $S$ of
+$\mathbb{Z}$ which satisfies $\sum\limits_{t\in T}f_{N+a_{t}}=\sum
+\limits_{s\in S}f_{N+s}$. But the problem is not solved yet: The problem
+requires us to prove that there exists one finite holey subset $S$ of
+$\mathbb{Z}$ which works for every $N$, while at the moment we cannot be sure
+yet whether different $N$'s wouldn't produce different sets $S$. And, in fact,
+different $N$'s can produce different sets $S$, but only if the $N$'s are too
+small. If we take $N$ big enough, the set $S$ that we obtained turns out to be
+\textit{universal}, i. e. it satisfies
+\begin{equation}
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which satisfies
+}n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
+S\right\}  \right)  . \label{BigLemma}%
+\end{equation}
+We are now going to prove this.
+
+In order to prove (\ref{BigLemma}), we need two assertions:
+
+\textit{Assertion 1:} If some $n\in\mathbb{Z}$ satisfies $n\geq N$ and
+$\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$, then
+$\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}=\sum\limits_{s\in
+S}f_{\left(  n+1\right)  +s}$.
+
+\textit{Assertion 2:} If some $n\in\mathbb{Z}$ satisfies $\sum\limits_{t\in
+T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$ and $\sum\limits_{t\in T}f_{\left(
+n+1\right)  +a_{t}}=\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}$, then
+$\sum\limits_{t\in T}f_{\left(  n-1\right)  +a_{t}}=\sum\limits_{s\in
+S}f_{\left(  n-1\right)  +s}$ (if $n-1>\max\left(  \left\{  -a_{t}\mid t\in
+T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $).
+
+Obviously, Assertion 1 yields (by induction) that $\sum\limits_{t\in
+T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$ for every $n\geq N$, and Assertion
+2 then finishes off the remaining $n$'s (by backwards induction). Thus, once
+both Assertions 1 and 2 are proven, (\ref{BigLemma}) will follow and thus the
+problem will be solved.
+
+Assertion 2 is almost trivial (just notice that%
+\[
+\sum\limits_{t\in T}f_{\left(  n-1\right)  +a_{t}}=\sum\limits_{t\in
+T}\underbrace{f_{n+a_{t}-1}}_{=f_{n+a_{t}+1}-f_{n+a_{t}}}=\sum\limits_{t\in
+T}f_{n+a_{t}+1}-\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in T}f_{\left(
+n+1\right)  +a_{t}}-\sum\limits_{t\in T}f_{n+a_{t}}%
+\]
+and%
+\[
+\sum\limits_{s\in S}f_{\left(  n-1\right)  +s}=\sum\limits_{s\in
+S}\underbrace{f_{n+s-1}}_{=f_{n+s+1}-f_{n+s}}=\sum\limits_{s\in S}%
+f_{n+s+1}-\sum\limits_{s\in S}f_{n+s}=\sum\limits_{s\in S}f_{\left(
+n+1\right)  +s}-\sum\limits_{s\in S}f_{n+s}%
+\]
+), so it only remains to prove Assertion 1.
+
+So let us prove Assertion 1. We have $\sum\limits_{t\in T}f_{n+a_{t}}%
+=\sum\limits_{s\in S}f_{n+s}$, so that $\sum\limits_{t\in T}f_{n+a_{t}}%
+-\sum\limits_{s\in S}f_{n+s}=0$. Thus,%
+\begin{align*}
+\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum\limits_{s\in
+S}f_{\left(  n+1\right)  +s}  &  =\sum\limits_{t\in T}f_{\left(  n+1\right)
++a_{t}}-\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}-\phi\left(
+\sum\limits_{t\in T}f_{n+a_{t}}-\sum\limits_{s\in S}f_{n+s}\right) \\
+&  =\sum\limits_{t\in T}\left(  f_{n+a_{t}+1}-\phi f_{n+a_{t}}\right)
+-\sum\limits_{s\in S}\left(  f_{n+s+1}-\phi f_{n+s}\right)  ,
+\end{align*}
+so that%
+\begin{align}
+&  \left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}%
+-\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert =\left\vert
+\sum\limits_{t\in T}\left(  f_{n+a_{t}+1}-\phi f_{n+a_{t}}\right)
+-\sum\limits_{s\in S}\left(  f_{n+s+1}-\phi f_{n+s}\right)  \right\vert
+\nonumber\\
+&  \leq\sum\limits_{t\in T}\left\vert f_{n+a_{t}+1}-\phi f_{n+a_{t}%
+}\right\vert +\sum\limits_{s\in S}\left\vert f_{n+s+1}-\phi f_{n+s}\right\vert
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the triangle inequality}\right)
+\nonumber\\
+&  =\sum\limits_{t\in T}\left(  \phi-1\right)  ^{n+a_{t}}+\sum\limits_{s\in
+S}\left(  \phi-1\right)  ^{n+s}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem
+2}\right) \nonumber\\
+&  \leq\sum\limits_{t\in T}\left(  \phi-1\right)  ^{N+a_{t}}+\sum\limits_{s\in
+S}\left(  \phi-1\right)  ^{N+s}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\left(  \phi-1\right)  ^{n+a_{t}}\leq\left(  \phi-1\right)
+^{N+a_{t}}\text{ and}\\
+\left(  \phi-1\right)  ^{n+s}\leq\left(  \phi-1\right)  ^{N+s}\text{,
+because}\\
+n\geq N\text{ and }0\leq\phi-1\leq1
+\end{array}
+\right) \nonumber\\
+&  =\sum\limits_{t\in T}\left(  \phi-1\right)  ^{N+a_{t}}+\sum\limits_{t\in
+Z_{\nu}}\left(  \phi-1\right)  ^{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}S=\left\{  t-N\ \mid\ t\in Z_{\nu}\right\}  \right) \nonumber\\
+&  =\sum\limits_{t\in T}\left(  \phi-1\right)  ^{N+a_{t}}+\sum\limits_{s\in
+Z_{\nu}}\left(  \phi-1\right)  ^{s}=\left(  \phi-1\right)  ^{N}\sum
+\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}}+\sum\limits_{s\in Z_{\nu}%
+}\left(  \phi-1\right)  ^{s}\nonumber\\
+&  \leq\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)
+^{a_{t}}+\left(  \phi-1\right)  \label{Estimate}%
+\end{align}
+(since $\sum\limits_{s\in Z_{\nu}}\left(  \phi-1\right)  ^{s}\leq\phi-1$ by
+Theorem 3, because $Z_{\nu}$ is a holey subset of $\mathbb{N}_{2}$).
+
+Now, $\sum\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}}$ is a constant,
+while $\left(  \phi-1\right)  ^{N}\rightarrow0$ for $N\rightarrow\infty$.
+Hence, we can make the product $\left(  \phi-1\right)  ^{N}\sum\limits_{t\in
+T}\left(  \phi-1\right)  ^{a_{t}}$ arbitrarily close to $0$ if we choose $N$
+big enough. Since $\phi-1<1$, we have%
+\begin{equation}
+\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}%
+}+\left(  \phi-1\right)  <1 \label{BoundWIN}%
+\end{equation}
+if $\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)
+^{a_{t}}$ is sufficiently close to $0$, what we can enforce by taking a high
+enough $N$.
+
+So let us take $N$ high enough so that (\ref{BoundWIN}) holds. Combined with
+(\ref{Estimate}), it then yields%
+\[
+\left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum
+\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert <1,
+\]
+which leads to $\left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}%
+}-\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert =0$ (since
+$\left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum
+\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert $ is a nonnegative
+integer). In other words, $\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}%
+}=\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}$. This completes the proof of
+Assertion 1, and, with it, the solution of the problem.
+
+\begin{center}
+\textbf{References}
+\end{center}
+
+[1] Philip Matchett Wood, Doron Zeilberger, \textit{A translation method for
+finding combinatorial bijections}, to appear in Annals of
+Combinatorics.\newline\texttt{http://www.math.rutgers.edu/\symbol{126}%
+zeilberg/mamarim/mamarimhtml/trans-method.html}
+
+
+\end{document}
