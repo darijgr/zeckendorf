@@ -222,8 +222,7 @@ Our main theorem is the following:
 set, and $a_{t}$ be an integer for every $t\in T$.
 
 Then, there exists one and only one finite lacunar subset $S$ of $\mathbb{Z}$
-such that\footnote{Here and in the following, $\max\varnothing$ is understood
-to be $0$.}
+such that\footnotemark%
 \[
 \left(
 \begin{array}
@@ -238,10 +237,24 @@ to be $0$.}
 
 \end{theorem}
 
+\footnotetext{Here and in the following, $\max\varnothing$ is understood
+to be $0$.}
+
 \begin{remark}
 \textbf{1)} Theorem~\ref{thm.1} generalizes the so-called \textit{Zeckendorf
 family identities} (which correspond to the case when all $a_{t}$ are $=0$),
-which were discussed in \cite{1}.\footnote{The first seven of these identities
+which were discussed in \cite{1}.\footnotemark
+
+\textbf{2)} The condition $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} is just
+a technical condition made in order to ensure that the Fibonacci numbers
+$f_{n+a_{t}}$ for all $t\in T$ and $f_{n+s}$ for all $s\in S$ are
+well-defined. (If we would define the Fibonacci numbers $f_{n}$ for integers
+$n\leq0$ by extending the recurrence relation $f_{n}=f_{n-1}+f_{n-2}$ ``to the
+left'', then we could drop this condition.)
+\end{remark}
+
+\footnotetext{The first seven of these identities
 are%
 \begin{align*}
 1f_{n}  &  =f_{n}\text{ for all }n\geq1;\\
@@ -253,15 +266,6 @@ are%
 7f_{n}  &  =f_{n-4}+f_{n+4}\text{ for all }n\geq5.
 \end{align*}
 }
-
-\textbf{2)} The condition $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
-\cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} is just
-a technical condition made in order to ensure that the Fibonacci numbers
-$f_{n+a_{t}}$ for all $t\in T$ and $f_{n+s}$ for all $s\in S$ are
-well-defined. (If we would define the Fibonacci numbers $f_{n}$ for integers
-$n\leq0$ by extending the recurrence relation $f_{n}=f_{n-1}+f_{n-2}$ ``to the
-left'', then we could drop this condition.)
-\end{remark}
 
 The proof we shall give for Theorem~\ref{thm.1} is not combinatorial.
 It will use inequalities and the properties of the golden ratio; in a sense,
