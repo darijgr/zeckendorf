@@ -14,7 +14,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 20:47:07}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 20:47:52}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -185,8 +185,6 @@ to be $0$.}
 \end{array}
 \right)  .
 \]
-
-
 
 \end{quote}
 
@@ -957,10 +955,11 @@ S\right\}  +2,
 \]
 we have $n-2\geq\max\left\{  -s\mid s\in S\right\}  $, and thus $n-2\geq-s$
 for every $s\in S$. Hence, every $s\in S$ satisfies $n-2+s\geq0$, which
-rewrites as $s+n\geq2$. Equivalently, $s+n\in\mathbb{N}_{2}$. Thus,%
+rewrites as $s+n\geq2$. Equivalently, $s+n\in\mathbb{N}_{2}$. Thus, we have
+shown that $s+n\in\mathbb{N}_{2}$ for each $s\in S$. In other words, $\left\{
+s+n\ \mid\ s\in S\right\}  \subseteq\mathbb{N}_{2}$. Hence,
 \[
-S+n=\left\{  \underbrace{s+n}_{\in\mathbb{N}_{2}}\ \mid\ s\in S\right\}
-\subseteq\mathbb{N}_{2}.
+S+n=\left\{  s+n\ \mid\ s\in S\right\}  \subseteq\mathbb{N}_{2}.
 \]
 }. In other words, $S+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
 Similarly, $S^{\prime}+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
@@ -970,9 +969,9 @@ Applying Lemma 4 to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in T}f_{n+a_{t}%
 $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$).
 Hence,%
 \begin{align*}
-S  &  =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
+S &  =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
 n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
-}+n}+\left(  -n\right) \\
+}+n}+\left(  -n\right)  \\
 &  =\left(  S^{\prime}+n\right)  +\left(  -n\right)  =S^{\prime}%
 +\underbrace{\left(  n+\left(  -n\right)  \right)  }_{=0}=S^{\prime
 }+0=S^{\prime}.
