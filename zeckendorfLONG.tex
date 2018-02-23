@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 09:39:54}
+%TCIDATA{LastRevised=Friday, February 23, 2018 10:10:57}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -341,13 +341,14 @@ Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots
 ,s_{k}\right\}  $, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{t\in
 S}f_{t}=\sum\limits_{i=1}^{k}f_{s_{i}}$ and $s_{k}=\max S$.
 
-Notice that $k\geq1$ (since $S$ is nonempty). From $s_{1}\in S\subseteq
-\mathbb{N}_{2}$, we obtain $s_{1}\geq2$ and thus $s_{1}-1\geq1$. Hence,
-$f_{s_{1}-1}>0$.
+Notice that $k\geq1$ (since $S$ is nonempty). From $s_{1}\in\left\{
+s_{1},s_{2},\ldots,s_{k}\right\}  =S\subseteq\mathbb{N}_{2}$, we obtain
+$s_{1}\geq2$ and thus $s_{1}-1\geq1$. Hence, $f_{s_{1}-1}>0$.
 
 On the other hand, every $i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies
 $s_{i}+1\leq s_{i+1}-1$\ \ \ \ \footnote{\textit{Proof.} Let $i\in\left\{
-1,2,\ldots,k-1\right\}  $.
+1,2,\ldots,k-1\right\}  $. Thus, both $i$ and $i+1$ belong to $\left\{
+1,2,\ldots,k\right\}  $.
 \par
 The set $S$ is lacunar, and thus $s+1\notin S$ for every $s\in S$. Applying
 this to $s=s_{i}$, we get $s_{i}+1\notin S$ (since $s_{i}\in\left\{
@@ -357,9 +358,12 @@ $s_{i+1}\in\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  =S$).
 Since $s_{1}<s_{2}<\cdots<s_{k}$, we have $s_{i}<s_{i+1}$, so that
 $s_{i}+1\leq s_{i+1}$ (because $s_{i}$ and $s_{i+1}$ are integers). Since
 $s_{i}+1\neq s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+1\leq
-s_{i+1}-1$ (because $s_{i}$ and $s_{i+1}$ are integers).}, so that
-$f_{s_{i}+1}\leq f_{s_{i+1}-1}$ (since the Fibonacci sequence $\left(
-f_{1},f_{2},f_{3},\ldots\right)  $ is weakly increasing). Thus,%
+s_{i+1}-1$ (because $s_{i}+1$ and $s_{i+1}$ are integers).}, so that
+\begin{equation}
+f_{s_{i}+1}\leq f_{s_{i+1}-1} \label{pf.lem.2.leq}%
+\end{equation}
+(since the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is
+weakly increasing). Thus,%
 \begin{align*}
 \sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}\underbrace{f_{s_{i}}%
 }_{\substack{=f_{s_{i}+1}-f_{s_{i}-1}\\\text{(by (\ref{pf.lem.2.rec-}),
@@ -368,9 +372,9 @@ applied to }t=s_{i}\text{)}}}=\sum\limits_{i=1}^{k}\left(  f_{s_{i}%
 _{=\sum\limits_{i=1}^{k-1}f_{s_{i}+1}+f_{s_{k}+1}}-\underbrace{\sum
 \limits_{i=1}^{k}f_{s_{i}-1}}_{=f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}%
 }\\
-&  =\left(  \sum\limits_{i=1}^{k-1}\underbrace{f_{s_{i}+1}}_{\leq
-f_{s_{i+1}-1}}+f_{s_{k}+1}\right)  -\left(  f_{s_{1}-1}+\sum\limits_{i=2}%
-^{k}f_{s_{i}-1}\right) \\
+&  =\left(  \sum\limits_{i=1}^{k-1}\underbrace{f_{s_{i}+1}}_{\substack{\leq
+f_{s_{i+1}-1}\\\text{(by (\ref{pf.lem.2.leq}))}}}+f_{s_{k}+1}\right)  -\left(
+f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 &  \leq\left(  \sum\limits_{i=1}^{k-1}f_{s_{i+1}-1}+f_{s_{k}+1}\right)
 -\left(  f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 &  =\left(  \sum\limits_{i=2}^{k}f_{s_{i}-1}+f_{s_{k}+1}\right)  -\left(
@@ -403,12 +407,12 @@ induction base is completed.
 that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$. We must
 now prove that Lemma~\ref{lem.3} holds for $n=\nu$.
 
-We have $\nu>0$, so that $\nu\geq1$ (since $\nu$ is an integer). Thus,
-$f_{2}=1\leq\nu$.
+In fact, we have $\nu>0$, so that $\nu\geq1$ (since $\nu$ is an integer).
+Thus, $f_{2}=1\leq\nu$.
 
-In fact, let $t_{1}$ be the maximal integer $\tau$ from $\mathbb{N}_{2}$
-satisfying $f_{\tau}\leq\nu$\ \ \ \ \footnote{Such an integer $t_{1}$ exists,
-because of the following:
+Let $t_{1}$ be the maximal integer $\tau$ from $\mathbb{N}_{2}$ satisfying
+$f_{\tau}\leq\nu$\ \ \ \ \footnote{Such an integer $t_{1}$ exists, because of
+the following:
 \par
 The Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is strictly
 increasing beginning with $f_{2}$ and therefore unbounded from above (because
@@ -425,7 +429,7 @@ there exists a \textbf{maximal integer} $\tau$ from $\mathbb{N}_{2}$
 satisfying $f_{\tau}\leq\nu$ (because we have already shown that there are
 \textbf{only finitely many} integers $\tau$ from $\mathbb{N}_{2}$ satisfying
 $f_{\tau}\leq\nu$). This is what we wanted to prove.}. Then, $f_{t_{1}}\leq
-\nu$ but $f_{t_{1}+1}>\nu$ (since $t_{1}$ is maximal). Then, $\nu-f_{t_{1}}$
+\nu$ but $f_{t_{1}+1}>\nu$ (since $t_{1}$ is maximal). Hence, $\nu-f_{t_{1}}$
 is a nonnegative integer (since $f_{t_{1}}\leq\nu$) and $<\nu$ (since
 $f_{t_{1}}>0$). Thus, Lemma~\ref{lem.3} holds for $n=\nu-f_{t_{1}}$ (since we
 assumed that Lemma~\ref{lem.3} holds for every nonnegative integer $n<\nu$).
@@ -563,7 +567,10 @@ T}f_{t}$ (according to Lemma~\ref{lem.3}), and such a subset is unique
 proves Theorem~\ref{thm.5}.
 \end{proof}
 
-Several books should have this and similar proofs of Theorem~\ref{thm.5}.
+Theorem~\ref{thm.5} is a classical result known as the \textit{Zeckendorf
+theorem}; it can be found in various place. In particular, the proof given in
+\cite{Hender16} is rather close to ours. Hoggatt proved a generalization of
+Theorem~\ref{thm.5} in \cite{Hoggat72}.
 
 \section{Inequalities for the golden ratio}
 
@@ -1139,6 +1146,13 @@ identities generalized},
 \url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfBRIEF.pdf}\newline Also
 available as \href{https://arxiv.org/abs/1103.4507v2}{arXiv preprint
 arXiv:1103.4507v2}.
+
+\bibitem[Hender16]{Hender16}Nik Henderson, \textit{What is Zeckendorf's
+Theorem?}, 23 July 2016.\newline\url{https://math.osu.edu/sites/math.osu.edu/files/henderson_zeckendorf.pdf}
+
+\bibitem[Hoggat72]{Hoggat72}V. E. Hoggatt, Jr., \textit{Generalized Zeckendorf
+theorem}, The Fibonacci Quarterly \textbf{10} (1972), Issue 1, pp.
+89--94.\newline\url{https://www.fq.math.ca/Scanned/10-1/hoggatt2.pdf}
 
 \bibitem[Vorobi02]{Vorobi02}Nicolai N. Vorobiev, \textit{Fibonacci numbers},
 translated from the Russian by Mircea Martin, Springer 2002.
