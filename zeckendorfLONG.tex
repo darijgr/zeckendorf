@@ -389,8 +389,8 @@ f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
 \end{proof}
 
 \begin{lemma}
-[existence part of the Zeckendorf theorem]\label{lem.3} For every nonnegative
-integer $n$, there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
+[existence part of the Zeckendorf theorem]\label{lem.3} Let $n \in \mathbb{N}$.
+Then, there exists a finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
 that $n=\sum\limits_{t\in T}f_{t}$.
 \end{lemma}
 
@@ -582,7 +582,9 @@ $\mathbb{Z}$
 is lacunar (since every subset of a lacunar subset of $\mathbb{Z}$ is lacunar).
 Thus, $S$ is a finite lacunar subset of $\mathbb{N}_2$.
 Similarly,
-$S^{\prime}$ is a finite lacunar subset of $\mathbb{N}_{2}$. Now,%
+$S^{\prime}$ is a finite lacunar subset of $\mathbb{N}_{2}$.
+Obviously, $\sum\limits_{t\in S}f_{t} \geq 0$ (since all $f_t$ are nonnegative).
+Now,%
 \begin{align*}
 \nu-f_{\mu}  &  =\sum\limits_{t\in T}f_{t}-f_{\mu}=\sum\limits_{t\in
 T\setminus\left\{  \mu\right\}  }f_{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
@@ -591,8 +593,8 @@ T\setminus\left\{  \mu\right\}  }f_{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
 \end{align*}
 (since $T\setminus\left\{  \mu\right\}  =S$) and similarly $\nu-f_{\mu}%
 =\sum\limits_{t\in S^{\prime}}f_{t}$. Since $\nu-f_{\mu}$ is a nonnegative
-integer (because $\nu-f_{\mu}=\sum\limits_{t\in S^{\prime}}f_{t}$, and since
-all $f_{t}$ are nonnegative) and satisfies $\nu-f_{\mu}<\nu$ (because $f_{\mu
+integer (because $\nu-f_{\mu}=\sum\limits_{t\in S}f_{t} \geq 0$)
+and satisfies $\nu-f_{\mu}<\nu$ (because $f_{\mu
 }> 0$), we can thus apply Lemma~\ref{lem.4} to $\nu-f_{\mu}$ instead of $n$
 and to the lacunar subsets $S$ and $S^{\prime}$ instead of $T$ and $T^{\prime
 }$ (since we assumed that Lemma~\ref{lem.4} holds for every nonnegative
@@ -606,7 +608,7 @@ of Lemma~\ref{lem.4} is done.
 \end{proof}
 
 \begin{theorem}
-[Zeckendorf theorem]\label{thm.5} For every nonnegative integer $n$, there
+[Zeckendorf theorem]\label{thm.5} Let $n \in \mathbb{N}$. Then, there
 exists one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such
 that $n=\sum\limits_{t\in T}f_{t}$.
 
@@ -615,15 +617,17 @@ f_{t}$.
 \end{theorem}
 
 \begin{proof}
-[Proof of Theorem~\ref{thm.5}.]Fix some $n\in\mathbb{N}$. Then, there exists a
+[Proof of Theorem~\ref{thm.5}.]There exists a
 finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in
 T}f_{t}$ (according to Lemma~\ref{lem.3}), and such a subset is unique
-(because any two such subsets are equal, according to Lemma~\ref{lem.4}). This
-proves Theorem~\ref{thm.5}.
+(because any two such subsets are equal (according to Lemma~\ref{lem.4})).
+Thus, there exists \textbf{one and only one} finite lacunar subset $T$ of
+$\mathbb{N}_{2}$ such that $n=\sum\limits_{t\in T}f_{t}$.
+This proves Theorem~\ref{thm.5}.
 \end{proof}
 
 Theorem~\ref{thm.5} is a classical result known as the \textit{Zeckendorf
-theorem}; it can be found in various place. In particular, the proof given in
+theorem}; it can be found in various places. In particular, the proof given in
 \cite{Hender16} is rather close to ours. Hoggatt proved a generalization of
 Theorem~\ref{thm.5} in \cite{Hoggat72}.
 
@@ -645,6 +649,8 @@ proof of it here.
 \begin{proof}
 [Proof of Theorem~\ref{thm.6}.]It is easy to see that $\phi^{-1}=\phi-1$ and
 $1-\phi^{-2}=\phi-1$.
+Also, $\left(\phi-1\right)^n \geq 0$ (since $\phi-1 \geq 0$) and thus
+$\dfrac{1}{\sqrt{5}} \left(\phi-1\right)^n \geq 0$.
 
 Let $n\in\mathbb{N}_{2}$. By Binet's formula, we have%
 \[
