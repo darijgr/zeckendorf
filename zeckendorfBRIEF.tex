@@ -1,11 +1,20 @@
-\documentclass[12pt,final,notitlepage,onecolumn]{article}%
-\usepackage{amsfonts}
+\documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage]{scrartcl}%
+\usepackage[headsepline,footsepline,manualmark]{scrlayer-scrpage}
+\usepackage[all,cmtip]{xy}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{framed}
+\usepackage{comment}
+\usepackage{color}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{needspace}
+\usepackage{tabls}
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 20:20:12}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 20:41:34}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13,10 +22,87 @@
 %BeginMSIPreambleData
 \providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
 %EndMSIPreambleData
-\voffset=-2.5cm
-\hoffset=-2.5cm
-\setlength\textheight{24cm}
+\newcounter{exer}
+\newcounter{exera}
+\numberwithin{exer}{section}
+\theoremstyle{definition}
+\newtheorem{theo}{Theorem}[section]
+\newenvironment{theorem}[1][]
+{\begin{theo}[#1]\begin{leftbar}}
+{\end{leftbar}\end{theo}}
+\newtheorem{lem}[theo]{Lemma}
+\newenvironment{lemma}[1][]
+{\begin{lem}[#1]\begin{leftbar}}
+{\end{leftbar}\end{lem}}
+\newtheorem{prop}[theo]{Proposition}
+\newenvironment{proposition}[1][]
+{\begin{prop}[#1]\begin{leftbar}}
+{\end{leftbar}\end{prop}}
+\newtheorem{defi}[theo]{Definition}
+\newenvironment{definition}[1][]
+{\begin{defi}[#1]\begin{leftbar}}
+{\end{leftbar}\end{defi}}
+\newtheorem{remk}[theo]{Remark}
+\newenvironment{remark}[1][]
+{\begin{remk}[#1]\begin{leftbar}}
+{\end{leftbar}\end{remk}}
+\newtheorem{coro}[theo]{Corollary}
+\newenvironment{corollary}[1][]
+{\begin{coro}[#1]\begin{leftbar}}
+{\end{leftbar}\end{coro}}
+\newtheorem{conv}[theo]{Convention}
+\newenvironment{condition}[1][]
+{\begin{conv}[#1]\begin{leftbar}}
+{\end{leftbar}\end{conv}}
+\newtheorem{quest}[theo]{Question}
+\newenvironment{algorithm}[1][]
+{\begin{quest}[#1]\begin{leftbar}}
+{\end{leftbar}\end{quest}}
+\newtheorem{warn}[theo]{Warning}
+\newenvironment{conclusion}[1][]
+{\begin{warn}[#1]\begin{leftbar}}
+{\end{leftbar}\end{warn}}
+\newtheorem{conj}[theo]{Conjecture}
+\newenvironment{conjecture}[1][]
+{\begin{conj}[#1]\begin{leftbar}}
+{\end{leftbar}\end{conj}}
+\newtheorem{exam}[theo]{Example}
+\newenvironment{example}[1][]
+{\begin{exam}[#1]\begin{leftbar}}
+{\end{leftbar}\end{exam}}
+\newtheorem{exmp}[exer]{Exercise}
+\newenvironment{exercise}[1][]
+{\begin{exmp}[#1]\begin{leftbar}}
+{\end{leftbar}\end{exmp}}
+\newenvironment{statement}{\begin{quote}}{\end{quote}}
+\iffalse
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\fi
+\let\sumnonlimits\sum
+\let\prodnonlimits\prod
+\let\cupnonlimits\bigcup
+\let\capnonlimits\bigcap
+\renewcommand{\sum}{\sumnonlimits\limits}
+\renewcommand{\prod}{\prodnonlimits\limits}
+\renewcommand{\bigcup}{\cupnonlimits\limits}
+\renewcommand{\bigcap}{\capnonlimits\limits}
+\setlength\tablinesep{3pt}
+\setlength\arraylinesep{3pt}
+\setlength\extrarulesep{3pt}
+\voffset=0cm
+\hoffset=-0.7cm
+\setlength\textheight{22.5cm}
 \setlength\textwidth{15.5cm}
+\newenvironment{verlong}{}{}
+\newenvironment{vershort}{}{}
+\newenvironment{noncompile}{}{}
+\excludecomment{verlong}
+\includecomment{vershort}
+\excludecomment{noncompile}
+\newcommand{\id}{\operatorname{id}}
+\ihead{Zeckendorf family identities generalized}
+\ohead{page \thepage}
+\cfoot{}
 \begin{document}
 
 \title{Zeckendorf family identities generalized}
@@ -56,20 +142,16 @@ would be interesting to find a purely combinatorial proof.
 %NOT proofreading completed
 
 
-%
-
-\begin{tabular}
-[c]{||l||}\hline\hline
+\begin{statement}
 This is a brief version of my text [2]. For more detailed proofs, see [2] (but
-beware that [2] is\\
-sometimes over-precise and very boring).\\
-This note has never been proofread by myself or anyone else. If you find any
-mistakes or typos,\\
-please inform me at $\Delta\Gamma$\texttt{@gmail.com} where $\Delta
-=$\texttt{darij }and $\Gamma=$\texttt{grinberg}\\
-Thank you!\\\hline\hline
-\end{tabular}
+beware that [2] is sometimes over-precise and very boring).
 
+This note has never been proofread by myself or anyone else. If you find any
+mistakes or typos, please inform me at $\Delta\Gamma$\texttt{@gmail.com} where
+$\Delta=$\texttt{darij }and $\Gamma=$\texttt{grinberg} Thank you!
+\end{statement}
+
+\hrule
 
 \bigskip
 
@@ -97,10 +179,18 @@ Then, there exists one and only one finite lacunar subset $S$ of $\mathbb{Z}$
 such that\footnote{Here and in the following, $\max\varnothing$ is understood
 to be $0$.}
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
-every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
-t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)  .
 \]
+
+
 
 \end{quote}
 
@@ -240,9 +330,15 @@ $t\in T$.
 
 Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
-every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
-t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)  .
 \]
 
 
@@ -284,12 +380,12 @@ $S$. And, in fact, different $N$'s \textit{can} produce different sets $S$,
 but (fortunately!) only if the $N$'s are too small. If we take $N$ high
 enough, the set $S$ that we obtained turns out to be \textit{universal}, i. e.
 it satisfies
-\begin{equation}
-\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}%
-\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which satisfies
-}n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
-S\right\}  \right)  . \label{BigLemma}%
-\end{equation}
+\begin{align}
+\sum\limits_{t\in T}f_{n+a_{t}}  & =\sum\limits_{s\in S}f_{n+s}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\nonumber\\
+\text{satisfies }n  & >\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)  .\label{BigLemma}%
+\end{align}
 We are now going to prove this.
 
 In order to prove (\ref{BigLemma}), we need two assertions:
@@ -421,16 +517,27 @@ $t\in T$.
 
 Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
-every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
-t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)  .
 \]
 Let $S^{\prime}$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S^{\prime}}%
-f_{n+s}\text{ for every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(
-\left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S^{\prime
-}\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S^{\prime}}f_{n+s}\text{ for
+every }n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)
+\end{array}
+\right)  .
 \]
 Then, $S=S^{\prime}$.
 \end{quote}

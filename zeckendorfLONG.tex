@@ -1,11 +1,20 @@
-\documentclass[12pt,final,notitlepage,onecolumn]{article}%
-\usepackage{amsfonts}
+\documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage]{scrartcl}%
+\usepackage[headsepline,footsepline,manualmark]{scrlayer-scrpage}
+\usepackage[all,cmtip]{xy}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{framed}
+\usepackage{comment}
+\usepackage{color}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{needspace}
+\usepackage{tabls}
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, February 22, 2018 20:20:23}
+%TCIDATA{LastRevised=Thursday, February 22, 2018 20:39:49}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13,10 +22,87 @@
 %BeginMSIPreambleData
 \providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
 %EndMSIPreambleData
-\voffset=-2.5cm
-\hoffset=-2.5cm
-\setlength\textheight{24cm}
+\newcounter{exer}
+\newcounter{exera}
+\numberwithin{exer}{section}
+\theoremstyle{definition}
+\newtheorem{theo}{Theorem}[section]
+\newenvironment{theorem}[1][]
+{\begin{theo}[#1]\begin{leftbar}}
+{\end{leftbar}\end{theo}}
+\newtheorem{lem}[theo]{Lemma}
+\newenvironment{lemma}[1][]
+{\begin{lem}[#1]\begin{leftbar}}
+{\end{leftbar}\end{lem}}
+\newtheorem{prop}[theo]{Proposition}
+\newenvironment{proposition}[1][]
+{\begin{prop}[#1]\begin{leftbar}}
+{\end{leftbar}\end{prop}}
+\newtheorem{defi}[theo]{Definition}
+\newenvironment{definition}[1][]
+{\begin{defi}[#1]\begin{leftbar}}
+{\end{leftbar}\end{defi}}
+\newtheorem{remk}[theo]{Remark}
+\newenvironment{remark}[1][]
+{\begin{remk}[#1]\begin{leftbar}}
+{\end{leftbar}\end{remk}}
+\newtheorem{coro}[theo]{Corollary}
+\newenvironment{corollary}[1][]
+{\begin{coro}[#1]\begin{leftbar}}
+{\end{leftbar}\end{coro}}
+\newtheorem{conv}[theo]{Convention}
+\newenvironment{condition}[1][]
+{\begin{conv}[#1]\begin{leftbar}}
+{\end{leftbar}\end{conv}}
+\newtheorem{quest}[theo]{Question}
+\newenvironment{algorithm}[1][]
+{\begin{quest}[#1]\begin{leftbar}}
+{\end{leftbar}\end{quest}}
+\newtheorem{warn}[theo]{Warning}
+\newenvironment{conclusion}[1][]
+{\begin{warn}[#1]\begin{leftbar}}
+{\end{leftbar}\end{warn}}
+\newtheorem{conj}[theo]{Conjecture}
+\newenvironment{conjecture}[1][]
+{\begin{conj}[#1]\begin{leftbar}}
+{\end{leftbar}\end{conj}}
+\newtheorem{exam}[theo]{Example}
+\newenvironment{example}[1][]
+{\begin{exam}[#1]\begin{leftbar}}
+{\end{leftbar}\end{exam}}
+\newtheorem{exmp}[exer]{Exercise}
+\newenvironment{exercise}[1][]
+{\begin{exmp}[#1]\begin{leftbar}}
+{\end{leftbar}\end{exmp}}
+\newenvironment{statement}{\begin{quote}}{\end{quote}}
+\iffalse
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\fi
+\let\sumnonlimits\sum
+\let\prodnonlimits\prod
+\let\cupnonlimits\bigcup
+\let\capnonlimits\bigcap
+\renewcommand{\sum}{\sumnonlimits\limits}
+\renewcommand{\prod}{\prodnonlimits\limits}
+\renewcommand{\bigcup}{\cupnonlimits\limits}
+\renewcommand{\bigcap}{\capnonlimits\limits}
+\setlength\tablinesep{3pt}
+\setlength\arraylinesep{3pt}
+\setlength\extrarulesep{3pt}
+\voffset=0cm
+\hoffset=-0.7cm
+\setlength\textheight{22.5cm}
 \setlength\textwidth{15.5cm}
+\newenvironment{verlong}{}{}
+\newenvironment{vershort}{}{}
+\newenvironment{noncompile}{}{}
+\excludecomment{verlong}
+\includecomment{vershort}
+\excludecomment{noncompile}
+\newcommand{\id}{\operatorname{id}}
+\ihead{Zeckendorf family identities generalized}
+\ohead{page \thepage}
+\cfoot{}
 \begin{document}
 
 \title{Zeckendorf family identities generalized}
@@ -56,22 +142,20 @@ would be interesting to find a purely combinatorial proof.
 %NOT proofreading completed
 
 
-%
-
-\begin{tabular}
-[c]{||l||}\hline\hline
-This is a detailed version of my text [2]. It contains the proof outlined in
-[2] in much more detail and\\
-was written for the purpose of persuading myself that my proofs are correct.\\
-This note has never been proofread by myself or anyone else. If you find any
-mistakes or typos,\\
-please inform me at $\Delta\Gamma$\texttt{@gmail.com} where $\Delta
-=$\texttt{darij }and $\Gamma=$\texttt{grinberg}\\
-Thank you!\\\hline\hline
-\end{tabular}
-
-
 \bigskip
+
+\begin{statement}
+This is a detailed version of my text [2]. It contains the proof outlined in
+[2] in much more detail and was written for the purpose of persuading myself
+that my proofs are correct.
+
+This note has never been proofread by myself or anyone else. If you find any
+mistakes or typos, please inform me at $\Delta\Gamma$\texttt{@gmail.com} where
+$\Delta=$\texttt{darij }and $\Gamma=$\texttt{grinberg }Thank you!
+\end{statement}
+
+\hrule
+
 
 \begin{quote}
 \textbf{Definitions.} \textbf{1)} A subset $S$ of $\mathbb{Z}$ is called
@@ -90,9 +174,15 @@ Then, there exists one and only one finite lacunar subset $S$ of $\mathbb{Z}$
 such that\footnote{Here and in the following, $\max\varnothing$ is understood
 to be $0$.}
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
-every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
-t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)  .
 \]
 
 
@@ -182,31 +272,31 @@ s_{i+1}$, this becomes $s_{i}+1<s_{i+1}$, so that $s_{i}+2\leq s_{i+1}$
 s_{i+1}-1$, so that $f_{s_{i}+1}\leq f_{s_{i+1}-1}$ (since the Fibonacci
 sequence $\left(  f_{1},f_{2},f_{3},...\right)  $ is weakly increasing). Thus,%
 \begin{align*}
-\sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}f_{s_{i}}=\sum
-\limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right)
-\ \ \ \ \ \ \ \ \ \ \left(
+\sum\limits_{t\in S}f_{t} &  =\sum\limits_{i=1}^{k}f_{s_{i}}=\sum
+\limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{since }f_{s_{i}}=f_{s_{i}+1}-f_{s_{i}-1}\text{ (due to }f_{t}%
 =f_{t+1}-f_{t-1}\text{,}\\
 \text{applied to }t=s_{i}\text{)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}+1}}_{=\sum\limits_{i=1}%
 ^{k-1}f_{s_{i}+1}+f_{s_{k}+1}}-\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}-1}%
 }_{=f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}}\\
 &  =\left(  \sum\limits_{i=1}^{k-1}\underbrace{f_{s_{i}+1}}_{\leq
 f_{s_{i+1}-1}}+f_{s_{k}+1}\right)  -\left(  f_{s_{1}-1}+\sum\limits_{i=2}%
-^{k}f_{s_{i}-1}\right)  \leq\left(  \sum\limits_{i=1}^{k-1}f_{s_{i+1}%
--1}+f_{s_{k}+1}\right)  -\left(  f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}%
--1}\right) \\
+^{k}f_{s_{i}-1}\right)  \\
+&  \leq\left(  \sum\limits_{i=1}^{k-1}f_{s_{i+1}-1}+f_{s_{k}+1}\right)
+-\left(  f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right)  \\
 &  =\left(  \sum\limits_{i=2}^{k}f_{s_{i}-1}+f_{s_{k}+1}\right)  -\left(
-f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
+f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
-}i+1\text{ in the first sum}\right) \\
-&  =f_{s_{k}+1}-f_{s_{1}-1}<f_{s_{k}+1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}f_{s_{1}-1}>0\text{, because }s_{1}-1>0\text{, since }s_{1}\in S\subseteq
-\mathbb{N}_{2}\right) \\
+}i+1\text{ in the first sum}\right)  \\
+&  =f_{s_{k}+1}-f_{s_{1}-1}<f_{s_{k}+1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f_{s_{1}-1}>0\text{, because
+}s_{1}-1>0\text{, since }s_{1}\in S\subseteq\mathbb{N}_{2}\right)  \\
 &  =f_{\max S+1}%
 \end{align*}
 (since $s_{k}=\max S$). This proves Lemma 2.
@@ -392,27 +482,28 @@ f_{n+1}=\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 \]
 These two equalities yield%
 \begin{align*}
-f_{n+1}-\phi f_{n}  &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
+f_{n+1}-\phi f_{n} &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\underbrace{\phi\cdot\dfrac{1}{\sqrt{5}}\phi^{n}%
-}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right) \\
+}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 }\right)  -\dfrac{1}{\sqrt{5}}\underbrace{\phi\phi^{n}}_{=\phi^{n+1}}\left(
-1-\phi^{-2n}\right) \\
+1-\phi^{-2n}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
-}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right) \\
+}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \underbrace{\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\left(  1-\phi^{-2n}\right)  }_{=\phi^{-2n}%
--\phi^{-2\left(  n+1\right)  }}\right)  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(
-\phi^{-2n}-\underbrace{\phi^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}%
-=\phi^{-2n}\phi^{-2}}\right) \\
+-\phi^{-2\left(  n+1\right)  }}\right)  \\
+&  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\underbrace{\phi
+^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}=\phi^{-2n}\phi^{-2}}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\phi^{-2n}\phi
 ^{-2}\right)  =\dfrac{1}{\sqrt{5}}\underbrace{\phi^{n+1}\phi^{-2n}}%
 _{=\phi^{\left(  n+1\right)  +\left(  -2n\right)  }=\phi^{-\left(  n-1\right)
-}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right) \\
+}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\left(  \underbrace{\phi^{-1}}_{\substack{=\phi-1\text{
 (as can be}\\\text{easily seen)}}}\right)  ^{n-1}\underbrace{\left(
 1-\phi^{-2}\right)  }_{\substack{=\phi-1\text{ (as can be}\\\text{easily
-seen)}}}=\dfrac{1}{\sqrt{5}}\underbrace{\left(  \phi-1\right)  ^{n-1}\left(
+seen)}}}\\
+&  =\dfrac{1}{\sqrt{5}}\underbrace{\left(  \phi-1\right)  ^{n-1}\left(
 \phi-1\right)  }_{=\left(  \phi-1\right)  ^{n}}=\dfrac{1}{\sqrt{5}}\left(
 \phi-1\right)  ^{n},
 \end{align*}
@@ -430,8 +521,6 @@ Yet another lemma:
 \begin{quote}
 \textbf{Theorem 7.} If $S$ is a finite lacunar subset of $\mathbb{N}_{2}$,
 then $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
-
-
 \end{quote}
 
 \textit{Proof of Theorem 7.} Let $\psi=\phi-1$. It is easily seen that
@@ -483,9 +572,15 @@ $t\in T$.
 
 Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
-every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
-t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)  .
 \]
 
 
@@ -613,10 +708,9 @@ so that%
 \nonumber\\
 &  \leq\left\vert \sum\limits_{t\in T}\left(  f_{m+a_{t}+1}-\phi f_{m+a_{t}%
 }\right)  \right\vert +\left\vert \sum\limits_{s\in S}\left(  f_{m+s+1}-\phi
-f_{m+s}\right)  \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by the triangle
-inequality}\right)  . \label{Estimate1}%
+f_{m+s}\right)  \right\vert \label{Estimate1}%
 \end{align}
-
+(by the triangle inequality).
 
 Now, the triangle inequality yields%
 \begin{align*}
@@ -771,12 +865,12 @@ $n=\lambda+s+2$, we obtain $f_{\lambda+s}=\underbrace{f_{\lambda+s+2}%
 }=f_{\lambda+2+s}-f_{\lambda+1+s}$ for every $s\in S$. Thus,%
 \begin{align*}
 \sum\limits_{t\in T}\underbrace{f_{\lambda+a_{t}}}_{=f_{\lambda+2+a_{t}%
-}-f_{\lambda+1+a_{t}}}  &  =\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}%
+}-f_{\lambda+1+a_{t}}} &  =\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}%
 }-f_{\lambda+1+a_{t}}\right)  =\underbrace{\sum\limits_{t\in T}f_{\lambda
 +2+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+2+s}}-\underbrace{\sum
-\limits_{t\in T}f_{\lambda+1+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+1+s}%
-}=\sum\limits_{s\in S}f_{\lambda+2+s}-\sum\limits_{s\in S}f_{\lambda+1+s}\\
-&  =\sum\limits_{s\in S}\underbrace{\left(  f_{\lambda+2+s}-f_{\lambda
+\limits_{t\in T}f_{\lambda+1+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+1+s}}\\
+&  =\sum\limits_{s\in S}f_{\lambda+2+s}-\sum\limits_{s\in S}f_{\lambda
++1+s}=\sum\limits_{s\in S}\underbrace{\left(  f_{\lambda+2+s}-f_{\lambda
 +1+s}\right)  }_{=f_{\lambda+s}}=\sum\limits_{s\in S}f_{\lambda+s}.
 \end{align*}
 In other words, (\ref{main}) holds for $n=\lambda$. This contradicts to our
@@ -799,16 +893,27 @@ $t\in T$.
 
 Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
-every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
-t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)  .
 \]
 Let $S^{\prime}$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S^{\prime}}%
-f_{n+s}\text{ for every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(
-\left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S^{\prime
-}\right\}  \right)  \right)  .
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S^{\prime}}f_{n+s}\text{ for
+every }n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)
+\end{array}
+\right)  .
 \]
 Then, $S=S^{\prime}$.
 \end{quote}
@@ -819,16 +924,16 @@ n=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
 S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.
 \]
 Then,%
-\[
-n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
-S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  \geq
-\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
+\begin{align*}
+n  & >\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
+S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  \\
+& \geq\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
 S\right\}  \right)  ,
-\]
+\end{align*}
 so that%
 \begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma 9}\right) \\
+\sum\limits_{t\in T}f_{n+a_{t}} &  =\sum\limits_{s\in S}f_{n+s}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma 9}\right)  \\
 &  =\sum\limits_{t\in S+n}f_{t}\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -863,21 +968,28 @@ Applying Lemma 4 to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in T}f_{n+a_{t}%
 (because $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S+n}f_{t}$ and
 $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$).
 Hence,%
-\[
-S=S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
+\begin{align*}
+S  & =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
 n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
-}+n}+\left(  -n\right)  =\left(  S^{\prime}+n\right)  +\left(  -n\right)
-=S^{\prime}+\underbrace{\left(  n+\left(  -n\right)  \right)  }_{=0}%
-=S^{\prime}+0=S^{\prime}.
-\]
+}+n}+\left(  -n\right)  \\
+& =\left(  S^{\prime}+n\right)  +\left(  -n\right)  =S^{\prime}%
++\underbrace{\left(  n+\left(  -n\right)  \right)  }_{=0}=S^{\prime
+}+0=S^{\prime}.
+\end{align*}
 This proves Lemma 9.
 
-\textit{Proof of Theorem 1.} Fix some $n\in\mathbb{N}$. Then, there exists a
-finite lacunar subset $S$ of $\mathbb{Z}$ such that
+\textit{Proof of Theorem 1.} Then, there exists a finite lacunar subset $S$ of
+$\mathbb{Z}$ such that
 \[
-\left(  \sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for
-every }n\in\mathbb{Z}\text{ which satisfies }n>\max\left(  \left\{  -a_{t}\mid
-t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  \right)
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)
 \]
 (according to Theorem 8), and such a subset is unique (because any two such
 subsets are equal, according to Lemma 9). This proves Theorem 1.
