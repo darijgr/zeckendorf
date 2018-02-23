@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 17:49:50}
+%TCIDATA{LastRevised=Friday, February 23, 2018 17:53:23}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -691,11 +691,14 @@ $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 \end{lemma}
 
 \begin{proof}
-[Proof of Lemma~\ref{lem.7}.]Let $\psi=\phi-1$. It is easily seen that
-$0<\psi<1$. Also, $\psi=\phi-1$ yields $\psi^{2}=\left(  \phi-1\right)
-^{2}=\underbrace{\phi^{2}}_{=\phi+1}-2\phi+1=\left(  \phi+1\right)
--2\phi+1=2-\phi$ and thus $1-\psi^{2}=1-\left(  2-\phi\right)  =\phi-1=\psi$,
-so that $\dfrac{\psi^{2}}{1-\psi^{2}}=\dfrac{\psi^{2}}{\psi}=\psi$.
+[Proof of Lemma~\ref{lem.7}.]We WLOG assume that $S$ is nonempty (since
+otherwise, Lemma~\ref{lem.7} follows easily from $0\leq\phi-1$).
+
+Let $\psi=\phi-1$. It is easily seen that $0<\psi<1$. Also, $\psi=\phi-1$
+yields $\psi^{2}=\left(  \phi-1\right)  ^{2}=\underbrace{\phi^{2}}_{=\phi
++1}-2\phi+1=\left(  \phi+1\right)  -2\phi+1=2-\phi$ and thus $1-\psi
+^{2}=1-\left(  2-\phi\right)  =\phi-1=\psi$, so that $\dfrac{\psi^{2}}%
+{1-\psi^{2}}=\dfrac{\psi^{2}}{\psi}=\psi$.
 
 Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots
 ,s_{k}\right\}  $, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{s\in
@@ -978,9 +981,9 @@ equation (\ref{main}) holds (as we already know), so that Assertion $\beta$ is
 proved for $n=N$, and thus the induction base is completed.
 
 \textit{Induction step:} Let $m\geq N$ be an integer. Assume that Assertion
-$\alpha$ holds for $n=m$. In other words, the equation (\ref{main}) holds for
+$\beta$ holds for $n=m$. In other words, the equation (\ref{main}) holds for
 $n=m$. Then, Assertion $\alpha$ yields that the equation (\ref{main}) holds
-for $n=m+1$ as well. In other words, Assertion $\alpha$ holds for $n=m+1$ as
+for $n=m+1$ as well. In other words, Assertion $\beta$ holds for $n=m+1$ as
 well. This completes the induction step, and thus Assertion $\beta$ is proven
 by induction over $n$.]
 
