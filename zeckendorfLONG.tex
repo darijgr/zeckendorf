@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 18:16:56}
+%TCIDATA{LastRevised=Friday, February 23, 2018 21:25:16}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -245,7 +245,7 @@ Our main theorem is the following:
 
 \begin{theorem}
 [generalized Zeckendorf family identities]\label{thm.1} Let $T$ be a finite
-set, and $a_{t}$ be an integer for every $t\in T$.
+set, and let $a_{t}$ be an integer for every $t\in T$.
 
 Then, there exists one and only one finite lacunar subset $S$ of $\mathbb{Z}$
 such that\footnotemark%
@@ -698,7 +698,8 @@ Let $\psi=\phi-1$. It is easily seen that $0<\psi<1$. Also, $\psi=\phi-1$
 yields $\psi^{2}=\left(  \phi-1\right)  ^{2}=\underbrace{\phi^{2}}_{=\phi
 +1}-2\phi+1=\left(  \phi+1\right)  -2\phi+1=2-\phi$ and thus $1-\psi
 ^{2}=1-\left(  2-\phi\right)  =\phi-1=\psi$, so that $\dfrac{\psi^{2}}%
-{1-\psi^{2}}=\dfrac{\psi^{2}}{\psi}=\psi$.
+{1-\psi^{2}}=\dfrac{\psi^{2}}{\psi}=\psi$. Also, from $0<\psi<1$, we obtain
+$0<\psi^{2}<1$, so that $1-\psi^{2}>0$.
 
 Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots
 ,s_{k}\right\}  $, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{s\in
@@ -707,35 +708,37 @@ $S$ is nonempty). On the other hand, every $i\in\left\{  1,2,\ldots
 ,k-1\right\}  $ satisfies $s_{i}+1\leq s_{i+1}-1$ (this was proven during the
 proof of Lemma~\ref{lem.2}) and thus $s_{i}+2\leq s_{i+1}$ and therefore%
 \begin{equation}
-\psi^{s_{i}+2}\geq\psi^{s_{i+1}}\label{pf.lem.7.ineq1}%
+\psi^{s_{i}+2}\geq\psi^{s_{i+1}} \label{pf.lem.7.ineq1}%
 \end{equation}
 (since $0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in S\subseteq
 \mathbb{N}_{2}$) and thus $\psi^{s_{1}}\leq\psi^{2}$ (since $0<\psi<1$). Now,
 $\sum\limits_{s\in S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{i}}$ yields%
 \begin{align*}
-\left(  1-\psi^{2}\right)  \sum\limits_{s\in S}\psi^{s} &  =\left(  1-\psi
-^{2}\right)  \sum\limits_{i=1}^{k}\psi^{s_{i}}=\underbrace{\sum\limits_{i=1}%
-^{k}\psi^{s_{i}}}_{=\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}%
-}-\underbrace{\psi^{2}\sum\limits_{i=1}^{k}\psi^{s_{i}}}_{=\sum\limits_{i=1}%
-^{k}\psi^{2}\psi^{s_{i}}=\sum\limits_{i=1}^{k}\psi^{s_{i}+2}=\sum
-\limits_{i=1}^{k-1}\psi^{s_{i}+2}+\psi^{s_{k}+2}}\\
+\left(  1-\psi^{2}\right)  \sum\limits_{s\in S}\psi^{s}  &  =\left(
+1-\psi^{2}\right)  \sum\limits_{i=1}^{k}\psi^{s_{i}}=\underbrace{\sum
+\limits_{i=1}^{k}\psi^{s_{i}}}_{=\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi
+^{s_{i}}}-\underbrace{\psi^{2}\sum\limits_{i=1}^{k}\psi^{s_{i}}}%
+_{=\sum\limits_{i=1}^{k}\psi^{2}\psi^{s_{i}}=\sum\limits_{i=1}^{k}\psi
+^{s_{i}+2}=\sum\limits_{i=1}^{k-1}\psi^{s_{i}+2}+\psi^{s_{k}+2}}\\
 &  =\left(  \psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}\right)  -\left(
 \sum\limits_{i=1}^{k-1}\underbrace{\psi^{s_{i}+2}}_{\substack{\geq
-\psi^{s_{i+1}}\\\text{(by (\ref{pf.lem.7.ineq1}))}}}+\psi^{s_{k}+2}\right)  \\
+\psi^{s_{i+1}}\\\text{(by (\ref{pf.lem.7.ineq1}))}}}+\psi^{s_{k}+2}\right) \\
+&  =\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}-\sum\limits_{i=1}%
+^{k-1}\underbrace{\psi^{s_{i}+2}}_{\substack{\geq\psi^{s_{i+1}}\\\text{(by
+(\ref{pf.lem.7.ineq1}))}}}-\psi^{s_{k}+2}\\
 &  \leq\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}-\sum\limits_{i=1}%
-^{k-1}\psi^{s_{i+1}}-\psi^{s_{k}+2}\\
-&  =\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}-\sum\limits_{i=2}^{k}%
-\psi^{s_{i}}-\psi^{s_{k}+2}\\
+^{k-1}\psi^{s_{i+1}}-\psi^{s_{k}+2}=\psi^{s_{1}}+\sum\limits_{i=2}^{k}%
+\psi^{s_{i}}-\sum\limits_{i=2}^{k}\psi^{s_{i}}-\psi^{s_{k}+2}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
-}i+1\text{ in the second sum}\right)  \\
+}i+1\text{ in the second sum}\right) \\
 &  =\underbrace{\psi^{s_{1}}}_{\leq\psi^{2}}-\underbrace{\psi^{s_{k}+2}}%
 _{\geq0}\leq\psi^{2}-0=\psi^{2}.
 \end{align*}
-Dividing this inequality by $1-\psi^{2}$ (here we are using $1-\psi^{2}>0$,
-which follows from $0<\psi<1$), we get $\sum\limits_{s\in S}\psi^{s}\leq
-\dfrac{\psi^{2}}{1-\psi^{2}}=\psi$. Replacing $\psi$ by $\phi-1$ in this
-inequality (since $\psi=\phi-1$), we rewrite it as $\sum\limits_{s\in
-S}\left(  \phi-1\right)  ^{s}\leq\phi-1$. This proves Lemma~\ref{lem.7}.
+Dividing this inequality by $1-\psi^{2}$ (here we are using $1-\psi^{2}>0$),
+we get $\sum\limits_{s\in S}\psi^{s}\leq\dfrac{\psi^{2}}{1-\psi^{2}}=\psi$.
+Replacing $\psi$ by $\phi-1$ in this inequality (since $\psi=\phi-1$), we
+rewrite it as $\sum\limits_{s\in S}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
+This proves Lemma~\ref{lem.7}.
 \end{proof}
 
 \section{Proving Theorem~\ref{thm.1}}
@@ -745,7 +748,7 @@ existence part of this theorem:
 
 \begin{theorem}
 [existence part of the generalized Zeckendorf family identities]\label{thm.8}
-Let $T$ be a finite set, and $a_{t}$ be an integer for every $t\in T$.
+Let $T$ be a finite set, and let $a_{t}$ be an integer for every $t\in T$.
 
 Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 \[
@@ -765,8 +768,8 @@ Then, there exists a finite lacunar subset $S$ of $\mathbb{Z}$ such that
 Before we start proving this, let us introduce a notation:
 
 \begin{definition}
-Let $K$ be a subset of $\mathbb{Z}$, and $a\in\mathbb{Z}$. Then, $K+a$ will
-denote the subset $\left\{  k+a\ \mid\ k\in K\right\}  $ of $\mathbb{Z}$.
+Let $K$ be a subset of $\mathbb{Z}$, and let $a\in\mathbb{Z}$. Then, $K+a$
+will denote the subset $\left\{  k+a\ \mid\ k\in K\right\}  $ of $\mathbb{Z}$.
 \end{definition}
 
 Clearly, $\left(  K+a\right)  +b=K+\left(  a+b\right)  $ for any two integers
@@ -1079,7 +1082,7 @@ Theorem~\ref{thm.1}:
 
 \begin{lemma}
 [uniqueness part of the generalized Zeckendorf family identities]\label{lem.9}
-Let $T$ be a finite set, and $a_{t}$ be an integer for every $t\in T$.
+Let $T$ be a finite set, and let $a_{t}$ be an integer for every $t\in T$.
 
 Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \[
@@ -1173,8 +1176,8 @@ This proves Lemma~\ref{lem.9}.
 \end{proof}
 
 \begin{proof}
-[Proof of Theorem~\ref{thm.1}.]Then, there exists a finite lacunar subset $S$
-of $\mathbb{Z}$ such that
+[Proof of Theorem~\ref{thm.1}.]There exists a finite lacunar subset $S$ of
+$\mathbb{Z}$ such that
 \[
 \left(
 \begin{array}
@@ -1187,7 +1190,7 @@ of $\mathbb{Z}$ such that
 \right)
 \]
 (according to Theorem~\ref{thm.8}), and such a subset is unique (because any
-two such subsets are equal, according to Lemma~\ref{lem.9}). This proves
+two such subsets are equal (according to Lemma~\ref{lem.9})). This proves
 Theorem~\ref{thm.1}.
 \end{proof}
 
