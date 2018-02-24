@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, February 24, 2018 13:22:19}
+%TCIDATA{LastRevised=Saturday, February 24, 2018 16:57:09}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -190,11 +190,11 @@ In other words, a subset $S$ of $\mathbb{Z}$ is lacunar if and only if it
 contains no two consecutive integers.
 
 \begin{definition}
-\label{def.fib}Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the
-Fibonacci sequence. This is a sequence of positive integers defined
-recursively by the initial values $f_{1}=1$ and $f_{2}=1$ and the recurrence
-relation $\left(  f_{n}=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{
-satisfying }n\geq3\right)  $.
+\label{def.fib}The \textit{Fibonacci sequence} $\left(  f_{1},f_{2}%
+,f_{3},\ldots\right)  $ is a sequence of positive integers defined recursively
+by the initial values $f_{1}=1$ and $f_{2}=1$ and the recurrence relation
+$\left(  f_{n}=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{ satisfying
+}n\geq3\right)  $.
 \end{definition}
 
 (Here and in the following, $\mathbb{N}$ denotes the set $\left\{
@@ -271,12 +271,12 @@ $0$.}
 of applying Theorem~\ref{thm.1} to the case when all $a_{t}$ are $=0$.
 
 \item The condition $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
-\cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} is just
-a technical condition made in order to ensure that the Fibonacci numbers
-$f_{n+a_{t}}$ for all $t\in T$ and $f_{n+s}$ for all $s\in S$ are
-well-defined. (If we would define the Fibonacci numbers $f_{n}$ for integers
-$n\leq0$ by extending the recurrence relation $f_{n}=f_{n-1}+f_{n-2}$ ``to the
-left'', then we could drop this condition.)
+\cup\left\{  -s\mid s\in S\right\}  \right)  $ in Theorem~\ref{thm.1} serves
+only to ensure that the Fibonacci numbers $f_{n+a_{t}}$ for all $t\in T$ and
+$f_{n+s}$ for all $s\in S$ are well-defined. (If we would define the Fibonacci
+numbers $f_{n}$ for integers $n\leq0$ by extending the recurrence relation
+$f_{n}=f_{n-1}+f_{n-2}$ \textquotedblleft to the left\textquotedblright, then
+we could drop this condition.)
 \end{enumerate}
 \end{remark}
 
@@ -306,17 +306,40 @@ $\sum\limits_{t\in S}f_{t}<f_{\max S+1}$.
 \end{lemma}
 
 \begin{proof}
-This is rather clear either by a telescoping sum argument (write the set $S$
-in the form $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  $ with $s_{1}%
-<s_{2}<\cdots<s_{k}$, notice that
-\[
-\sum\limits_{t\in S}f_{t}=\sum\limits_{i=1}^{k}f_{s_{i}}=\sum\limits_{i=1}%
-^{k}\left(  f_{s_{i}+1}-f_{s_{i}-1}\right)  =\sum\limits_{i=1}^{k-1}\left(
-f_{s_{i}+1}-f_{s_{i+1}-1}\right)  +\underbrace{f_{s_{k}+1}}_{=f_{\max S+1}%
-}-\underbrace{f_{s_{1}-1}}_{>0},
-\]
-and use $s_{i}+1\leq s_{i+1}-1$ since the set $S$ is lacunar) or by strong
-induction over $\max S$ (use $f_{\max S+1}=f_{\max S}+f_{\max S-1}$ here).
+WLOG assume that the set $S$ is nonempty (else, the lemma follows from our
+convention that $\max\varnothing=0$). Write the set $S$ in the form $\left\{
+s_{1},s_{2},\ldots,s_{k}\right\}  $ with $s_{1}<s_{2}<\cdots<s_{k}$. Every
+$i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+1\leq s_{i+1}-1$
+(because the set $S$ is lacunar, so $s_{i+1}$ cannot be $s_{i}+1$, whence
+$s_{i+1}>s_{i}+1$ and thus $s_{i+1}-1\geq s_{i}+1$), so that
+\begin{equation}
+f_{s_{i}+1}\leq f_{s_{i+1}-1} \label{pf.lem.2.leq}%
+\end{equation}
+(since the Fibonacci sequence $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ is
+weakly increasing). Thus,%
+\begin{align*}
+\sum\limits_{t\in S}f_{t}  &  =\sum\limits_{i=1}^{k}\underbrace{f_{s_{i}}%
+}_{\substack{=f_{s_{i}+1}-f_{s_{i}-1}\\\text{(since }f_{s_{i}+1}=f_{s_{i}%
+}+f_{s_{i}-1}\text{)}}}=\sum\limits_{i=1}^{k}\left(  f_{s_{i}+1}-f_{s_{i}%
+-1}\right)  =\underbrace{\sum\limits_{i=1}^{k}f_{s_{i}+1}}_{=\sum
+\limits_{i=1}^{k-1}f_{s_{i}+1}+f_{s_{k}+1}}-\underbrace{\sum\limits_{i=1}%
+^{k}f_{s_{i}-1}}_{=f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}}\\
+&  =\left(  \sum\limits_{i=1}^{k-1}\underbrace{f_{s_{i}+1}}_{\substack{\leq
+f_{s_{i+1}-1}\\\text{(by (\ref{pf.lem.2.leq}))}}}+f_{s_{k}+1}\right)  -\left(
+f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
+&  \leq\left(  \sum\limits_{i=1}^{k-1}f_{s_{i+1}-1}+f_{s_{k}+1}\right)
+-\left(  f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
+&  =\left(  \sum\limits_{i=2}^{k}f_{s_{i}-1}+f_{s_{k}+1}\right)  -\left(
+f_{s_{1}-1}+\sum\limits_{i=2}^{k}f_{s_{i}-1}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
+}i+1\text{ in the first sum}\right) \\
+&  =f_{s_{k}+1}-f_{s_{1}-1}<f_{s_{k}+1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}f_{s_{1}-1}>0\right) \\
+&  =f_{\max S+1}%
+\end{align*}
+(since $s_{k}=\max S$), which proves Lemma~\ref{lem.2}. (An alternative proof
+proceeds by strong induction over $\max S$; it uses $f_{\max S+1}=f_{\max
+S}+f_{\max S-1}$ in the induction step.)
 \end{proof}
 
 \begin{lemma}
@@ -326,10 +349,18 @@ $n=\sum\limits_{t\in T}f_{t}$.
 \end{lemma}
 
 \begin{proof}
-Strong induction over $n$. The main idea here is to let $t_{1}$ be the maximal
-$\tau\in\mathbb{N}_{2}$ satisfying $f_{\tau}\leq n$, and apply
-Lemma~\ref{lem.3} to $n-t_{1}$ instead of $n$. The details are left to the
-reader (and can be found in \cite{this.long}).
+Strong induction over $n$. The case $n=0$ needs to be treated separately. In
+the induction step for $n>0$, the main idea is to let $t_{1}$ be the maximal
+$\tau\in\mathbb{N}_{2}$ satisfying $f_{\tau}\leq n$ (this exists because
+$f_{2}=1\leq n$ and because the Fibonacci sequence is increasing and unbounded
+from above), and to apply Lemma~\ref{lem.3} to $n-f_{t_{1}}$ instead of $n$.
+(This yields a finite lacunar subset $T^{\prime}$ of $\mathbb{N}_{2}$
+satisfying $n-f_{t_{1}}=\sum_{t\in T^{\prime}}f_{t}$; now, it remains to be
+shown that the set $T^{\prime}\cup\left\{  t_{1}\right\}  $ is still lacunar.
+To check this, observe that $n<f_{t_{1}+1}$, so that $n-f_{t_{1}}<f_{t_{1}%
++1}-f_{t_{1}}=f_{t_{1}-1}$, which shows that no addend $f_{t}$ of the sum
+$\sum_{t\in T^{\prime}}f_{t}$ can be $f_{t_{1}-1}$ or larger.) The details are
+left to the reader (and can be found in \cite{this.long}).
 \end{proof}
 
 \begin{lemma}
@@ -340,11 +371,11 @@ such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum\limits_{t\in T^{\prime}%
 \end{lemma}
 
 \begin{proof}
-Strong induction over $n$. Use Lemma~\ref{lem.2} to show that $\max T<\max
-T^{\prime}+1$ and $\max T^{\prime}<\max T+1$; these together result in $\max
-T=\max T^{\prime}$. Hence, the sets $T$ and $T^{\prime}$ have an element in
-common, and we can reduce the situation to one with a smaller $n$ by removing
-this common element from both sets.
+Strong induction over $n$. In the induction step for $n>0$, use
+Lemma~\ref{lem.2} to show that $\max T<\max T^{\prime}+1$ and $\max T^{\prime
+}<\max T+1$; these together result in $\max T=\max T^{\prime}$. Hence, the
+sets $T$ and $T^{\prime}$ have an element in common, and we can reduce the
+situation to one with a smaller $n$ by removing this common element from both sets.
 \end{proof}
 
 Lemmata~\ref{lem.3} and~\ref{lem.4} together yield the following theorem:
@@ -444,18 +475,57 @@ $a$ and $b$. Also, $K+0=K$. Finally, if $K$ is a lacunar subset of
 $\mathbb{Z}$, and if $a\in\mathbb{Z}$, then $K+a$ is lacunar as well.
 
 \begin{proof}
-[Proof of Theorem~\ref{thm.8}.]Choose a high enough integer $N$. What exactly
-``high enough'' means we will see later; at the moment, we only require
-$N\in\mathbb{N}_{2}$ and $N>\max\left\{  -a_{t}\mid t\in T\right\}  $. We
-might later want $N$ to be even higher, however.
+[Proof of Theorem~\ref{thm.8}.]Choose a high enough integer $N$. Here,
+\textquotedblleft high enough\textquotedblright\ means that $N$ should satisfy
+$N\in\mathbb{N}_{2}$ and $N>\max\left\{  -a_{t}\mid t\in T\right\}  $ and%
+\begin{equation}
+\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}%
+}+\left(  \phi-1\right)  <1. \label{pf.thm.8.how-high-should-N-be}%
+\end{equation}
+(Such an $N$ can indeed be found\footnote{\textit{Proof.} We have $\left(
+\phi-1\right)  ^{N}\rightarrow0$ for $N\rightarrow\infty$ (since $0<\phi
+-1<1$). Therefore, the left hand side of (\ref{pf.thm.8.how-high-should-N-be})
+tends to $\phi-1$ as $N\rightarrow\infty$. Thus, for all sufficiently high
+$N$, the left hand side of (\ref{pf.thm.8.how-high-should-N-be}) will be $<1$,
+because $\phi-1<1$. So, if we take $N$ sufficiently high, then
+(\ref{pf.thm.8.how-high-should-N-be}) will hold. Of course, our other two
+requirements on $N$ (namely, $N\in\mathbb{N}_{2}$ and $N>\max\left\{
+-a_{t}\mid t\in T\right\}  $) can also be achieved by taking $N$ sufficiently
+high.}.)
 
 Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, $Z_{\nu}$ is a finite lacunar
-subset $Z_{\nu}$ of $\mathbb{N}_{2}$ satisfying $\nu=\sum\limits_{t\in Z_{\nu
-}}f_{t}$. Let $S=\left\{  t-N\ \mid\ t\in Z_{\nu}\right\}  $. Then, $S=Z_{\nu
-}+\left(  -N\right)  $ is a finite lacunar subset of $\mathbb{Z}$, and
-$\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$ becomes $\nu=\sum\limits_{s\in S}%
-f_{N+s}$. So now we know that $\sum\limits_{t\in T}f_{N+a_{t}}=\sum
-\limits_{s\in S}f_{N+s}$ (because both sides of this equation equal $\nu$).
+subset of $\mathbb{N}_{2}$ satisfying $\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$.
+Hence, Lemma~\ref{lem.7} yields
+\begin{equation}
+\sum\limits_{s\in Z_{\nu}}\left(  \phi-1\right)  ^{s}\leq\phi-1.
+\label{pf.thm.8.lacZnu}%
+\end{equation}
+
+
+Define a subset $S$ of $\mathbb{Z}$ by $S=Z_{\nu}+\left(  -N\right)  $. Then,
+$S$ is a finite lacunar subset of $\mathbb{Z}$ (since $Z_{\nu}$ is a finite
+lacunar subset of $\mathbb{Z}$). Furthermore, from $S=Z_{\nu}+\left(
+-N\right)  $, we obtain $Z_{\nu}=S+N$. Thus, the map $S\rightarrow Z_{\nu
+},\ s\mapsto N+s$ is a bijection. This allows us to substitute $N+s$ for $t$
+in sums over all $t\in Z_{\nu}$; we thus obtain%
+\begin{align}
+\sum\limits_{t\in Z_{\nu}}f_{t}  &  =\sum\limits_{s\in S}f_{N+s}%
+\ \ \ \ \ \ \ \ \ \ \text{and}\nonumber\\
+\sum\limits_{t\in Z_{\nu}}\left(  \phi-1\right)  ^{t}  &  =\sum\limits_{s\in
+S}\left(  \phi-1\right)  ^{N+s}. \label{pf.thm.8.subs2}%
+\end{align}
+Hence,
+\begin{equation}
+\sum\limits_{t\in T}f_{N+a_{t}}=\nu=\sum\limits_{t\in Z_{\nu}}f_{t}%
+=\sum\limits_{s\in S}f_{N+s}, \label{pf.thm.8.subs1a}%
+\end{equation}
+while the equality (\ref{pf.thm.8.subs2}) yields%
+\begin{equation}
+\sum\limits_{s\in S}\left(  \phi-1\right)  ^{N+s}=\sum\limits_{t\in Z_{\nu}%
+}\left(  \phi-1\right)  ^{t}=\sum\limits_{s\in Z_{\nu}}\left(  \phi-1\right)
+^{s}\leq\phi-1 \label{pf.thm.8.lacZnu2}%
+\end{equation}
+(by (\ref{pf.thm.8.lacZnu2})).
 
 So, we have chosen a high $N$ and found a finite lacunar subset $S$ of
 $\mathbb{Z}$ which satisfies $\sum\limits_{t\in T}f_{N+a_{t}}=\sum
@@ -465,14 +535,19 @@ lacunar subset $S$ of $\mathbb{Z}$ which works for \textit{every} $N$, while
 at the moment we cannot be sure yet whether different $N$'s wouldn't produce
 \textit{different} sets $S$. And, in fact, different $N$'s \textit{can}
 produce different sets $S$, but (fortunately!) only if the $N$'s are too
-small. If we take $N$ high enough, the set $S$ that we obtained turns out to
-be \textit{universal}, i.e., it satisfies
-\begin{align}
-\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
-\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\nonumber\\
-\text{satisfies }n  &  >\max\left(  \left\{  -a_{t}\mid t\in T\right\}
-\cup\left\{  -s\mid s\in S\right\}  \right)  . \label{BigLemma}%
-\end{align}
+small. As we have taken $N$ high enough, the set $S$ that we obtained turns
+out to be \textit{universal}, i.e., it satisfies
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}\text{ for every
+}n\in\mathbb{Z}\text{ which}\\
+\text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)
+\end{array}
+\right)  . \label{BigLemma}%
+\end{equation}
 We are now going to prove this.
 
 In order to prove (\ref{BigLemma}), we need two assertions:
@@ -494,23 +569,24 @@ t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $).
 \end{statement}
 
 Obviously, Assertion 1 yields (by induction) the equality $\sum\limits_{t\in
-T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$ for every $n\geq N$, and Assertion
-2 then proves it for the remaining values of $n$ (by backwards induction, or,
-to be more precise, by an induction step from $n+1$ and $n$ to $n-1$). Thus,
-once both Assertions 1 and 2 are proven, (\ref{BigLemma}) will follow and thus
-Theorem~\ref{thm.8} will be proven.
+T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$ for every $n\geq N$ (the induction
+base follows from (\ref{pf.thm.8.subs1a})), and Assertion 2 then proves it for
+the remaining values of $n$ (by backwards induction, or, to be more precise,
+by an induction step from $n+1$ and $n$ to $n-1$). Thus, once both Assertions
+1 and 2 are proven, (\ref{BigLemma}) will follow and thus Theorem~\ref{thm.8}
+will be proven.
 
 Assertion 2 follows from comparing the equalities%
 \[
-\sum\limits_{t\in T}f_{\left(  n-1\right)  +a_{t}}=\sum\limits_{t\in
-T}\underbrace{f_{n+a_{t}-1}}_{=f_{n+a_{t}+1}-f_{n+a_{t}}}=\sum\limits_{t\in
+\sum\limits_{t\in T}\underbrace{f_{\left(  n-1\right)  +a_{t}}}%
+_{\substack{=f_{n+a_{t}-1}\\=f_{n+a_{t}+1}-f_{n+a_{t}}}}=\sum\limits_{t\in
 T}f_{n+a_{t}+1}-\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in T}f_{\left(
 n+1\right)  +a_{t}}-\sum\limits_{t\in T}f_{n+a_{t}}%
 \]
 and%
 \[
-\sum\limits_{s\in S}f_{\left(  n-1\right)  +s}=\sum\limits_{s\in
-S}\underbrace{f_{n+s-1}}_{=f_{n+s+1}-f_{n+s}}=\sum\limits_{s\in S}%
+\sum\limits_{s\in S}\underbrace{f_{\left(  n-1\right)  +s}}%
+_{\substack{=f_{n+s-1}\\=f_{n+s+1}-f_{n+s}}}=\sum\limits_{s\in S}%
 f_{n+s+1}-\sum\limits_{s\in S}f_{n+s}=\sum\limits_{s\in S}f_{\left(
 n+1\right)  +s}-\sum\limits_{s\in S}f_{n+s}%
 \]
@@ -533,72 +609,38 @@ f_{n+a_{t}}\right)  -\sum\limits_{s\in S}\left(  f_{\left(  n+1\right)
 -\sum\limits_{s\in S}\left(  f_{n+s+1}-\phi f_{n+s}\right)  ,
 \end{align*}
 so that%
-\begin{align}
+\begin{align*}
 &  \left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}%
 -\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert =\left\vert
 \sum\limits_{t\in T}\left(  f_{n+a_{t}+1}-\phi f_{n+a_{t}}\right)
--\sum\limits_{s\in S}\left(  f_{n+s+1}-\phi f_{n+s}\right)  \right\vert
-\nonumber\\
+-\sum\limits_{s\in S}\left(  f_{n+s+1}-\phi f_{n+s}\right)  \right\vert \\
 &  \leq\sum\limits_{t\in T}\left\vert f_{n+a_{t}+1}-\phi f_{n+a_{t}%
 }\right\vert +\sum\limits_{s\in S}\left\vert f_{n+s+1}-\phi f_{n+s}\right\vert
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the triangle inequality}\right)
-\nonumber\\
-&  =\dfrac{1}{\sqrt{5}}\sum\limits_{t\in T}\left(  \phi-1\right)  ^{n+a_{t}%
-}+\dfrac{1}{\sqrt{5}}\sum\limits_{s\in S}\left(  \phi-1\right)  ^{n+s}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem~\ref{thm.6}}\right) \nonumber\\
-&  <\sum\limits_{t\in T}\left(  \phi-1\right)  ^{n+a_{t}}+\sum\limits_{s\in
-S}\left(  \phi-1\right)  ^{n+s}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }%
-\dfrac{1}{\sqrt{5}}<1\right) \nonumber\\
-&  \leq\sum\limits_{t\in T}\left(  \phi-1\right)  ^{N+a_{t}}+\sum\limits_{s\in
-S}\left(  \phi-1\right)  ^{N+s}\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{since }\left(  \phi-1\right)  ^{n+a_{t}}\leq\left(  \phi-1\right)
-^{N+a_{t}}\text{ and}\\
-\left(  \phi-1\right)  ^{n+s}\leq\left(  \phi-1\right)  ^{N+s}\text{,
-because}\\
-n\geq N\text{ and }0\leq\phi-1\leq1
-\end{array}
-\right) \nonumber\\
-&  =\sum\limits_{t\in T}\left(  \phi-1\right)  ^{N+a_{t}}+\sum\limits_{t\in
-Z_{\nu}}\left(  \phi-1\right)  ^{t}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}S=\left\{  t-N\ \mid\ t\in Z_{\nu}\right\}  \right) \nonumber\\
-&  =\sum\limits_{t\in T}\left(  \phi-1\right)  ^{N+a_{t}}+\sum\limits_{s\in
-Z_{\nu}}\left(  \phi-1\right)  ^{s}=\left(  \phi-1\right)  ^{N}\sum
-\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}}+\sum\limits_{s\in Z_{\nu}%
-}\left(  \phi-1\right)  ^{s}\nonumber\\
-&  \leq\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)
-^{a_{t}}+\left(  \phi-1\right)  \label{Estimate}%
-\end{align}
-(since $\sum\limits_{s\in Z_{\nu}}\left(  \phi-1\right)  ^{s}\leq\phi-1$ by
-Lemma~\ref{lem.7}, because $Z_{\nu}$ is a lacunar subset of $\mathbb{N}_{2}$).
-
-Now, $\sum\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}}$ is a constant,
-while $\left(  \phi-1\right)  ^{N}\rightarrow0$ for $N\rightarrow\infty$.
-Hence, we can make the product $\left(  \phi-1\right)  ^{N}\sum\limits_{t\in
-T}\left(  \phi-1\right)  ^{a_{t}}$ arbitrarily close to $0$ if we choose $N$
-high enough. Since $\phi-1<1$, we have%
-\begin{equation}
-\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}%
-}+\left(  \phi-1\right)  <1 \label{BoundWIN}%
-\end{equation}
-if $\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)
-^{a_{t}}$ is sufficiently close to $0$, which we can enforce by taking a high
-enough $N$. This is exactly the point where we require $N$ to be high enough.
-
-So let us take $N$ high enough so that (\ref{BoundWIN}) holds. Combined with
-(\ref{Estimate}), it then yields%
-\[
-\left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum
-\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert <1,
-\]
-which leads to $\left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}%
-}-\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert =0$ (since
-$\left\vert \sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum
-\limits_{s\in S}f_{\left(  n+1\right)  +s}\right\vert $ is a nonnegative
-integer). In other words, $\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}%
-}=\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}$. This completes the proof of
-Assertion 1, and, with it, the proof of Theorem~\ref{thm.8}.
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the triangle inequality}\right) \\
+&  =\sum\limits_{t\in T}\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n+a_{t}%
+}+\sum\limits_{s\in S}\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n+s}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem~\ref{thm.6}}\right) \\
+&  <\sum\limits_{t\in T}\underbrace{\left(  \phi-1\right)  ^{n+a_{t}}%
+}_{\substack{\leq\left(  \phi-1\right)  ^{N+a_{t}}\\\text{(since }n\geq
+N\text{ and }0<\phi-1<1\text{)}}}+\sum\limits_{s\in S}\underbrace{\left(
+\phi-1\right)  ^{n+s}}_{\substack{\leq\left(  \phi-1\right)  ^{N+s}%
+\\\text{(since }n\geq N\text{ and }0<\phi-1<1\text{)}}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\dfrac{1}{\sqrt{5}}<1\right) \\
+&  \leq\underbrace{\sum\limits_{t\in T}\left(  \phi-1\right)  ^{N+a_{t}}%
+}_{=\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)
+^{a_{t}}}+\underbrace{\sum\limits_{s\in S}\left(  \phi-1\right)  ^{N+s}%
+}_{\substack{\leq\phi-1\\\text{(by (\ref{pf.thm.8.lacZnu2}))}}}\leq\left(
+\phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}}+\left(
+\phi-1\right)  <1
+\end{align*}
+(by (\ref{pf.thm.8.how-high-should-N-be})). This leads to $\left\vert
+\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum\limits_{s\in
+S}f_{\left(  n+1\right)  +s}\right\vert =0$ (since $\left\vert \sum
+\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}-\sum\limits_{s\in S}f_{\left(
+n+1\right)  +s}\right\vert $ is a nonnegative integer). In other words,
+$\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}=\sum\limits_{s\in
+S}f_{\left(  n+1\right)  +s}$. This completes the proof of Assertion 1, and,
+with it, the proof of Theorem~\ref{thm.8}.
 \end{proof}
 
 All that remains now is the (rather trivial) uniqueness part of
@@ -609,7 +651,7 @@ Theorem~\ref{thm.1}:
 Let $T$ be a finite set, and let $a_{t}$ be an integer for every $t\in T$.
 
 Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
-\[
+\begin{equation}
 \left(
 \begin{array}
 [c]{c}%
@@ -618,10 +660,10 @@ Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S\right\}  \right)
 \end{array}
-\right)  .
-\]
+\right)  . \label{eq.lem.9.ass1}%
+\end{equation}
 Let $S^{\prime}$ be a finite lacunar subset of $\mathbb{Z}$ such that%
-\[
+\begin{equation}
 \left(
 \begin{array}
 [c]{c}%
@@ -630,8 +672,8 @@ every }n\in\mathbb{Z}\text{ which}\\
 \text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)
 \end{array}
-\right)  .
-\]
+\right)  . \label{eq.lem.9.ass2}%
+\end{equation}
 Then, $S=S^{\prime}$.
 \end{lemma}
 
@@ -639,30 +681,24 @@ Then, $S=S^{\prime}$.
 [Proof of Lemma~\ref{lem.9}.]Let%
 \begin{equation}
 n=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
-S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.
-\label{l7}%
+S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.\label{l7}%
 \end{equation}
 Then, $n$ satisfies $n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
-\cup\left\{  -s\mid s\in S\right\}  \right)  $, so that
-\begin{align*}
-\sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma~\ref{lem.9}%
-}\right) \\
-&  =\sum\limits_{t\in S+n}f_{t}\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{here, we substituted }t\text{ for }n+s\text{, since the map}\\
-S\rightarrow S+n,\ s\mapsto n+s\text{ is a bijection}%
-\end{array}
-\right)  .
-\end{align*}
-Similarly, $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}%
-+n}f_{t}$. Hence, $\sum\limits_{t\in S+n}f_{t}=\sum\limits_{t\in S^{\prime}%
-+n}f_{t}$. Since the sets $S+n$ and $S^{\prime}+n$ are both lacunar (since so
-are $S$ and $S^{\prime}$) and finite (since so are $S$ and $S^{\prime}$), and
-are subsets of $\mathbb{N}_{2}$ (here is where we use (\ref{l7})), we can now
-conclude from Lemma~\ref{lem.4} that $S+n=S^{\prime}+n$, so that $S=S^{\prime
-}$, proving Lemma~\ref{lem.9}.
+\cup\left\{  -s\mid s\in S\right\}  \right)  $. Thus, (\ref{eq.lem.9.ass1})
+yields
+\[
+\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}=\sum\limits_{t\in
+S+n}f_{t}%
+\]
+(here, we substituted $t$ for $n+s$, since the map $S\rightarrow
+S+n,\ s\mapsto n+s$ is a bijection). Similarly, $\sum\limits_{t\in
+T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$. Since the sets $S+n$ and
+$S^{\prime}+n$ are both lacunar (since so are $S$ and $S^{\prime}$) and finite
+(since so are $S$ and $S^{\prime}$), and are subsets of $\mathbb{N}_{2}$ (by
+(\ref{l7})), we can now conclude from Lemma~\ref{lem.4} (applied to
+$\sum\limits_{t\in T}f_{n+a_{t}}$, $S+n$ and $S^{\prime}+n$ instead of $n$,
+$S$ and $S^{\prime}$) that $S+n=S^{\prime}+n$, so that $S=S^{\prime}$. This
+proves Lemma~\ref{lem.9}.
 \end{proof}
 
 \begin{proof}

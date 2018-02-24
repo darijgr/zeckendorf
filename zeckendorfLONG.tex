@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, February 24, 2018 13:24:02}
+%TCIDATA{LastRevised=Saturday, February 24, 2018 14:44:53}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -191,11 +191,11 @@ In other words, a subset $S$ of $\mathbb{Z}$ is lacunar if and only if it
 contains no two consecutive integers.
 
 \begin{definition}
-\label{def.fib}Let $\left(  f_{1},f_{2},f_{3},\ldots\right)  $ be the
-Fibonacci sequence. This is a sequence of positive integers defined
-recursively by the initial values $f_{1}=1$ and $f_{2}=1$ and the recurrence
-relation $\left(  f_{n}=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{
-satisfying }n\geq3\right)  $.
+\label{def.fib}The \textit{Fibonacci sequence} $\left(  f_{1},f_{2}%
+,f_{3},\ldots\right)  $ is a sequence of positive integers defined recursively
+by the initial values $f_{1}=1$ and $f_{2}=1$ and the recurrence relation
+$\left(  f_{n}=f_{n-1}+f_{n-2}\text{ for all }n\in\mathbb{N}\text{ satisfying
+}n\geq3\right)  $.
 \end{definition}
 
 (Here and in the following, $\mathbb{N}$ denotes the set $\left\{
@@ -802,6 +802,30 @@ every $q\in K+a$. Renaming the variable $q$ as $s$ in this statement, we
 obtain $\left(  s+1\notin K+a\text{ for every }s\in K+a\right)  $. In other
 words, the subset $K+a$ of $\mathbb{Z}$ is lacunar. Qed.}.
 
+Let us furthermore make two basic observations:
+
+\begin{itemize}
+\item If $u$ and $v$ are two real numbers, then
+\begin{equation}
+\left\vert u-v\right\vert \leq\left\vert u\right\vert +\left\vert v\right\vert
+. \label{pf.thm.8.triangle1}%
+\end{equation}
+(Indeed, this is one of the forms of the triangle inequality.)
+
+\item If $m$ is a positive integer, then
+\begin{equation}
+f_{m}=f_{m+2}-f_{m+1}. \label{pf.thm.8.fm=}%
+\end{equation}
+
+
+[\textit{Proof of (\ref{pf.thm.8.fm=}):} Let $m$ be a positive integer. Thus,
+$m\geq1$, so that $m+2\geq1+2=3$. But recall that every integer $n\geq3$
+satisfies $f_{n}=f_{n-1}+f_{n-2}$, so that $f_{n-2}=f_{n}-f_{n-1}$. Applying
+this to $n=m+2$, we obtain $f_{\left(  m+2\right)  -2}=f_{m+2}-f_{\left(
+m+2\right)  -1}$. This simplifies to $f_{m}=f_{m+2}-f_{m+1}$. Thus,
+(\ref{pf.thm.8.fm=}) is proven.]
+\end{itemize}
+
 \begin{proof}
 [Proof of Theorem~\ref{thm.8}.]Let us define a real constant $C$ by
 $C=\sum\limits_{t\in T}\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{a_{t}}$.
@@ -829,13 +853,6 @@ Fibonacci number $f_{N+a_{t}}$ is well-defined for every $t\in T$. (This was
 exactly the reason why we have required $N>\max\left\{  -a_{t}\mid t\in
 T\right\}  $. The reason for the second condition $\left(  \phi-1\right)
 ^{N}C<2-\phi$ will become clear later in the proof.)
-
-If $u$ and $v$ are two real numbers, then
-\begin{equation}
-\left|  u-v \right|  \leq\left|  u\right|  + \left|  v\right|  .
-\label{pf.thm.8.triangle1}%
-\end{equation}
-(Indeed, this is one of the forms of the triangle inequality.)
 
 Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Recall that $Z_{\nu}$ is a finite
 lacunar subset of $\mathbb{N}_{2}$ such that $\nu=\sum\limits_{t\in Z_{\nu}%
@@ -1012,84 +1029,120 @@ With Assertion $\beta$ we now know that (\ref{main}) holds for all
 sufficiently high $n$, namely for all $n\geq N$. But in order to prove Theorem
 8, we must show that it also holds for all $n>\max\left(  \left\{  -a_{t}\mid
 t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $; usually, these
-$n$ are not all $\geq N$. What remains to do is ``backwards induction'' or an
-application of the maximum principle. Here are the details:
+$n$ are not all $\geq N$. What remains to do is \textquotedblleft backwards
+induction\textquotedblright\ or an application of the maximum principle. Here
+are the details:
 
 Let $M=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid
 s\in S\right\}  \right)  $. We thus must show that (\ref{main}) holds for all
-$n>M$. In order to prove this, we assume the contrary, i.e., we assume that
-there exists some $n>M$ such that (\ref{main}) does not hold. In other words,
-the set $\left\{  n\in\mathbb{Z}\ \mid\ \text{we have }n>M\text{, and
-(\ref{main}) doesn't hold}\right\}  $ is nonempty. This set is bounded from
-above by $N$ (in fact, it doesn't contain any $n\geq N$, because (\ref{main})
-does hold for $n\geq N$ according to Assertion $\beta$), and thus it has a
-maximum (since a nonempty set of integers which is bounded from above always
-has a maximum). Let $\lambda$ be this maximum. Then, $\lambda\in\left\{
-n\in\mathbb{Z}\ \mid\ \text{we have }n>M\text{, and (\ref{main}) doesn't
-hold}\right\}  $. Therefore, $\lambda$ itself satisfies $\lambda>M$, and
-(\ref{main}) doesn't hold for $n=\lambda$. On the other hand,%
+$n>M$.
+
+Define a subset $\mathcal{R}$ of $\mathbb{Z}$ by%
+\begin{equation}
+\mathcal{R}=\left\{  n\in\mathbb{Z}\ \mid\ \text{we have }n>M\text{, and
+(\ref{main}) does not hold}\right\}  . \label{defR}%
+\end{equation}
+This set $\mathcal{R}$ is bounded from above by $N$ (in fact, it does not
+contain any $n\geq N$, because (\ref{main}) does hold for all $n\geq N$
+(according to Assertion $\beta$)), and bounded from below by $M$ (because
+every element of this set is $>M$ by definition). Thus, this set $\mathcal{R}$
+is finite (since any subset of $\mathbb{Z}$ that is bounded from above and
+bounded from below is finite).
+
+Let us assume (for the sake of contradiction) that $\mathcal{R}$ is nonempty.
+Then, the set $\mathcal{R}$ is a nonempty finite set of integers, and thus has
+a maximum (since a nonempty finite set of integers always has a maximum). Let
+$\lambda$ be this maximum. Then, $\lambda\in\mathcal{R}=\left\{
+n\in\mathbb{Z}\ \mid\ \text{we have }n>M\text{, and (\ref{main}) does not
+hold}\right\}  $. In other words, $\lambda$ is an element of $\mathbb{Z}$
+satisfying $\lambda>M$, and (\ref{main}) does not hold for $n=\lambda$. On the
+other hand,%
 \begin{equation}
 \text{for every integer }\mu>\lambda\text{, the equation (\ref{main}) holds
-for }n=\mu.\label{back-induct}%
+for }n=\mu\label{back-induct}%
 \end{equation}
-\footnote{\textit{Proof.} Assume the opposite. Then, not for every integer
-$\mu>\lambda$, the equation (\ref{main}) holds for $n=\mu$. So there exists
-some integer $\mu>\lambda$ such that the equation (\ref{main}) doesn't hold
-for $n=\mu$. Since this $\mu$ must satisfy $\mu>M$ (since $\mu>\lambda>M$), we
-conclude that $\mu$ lies in the set $\left\{  n\in\mathbb{Z}\ \mid\ \text{we
-have }n>M\text{, and (\ref{main}) doesn't hold}\right\}  $. Since $\lambda$ is
-the maximum of this set, we thus get $\mu\leq\lambda$, contradicting
-$\mu>\lambda$. This contradiction shows that our assumption was wrong, and
-thus (\ref{back-induct}) is correct.} In particular, applying
-(\ref{back-induct}) to $\mu=\lambda+1$, we see that (\ref{main}) holds for
-$n=\lambda+1$; in other words, $\sum\limits_{t\in T}f_{\lambda+1+a_{t}}%
-=\sum\limits_{s\in S}f_{\lambda+1+s}$. Besides, applying (\ref{back-induct})
-to $\mu=\lambda+2$, we see that (\ref{main}) holds for $n=\lambda+2$; in other
-words, $\sum\limits_{t\in T}f_{\lambda+2+a_{t}}=\sum\limits_{s\in S}%
-f_{\lambda+2+s}$.
+\footnote{\textit{Proof.} Let $\mu>\lambda$ be an integer. We must prove that
+the equation (\ref{main}) holds for $n=\mu$.
+\par
+Assume the contrary. Thus, the equation (\ref{main}) does not hold for $n=\mu
+$. Hence, $\mu$ is an integer with the property that $\mu>M$ (since
+$\mu>\lambda>M$), and (\ref{main}) does not hold for $n=\mu$. In other words,
+$\mu\in\left\{  n\in\mathbb{Z}\ \mid\ \text{we have }n>M\text{, and
+(\ref{main}) does not hold}\right\}  $. In view of (\ref{defR}), this rewrites
+as $\mu\in\mathcal{R}$.
+\par
+But $\lambda$ is the maximum of $\mathcal{R}$. Thus, every $r\in\mathcal{R}$
+satisfies $r\leq\lambda$. Applying this to $r=\mu$, we obtain $\mu\leq\lambda$
+(since $\mu\in\mathcal{R}$). This contradicts $\mu>\lambda$. This
+contradiction shows that our assumption was wrong. Hence, the equation
+(\ref{main}) holds for $n=\mu$. This proves (\ref{back-induct}).}. In
+particular, applying (\ref{back-induct}) to $\mu=\lambda+1$, we see that
+(\ref{main}) holds for $n=\lambda+1$; in other words, $\sum\limits_{t\in
+T}f_{\lambda+1+a_{t}}=\sum\limits_{s\in S}f_{\lambda+1+s}$. Besides, applying
+(\ref{back-induct}) to $\mu=\lambda+2$, we see that (\ref{main}) holds for
+$n=\lambda+2$; in other words, $\sum\limits_{t\in T}f_{\lambda+2+a_{t}}%
+=\sum\limits_{s\in S}f_{\lambda+2+s}$.
 
 Now, we are going to prove the equation $\sum\limits_{t\in T}f_{\lambda+a_{t}%
 }=\sum\limits_{s\in S}f_{\lambda+s}$. (We notice that this equation indeed
 makes sense, because the Fibonacci number $f_{\lambda+a_{t}}$ is well-defined
 for every $t\in T$\ \ \ \ \footnote{\textit{Proof.} In fact, $\lambda
->M=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
-S\right\}  \right)  \geq\max\left\{  -a_{t}\mid t\in T\right\}  $ yields that
+>M=\max\left(  \underbrace{\left\{  -a_{t}\mid t\in T\right\}  \cup\left\{
+-s\mid s\in S\right\}  }_{\supseteq\left\{  -a_{t}\mid t\in T\right\}
+}\right)  \geq\max\left\{  -a_{t}\mid t\in T\right\}  $ yields that
 $\lambda>-a_{t}$ for every $t\in T$. Thus, for every $t\in T$, we have
 $\lambda+a_{t}>0$, and thus $f_{\lambda+a_{t}}$ is well-defined.}, and because
 the Fibonacci number $f_{\lambda+s}$ is well-defined for every $s\in
-S$\ \ \ \ \footnote{\textit{Proof.} In fact, $\lambda>M=\max\left(  \left\{
--a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)
-\geq\max\left\{  -s\mid s\in S\right\}  $ yields that $\lambda>-s$ for every
-$s\in S$. Thus, for every $s\in S$, we have $\lambda+s>0$, and thus
-$f_{\lambda+s}$ is well-defined.}.) In fact, every integer $n\geq3$ satisfies
-$f_{n}=f_{n-1}+f_{n-2}$, so that $f_{n-2}=f_{n}-f_{n-1}$. Applying this to
-$n=\lambda+a_{t}+2$, we obtain $f_{\lambda+a_{t}}=\underbrace{f_{\lambda
-+a_{t}+2}}_{=f_{\lambda+2+a_{t}}}-\underbrace{f_{\lambda+a_{t}+1}%
-}_{=f_{\lambda+1+a_{t}}}=f_{\lambda+2+a_{t}}-f_{\lambda+1+a_{t}}$ for every
-$t\in T$. On the other hand, applying $f_{n-2}=f_{n}-f_{n-1}$ to
-$n=\lambda+s+2$, we obtain $f_{\lambda+s}=\underbrace{f_{\lambda+s+2}%
-}_{=f_{\lambda+2+s}}-\underbrace{f_{\lambda+s+1}}_{=f_{\lambda+1+s}%
-}=f_{\lambda+2+s}-f_{\lambda+1+s}$ for every $s\in S$. Thus,%
+S$\ \ \ \ \footnote{\textit{Proof.} In fact, $\lambda>M=\max\left(
+\underbrace{\left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in
+S\right\}  }_{\supseteq\left\{  -s\mid s\in S\right\}  }\right)  \geq
+\max\left\{  -s\mid s\in S\right\}  $ yields that $\lambda>-s$ for every $s\in
+S$. Thus, for every $s\in S$, we have $\lambda+s>0$, and thus $f_{\lambda+s}$
+is well-defined.}.) Applying (\ref{pf.thm.8.fm=}) to $m=\lambda+a_{t}$, we
+obtain
+\begin{equation}
+f_{\lambda+a_{t}}=\underbrace{f_{\lambda+a_{t}+2}}_{=f_{\lambda+2+a_{t}}%
+}-\underbrace{f_{\lambda+a_{t}+1}}_{=f_{\lambda+1+a_{t}}}=f_{\lambda+2+a_{t}%
+}-f_{\lambda+1+a_{t}} \label{pf.thm.8.back1}%
+\end{equation}
+for every $t\in T$. On the other hand, applying (\ref{pf.thm.8.fm=}) to
+$m=\lambda+s$, we obtain%
+\begin{equation}
+f_{\lambda+s}=\underbrace{f_{\lambda+s+2}}_{=f_{\lambda+2+s}}%
+-\underbrace{f_{\lambda+s+1}}_{=f_{\lambda+1+s}}=f_{\lambda+2+s}%
+-f_{\lambda+1+s} \label{pf.thm.8.back2}%
+\end{equation}
+for every $s\in S$. Thus,%
 \begin{align*}
-\sum\limits_{t\in T}\underbrace{f_{\lambda+a_{t}}}_{=f_{\lambda+2+a_{t}%
-}-f_{\lambda+1+a_{t}}}  &  =\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}%
-}-f_{\lambda+1+a_{t}}\right)  =\underbrace{\sum\limits_{t\in T}f_{\lambda
-+2+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+2+s}}-\underbrace{\sum
-\limits_{t\in T}f_{\lambda+1+a_{t}}}_{=\sum\limits_{s\in S}f_{\lambda+1+s}}\\
+\sum\limits_{t\in T}\underbrace{f_{\lambda+a_{t}}}_{\substack{=f_{\lambda
++2+a_{t}}-f_{\lambda+1+a_{t}}\\\text{(by (\ref{pf.thm.8.back1}))}}}  &
+=\sum\limits_{t\in T}\left(  f_{\lambda+2+a_{t}}-f_{\lambda+1+a_{t}}\right)
+=\underbrace{\sum\limits_{t\in T}f_{\lambda+2+a_{t}}}_{=\sum\limits_{s\in
+S}f_{\lambda+2+s}}-\underbrace{\sum\limits_{t\in T}f_{\lambda+1+a_{t}}}%
+_{=\sum\limits_{s\in S}f_{\lambda+1+s}}\\
 &  =\sum\limits_{s\in S}f_{\lambda+2+s}-\sum\limits_{s\in S}f_{\lambda
 +1+s}=\sum\limits_{s\in S}\underbrace{\left(  f_{\lambda+2+s}-f_{\lambda
-+1+s}\right)  }_{=f_{\lambda+s}}=\sum\limits_{s\in S}f_{\lambda+s}.
++1+s}\right)  }_{\substack{=f_{\lambda+s}\\\text{(by (\ref{pf.thm.8.back2}))}%
+}}=\sum\limits_{s\in S}f_{\lambda+s}.
 \end{align*}
 In other words, (\ref{main}) holds for $n=\lambda$. This contradicts our
-knowledge that (\ref{main}) doesn't hold for $n=\lambda$. This contradiction
-shows that our assumption (the assumption that there exists some $n>M$ such
-that (\ref{main}) does not hold) was wrong. Hence, there exists no $n>M$ such
-that (\ref{main}) does not hold. In other words, (\ref{main}) holds for every
-$n>M$. Since $M=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{
--s\mid s\in S\right\}  \right)  $, this is equivalent to saying that
-(\ref{main}) holds for every $n>\max\left(  \left\{  -a_{t}\mid t\in
-T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $. Consequently,
-Theorem~\ref{thm.8} is proven.
+knowledge that (\ref{main}) does not hold for $n=\lambda$. This contradiction
+shows that our assumption (the assumption that the set $\mathcal{R}$ is
+nonempty) was wrong. Hence, the set $\mathcal{R}$ is empty. In other words,
+the set%
+\[
+\left\{  n\in\mathbb{Z}\ \mid\ \text{we have }n>M\text{, and (\ref{main}) does
+not hold}\right\}
+\]
+is empty (since $\mathcal{R}=\left\{  n\in\mathbb{Z}\ \mid\ \text{we have
+}n>M\text{, and (\ref{main}) does not hold}\right\}  $). In other words, there
+exists no $n\in\mathbb{Z}$ satisfying $n>M$ such that (\ref{main}) does not
+hold. In other words, (\ref{main}) holds for every $n\in\mathbb{Z}$ satisfying
+$n>M$. Since \newline$M=\max\left(  \left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \right)  $, this is equivalent to saying
+that (\ref{main}) holds for every $n\in\mathbb{Z}$ satisfying $n>\max\left(
+\left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}
+\right)  $. Consequently, Theorem~\ref{thm.8} is proven.
 \end{proof}
 
 All that remains now is the (rather trivial) uniqueness part of
@@ -1100,7 +1153,7 @@ Theorem~\ref{thm.1}:
 Let $T$ be a finite set, and let $a_{t}$ be an integer for every $t\in T$.
 
 Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
-\[
+\begin{equation}
 \left(
 \begin{array}
 [c]{c}%
@@ -1109,10 +1162,10 @@ Let $S$ be a finite lacunar subset of $\mathbb{Z}$ such that%
 \text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S\right\}  \right)
 \end{array}
-\right)  .
-\]
+\right)  . \label{eq.lem.9.ass1}%
+\end{equation}
 Let $S^{\prime}$ be a finite lacunar subset of $\mathbb{Z}$ such that%
-\[
+\begin{equation}
 \left(
 \begin{array}
 [c]{c}%
@@ -1121,8 +1174,8 @@ every }n\in\mathbb{Z}\text{ which}\\
 \text{satisfies }n>\max\left(  \left\{  -a_{t}\mid t\in T\right\}
 \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)
 \end{array}
-\right)  .
-\]
+\right)  . \label{eq.lem.9.ass2}%
+\end{equation}
 Then, $S=S^{\prime}$.
 \end{lemma}
 
@@ -1134,16 +1187,17 @@ S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)  +2.
 \]
 Then,%
 \begin{align*}
-n  &  >\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid
-s\in S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right) \\
+n  &  >\max\left(  \underbrace{\left\{  -a_{t}\mid t\in T\right\}
+\cup\left\{  -s\mid s\in S\right\}  \cup\left\{  -s\mid s\in S^{\prime
+}\right\}  }_{\supseteq\left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid
+s\in S\right\}  }\right) \\
 &  \geq\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid
 s\in S\right\}  \right)  ,
 \end{align*}
 so that%
 \begin{align*}
 \sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the condition of Lemma~\ref{lem.9}%
-}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{eq.lem.9.ass1})}\right) \\
 &  =\sum\limits_{t\in S+n}f_{t}\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -1161,8 +1215,10 @@ $\mathbb{N}_{2}$\ \ \ \ \footnote{\textit{Proof.} Since%
 \[
 n=\underbrace{\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{
 -s\mid s\in S\right\}  \cup\left\{  -s\mid s\in S^{\prime}\right\}  \right)
-}_{\geq\max\left\{  -s\mid s\in S\right\}  }+2\geq\max\left\{  -s\mid s\in
-S\right\}  +2,
+}_{\substack{\geq\max\left\{  -s\mid s\in S\right\}  \\\text{(since }\left\{
+-a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \cup\left\{
+-s\mid s\in S^{\prime}\right\}  \supseteq\left\{  -s\mid s\in S\right\}
+\text{)}}}+2\geq\max\left\{  -s\mid s\in S\right\}  +2,
 \]
 we have $n-2\geq\max\left\{  -s\mid s\in S\right\}  $, and thus $n-2\geq-s$
 for every $s\in S$. Hence, every $s\in S$ satisfies $n-2+s\geq0$, which
@@ -1172,13 +1228,13 @@ s+n\ \mid\ s\in S\right\}  \subseteq\mathbb{N}_{2}$. Hence,
 \[
 S+n=\left\{  s+n\ \mid\ s\in S\right\}  \subseteq\mathbb{N}_{2}.
 \]
-}. In other words, $S+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
-Similarly, $S^{\prime}+n$ is a finite lacunar subset of $\mathbb{N}_{2}$.
-Applying Lemma~\ref{lem.4} to $S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in
-T}f_{n+a_{t}}$ instead of $T$, $T^{\prime}$ and $n$ yields that $S+n=S^{\prime
-}+n$ (because $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S+n}f_{t}$
-and $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$).
-Hence,%
+}. In other words, $S+n$ is a finite lacunar subset of $\mathbb{N}_{2}$ (since
+$S+n$ is finite (because $S$ is finite)). Similarly, $S^{\prime}+n$ is a
+finite lacunar subset of $\mathbb{N}_{2}$. Applying Lemma~\ref{lem.4} to
+$S+n$, $S^{\prime}+n$ and $\sum\limits_{t\in T}f_{n+a_{t}}$ instead of $T$,
+$T^{\prime}$ and $n$ yields that $S+n=S^{\prime}+n$ (because $\sum
+\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S+n}f_{t}$ and $\sum
+\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{t\in S^{\prime}+n}f_{t}$). Hence,%
 \begin{align*}
 S  &  =S+\underbrace{0}_{=\left(  n+\left(  -n\right)  \right)  }=S+\left(
 n+\left(  -n\right)  \right)  =\underbrace{\left(  S+n\right)  }_{=S^{\prime
@@ -1205,8 +1261,8 @@ $\mathbb{Z}$ such that
 \right)
 \]
 (according to Theorem~\ref{thm.8}), and such a subset is unique (because any
-two such subsets are equal (according to Lemma~\ref{lem.9})). This proves
-Theorem~\ref{thm.1}.
+two such subsets are equal (according to Lemma~\ref{lem.9})). Thus, there
+exists \textbf{one and only one} such subset. This proves Theorem~\ref{thm.1}.
 \end{proof}
 
 \begin{thebibliography}{99999999}                                                                                         %
