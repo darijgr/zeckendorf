@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 21:25:16}
+%TCIDATA{LastRevised=Friday, February 23, 2018 21:30:51}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -316,7 +316,7 @@ beginning with its second term $f_{2}$. Furthermore, $f_{1} = 1 = f_{2}$, so
 that $f_{1} = f_{2} < f_{2} < f_{3} < f_{4} < \cdots$. Hence, the Fibonacci
 sequence is weakly increasing.
 
-We recall some known facts about the Fibonacci sequence:
+We recall some basic and well-known facts about the Fibonacci sequence:
 
 \begin{lemma}
 \label{lem.2} Let $S$ be a finite lacunar subset of $\mathbb{N}_{2}$. Then,
@@ -776,20 +776,27 @@ Clearly, $\left(  K+a\right)  +b=K+\left(  a+b\right)  $ for any two integers
 $a$ and $b$. Also, $K+0=K$. Finally,%
 \begin{equation}
 \text{if }K\text{ is a lacunar subset of }\mathbb{Z}\text{, and if }%
-a\in\mathbb{Z}\text{, then }K+a\text{ is lacunar as well} \label{lacunar-plus}%
+a\in\mathbb{Z}\text{, then }K+a\text{ is lacunar as well}\label{lacunar-plus}%
 \end{equation}
-(because every $s\in K+a$ satisfies $s+1\notin K+a\ \ \ \ $%
-\footnote{\textit{Proof.} Assume the contrary. In other words, assume that
-$s+1\in K+a$. Then, $s+1\in K+a=\left\{  k+a\ \mid\ k\in K\right\}  $. Hence,
-there exists some $\ell\in K$ such that $s+1=\ell+a$. Consider this $\ell$.
+\footnote{\textit{Proof.} Let $K$ be a lacunar subset of $\mathbb{Z}$. Let
+$a\in\mathbb{Z}$. Let $q\in K+a$. We shall prove that $q+1\notin K+a$.
 \par
-Now, $s\in K+a=\left\{  k+a\ \mid\ k\in K\right\}  $ yields that there exists
-some $k\in K$ such that $s=k+a$. Consider this $k$. Since $K$ is a lacunar
+Assume the contrary. In other words, assume that $q+1\in K+a$. Thus, $q+1\in
+K+a=\left\{  k+a\ \mid\ k\in K\right\}  $. Hence, there exists some $\ell\in
+K$ such that $q+1=\ell+a$. Consider this $\ell$.
+\par
+Now, $q\in K+a=\left\{  k+a\ \mid\ k\in K\right\}  $ yields that there exists
+some $k\in K$ such that $q=k+a$. Consider this $k$. Since $K$ is a lacunar
 set, we have $\left(  s+1\notin K\text{ for every }s\in K\right)  $. Applying
-this to $s=k$, we get $k+1\notin K$. But $\ell+a=\underbrace{s}_{=k+a}%
+this to $s=k$, we get $k+1\notin K$. But $\ell+a=\underbrace{q}_{=k+a}%
 +1=k+a+1$ yields $\ell=\left(  k+a+1\right)  -a=k+1\notin K$, contradicting
-$\ell\in K$. This contradiction shows that our assumption $s+1\in K+a$ was
-wrong. Hence, $s+1\notin K+a$ is proven.}).
+$\ell\in K$. This contradiction shows that our assumption was wrong. Hence,
+$q+1\notin K+a$ is proven.
+\par
+Now, forget that we fixed $q$. We thus have shown that $q+1\notin K+a$ for
+every $q\in K+a$. Renaming the variable $q$ as $s$ in this statement, we
+obtain $\left(  s+1\notin K+a\text{ for every }s\in K+a\right)  $. In other
+words, the subset $K+a$ of $\mathbb{Z}$ is lacunar. Qed.}.
 
 \begin{proof}
 [Proof of Theorem~\ref{thm.8}.]Let us define a real constant $C$ by
