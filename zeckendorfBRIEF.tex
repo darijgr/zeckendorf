@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 21:32:29}
+%TCIDATA{LastRevised=Saturday, February 24, 2018 11:33:37}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -353,14 +353,18 @@ Lemmata~\ref{lem.3} and~\ref{lem.4} together yield the following theorem:
 [Zeckendorf theorem]\label{thm.5} Let $n \in\mathbb{N}$. Then, there exists
 one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that
 $n=\sum\limits_{t\in T}f_{t}$.
-
-We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
-f_{t}$.
 \end{theorem}
 
 Theorem~\ref{thm.5} is a classical result that can be found in various places
 (e.g., \cite{Hender16}). Hoggatt proved a generalization of
 Theorem~\ref{thm.5} in \cite{Hoggat72}.
+
+\begin{definition}
+Let $n\in\mathbb{N}$. Theorem~\ref{thm.5} shows that there exists one and only
+one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum
+\limits_{t\in T}f_{t}$. We will denote this set $T$ by $Z_{n}$. Thus,
+$n=\sum\limits_{t\in Z_{n}}f_{t}$.
+\end{definition}
 
 \section{Inequalities for the golden ratio}
 
@@ -369,7 +373,7 @@ Next, we state a completely straightforward (and well-known, cf. \cite[Chapter
 grows roughly exponentially (with the exponent being the golden ratio $\phi$):
 
 \begin{theorem}
-\label{thm.6} For every $n\in\mathbb{N}_{2}$, we have $\left\vert f_{n+1}-\phi
+\label{thm.6} For every positive integer $n$, we have $\left\vert f_{n+1}-\phi
 f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
 \end{theorem}
 
@@ -445,13 +449,13 @@ $\mathbb{Z}$, and if $a\in\mathbb{Z}$, then $K+a$ is lacunar as well.
 $N\in\mathbb{N}_{2}$ and $N>\max\left\{  -a_{t}\mid t\in T\right\}  $. We
 might later want $N$ to be even higher, however.
 
-Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, Lemma~\ref{lem.3} yields
-$\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$ for a finite lacunar subset $Z_{\nu}$ of
-$\mathbb{N}_{2}$. Let $S=\left\{  t-N\ \mid\ t\in Z_{\nu}\right\}  $. Then,
-$S=Z_{\nu}+\left(  -N\right)  $ is a finite lacunar subset of $\mathbb{Z}$,
-and $\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$ becomes $\nu=\sum\limits_{s\in
-S}f_{N+s}$. So now we know that $\sum\limits_{t\in T}f_{N+a_{t}}%
-=\sum\limits_{s\in S}f_{N+s}$ (because both sides of this equation equal $\nu$).
+Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, $Z_{\nu}$ is a finite lacunar
+subset $Z_{\nu}$ of $\mathbb{N}_{2}$ satisfying $\nu=\sum\limits_{t\in Z_{\nu
+}}f_{t}$. Let $S=\left\{  t-N\ \mid\ t\in Z_{\nu}\right\}  $. Then, $S=Z_{\nu
+}+\left(  -N\right)  $ is a finite lacunar subset of $\mathbb{Z}$, and
+$\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$ becomes $\nu=\sum\limits_{s\in S}%
+f_{N+s}$. So now we know that $\sum\limits_{t\in T}f_{N+a_{t}}=\sum
+\limits_{s\in S}f_{N+s}$ (because both sides of this equation equal $\nu$).
 
 So, we have chosen a high $N$ and found a finite lacunar subset $S$ of
 $\mathbb{Z}$ which satisfies $\sum\limits_{t\in T}f_{N+a_{t}}=\sum
@@ -496,7 +500,7 @@ to be more precise, by an induction step from $n+1$ and $n$ to $n-1$). Thus,
 once both Assertions 1 and 2 are proven, (\ref{BigLemma}) will follow and thus
 Theorem~\ref{thm.8} will be proven.
 
-Assertion 2 is almost trivial (just notice that%
+Assertion 2 follows from comparing the equalities%
 \[
 \sum\limits_{t\in T}f_{\left(  n-1\right)  +a_{t}}=\sum\limits_{t\in
 T}\underbrace{f_{n+a_{t}-1}}_{=f_{n+a_{t}+1}-f_{n+a_{t}}}=\sum\limits_{t\in
@@ -510,7 +514,8 @@ S}\underbrace{f_{n+s-1}}_{=f_{n+s+1}-f_{n+s}}=\sum\limits_{s\in S}%
 f_{n+s+1}-\sum\limits_{s\in S}f_{n+s}=\sum\limits_{s\in S}f_{\left(
 n+1\right)  +s}-\sum\limits_{s\in S}f_{n+s}%
 \]
-), so it only remains to prove Assertion 1.
+(whose right hand sides are equal by the assumptions of Assertion 2); thus, it
+only remains to prove Assertion 1.
 
 So let us prove Assertion 1. Here we are going to use that $N$ is high enough
 (because otherwise, Assertion 1 wouldn't hold). We have $\sum\limits_{t\in
@@ -575,10 +580,10 @@ T}\left(  \phi-1\right)  ^{a_{t}}$ arbitrarily close to $0$ if we choose $N$
 high enough. Since $\phi-1<1$, we have%
 \begin{equation}
 \left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)  ^{a_{t}%
-}+\left(  \phi-1\right)  <1 \label{BoundWIN}%
+}+\left(  \phi-1\right)  <1\label{BoundWIN}%
 \end{equation}
 if $\left(  \phi-1\right)  ^{N}\sum\limits_{t\in T}\left(  \phi-1\right)
-^{a_{t}}$ is sufficiently close to $0$, what we can enforce by taking a high
+^{a_{t}}$ is sufficiently close to $0$, which we can enforce by taking a high
 enough $N$. This is exactly the point where we require $N$ to be high enough.
 
 So let us take $N$ high enough so that (\ref{BoundWIN}) holds. Combined with

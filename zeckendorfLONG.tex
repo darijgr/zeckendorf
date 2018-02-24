@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 21:30:51}
+%TCIDATA{LastRevised=Saturday, February 24, 2018 11:30:17}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -599,9 +599,6 @@ and the induction proof of Lemma~\ref{lem.4} is done.
 [Zeckendorf theorem]\label{thm.5} Let $n \in\mathbb{N}$. Then, there exists
 one and only one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that
 $n=\sum\limits_{t\in T}f_{t}$.
-
-We will denote this set $T$ by $Z_{n}$. Thus, $n=\sum\limits_{t\in Z_{n}}%
-f_{t}$.
 \end{theorem}
 
 \begin{proof}
@@ -618,6 +615,13 @@ theorem}; it can be found in various places. In particular, the proof given in
 \cite{Hender16} is rather close to ours. Hoggatt proved a generalization of
 Theorem~\ref{thm.5} in \cite{Hoggat72}.
 
+\begin{definition}
+Let $n\in\mathbb{N}$. Theorem~\ref{thm.5} shows that there exists one and only
+one finite lacunar subset $T$ of $\mathbb{N}_{2}$ such that $n=\sum
+\limits_{t\in T}f_{t}$. We will denote this set $T$ by $Z_{n}$. Thus,
+$n=\sum\limits_{t\in Z_{n}}f_{t}$.
+\end{definition}
+
 \section{Inequalities for the golden ratio}
 
 Next, we state a completely straightforward (and well-known) theorem, which
@@ -625,7 +629,7 @@ shows that the Fibonacci sequence grows roughly exponentially (with the
 exponent being the golden ratio $\phi$):
 
 \begin{theorem}
-\label{thm.6} For every $n\in\mathbb{N}_{2}$, we have $\left\vert f_{n+1}-\phi
+\label{thm.6} For every positive integer $n$, we have $\left\vert f_{n+1}-\phi
 f_{n}\right\vert =\dfrac{1}{\sqrt{5}}\left(  \phi-1\right)  ^{n}$.
 \end{theorem}
 
@@ -638,7 +642,7 @@ proof of it here.
 $1-\phi^{-2}=\phi-1$. Also, $\left(  \phi-1\right)  ^{n} \geq0$ (since $\phi-1
 \geq0$) and thus $\dfrac{1}{\sqrt{5}} \left(  \phi-1\right)  ^{n} \geq0$.
 
-Let $n\in\mathbb{N}_{2}$. By Binet's formula, we have%
+Let $n$ be a positive integer. By Binet's formula, we have%
 \[
 f_{n}=\dfrac{\phi^{n}-\phi^{-n}}{\sqrt{5}}=\dfrac{\phi^{n}\left(  1-\phi
 ^{-2n}\right)  }{\sqrt{5}}=\dfrac{1}{\sqrt{5}}\phi^{n}\left(  1-\phi
@@ -651,23 +655,23 @@ f_{n+1}=\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 \]
 These two equalities yield%
 \begin{align*}
-f_{n+1}-\phi f_{n}  &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
+f_{n+1}-\phi f_{n} &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\underbrace{\phi\cdot\dfrac{1}{\sqrt{5}}\phi^{n}%
-}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right) \\
+}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 }\right)  -\dfrac{1}{\sqrt{5}}\underbrace{\phi\phi^{n}}_{=\phi^{n+1}}\left(
-1-\phi^{-2n}\right) \\
+1-\phi^{-2n}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
-}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right) \\
+}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \underbrace{\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\left(  1-\phi^{-2n}\right)  }_{=\phi^{-2n}%
--\phi^{-2\left(  n+1\right)  }}\right) \\
+-\phi^{-2\left(  n+1\right)  }}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\underbrace{\phi
-^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}=\phi^{-2n}\phi^{-2}}\right) \\
+^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}=\phi^{-2n}\phi^{-2}}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\phi^{-2n}\phi
 ^{-2}\right)  =\dfrac{1}{\sqrt{5}}\underbrace{\phi^{n+1}\phi^{-2n}}%
 _{=\phi^{\left(  n+1\right)  +\left(  -2n\right)  }=\phi^{-\left(  n-1\right)
-}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right) \\
+}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right)  \\
 &  =\dfrac{1}{\sqrt{5}}\left(  \underbrace{\phi^{-1}}_{=\phi-1}\right)
 ^{n-1}\underbrace{\left(  1-\phi^{-2}\right)  }_{=\phi-1}=\dfrac{1}{\sqrt{5}%
 }\underbrace{\left(  \phi-1\right)  ^{n-1}\left(  \phi-1\right)  }_{=\left(
@@ -776,7 +780,7 @@ Clearly, $\left(  K+a\right)  +b=K+\left(  a+b\right)  $ for any two integers
 $a$ and $b$. Also, $K+0=K$. Finally,%
 \begin{equation}
 \text{if }K\text{ is a lacunar subset of }\mathbb{Z}\text{, and if }%
-a\in\mathbb{Z}\text{, then }K+a\text{ is lacunar as well}\label{lacunar-plus}%
+a\in\mathbb{Z}\text{, then }K+a\text{ is lacunar as well} \label{lacunar-plus}%
 \end{equation}
 \footnote{\textit{Proof.} Let $K$ be a lacunar subset of $\mathbb{Z}$. Let
 $a\in\mathbb{Z}$. Let $q\in K+a$. We shall prove that $q+1\notin K+a$.
@@ -833,13 +837,13 @@ If $u$ and $v$ are two real numbers, then
 \end{equation}
 (Indeed, this is one of the forms of the triangle inequality.)
 
-Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Then, Lemma~\ref{lem.3} (applied to
-$\nu$ instead of $n$) yields that there exists a finite lacunar subset
-$Z_{\nu}$ of $\mathbb{N}_{2}$ such that $\nu=\sum\limits_{t\in Z_{\nu}}f_{t}$.
-Let $S=Z_{\nu}+\left(  -N\right)  $. Then, the set $S=Z_{\nu}+\left(
--N\right)  $ is lacunar (by (\ref{lacunar-plus}) (applied to $K=Z_{\nu}$ and
-$a=-N$), because $Z_{\nu}$ is a lacunar subset of $\mathbb{Z}$) and finite
-(since $Z_{\nu}$ is finite), and satisfies%
+Let $\nu=\sum\limits_{t\in T}f_{N+a_{t}}$. Recall that $Z_{\nu}$ is a finite
+lacunar subset of $\mathbb{N}_{2}$ such that $\nu=\sum\limits_{t\in Z_{\nu}%
+}f_{t}$ (by the definition of $Z_{\nu}$). Let $S=Z_{\nu}+\left(  -N\right)  $.
+Then, the set $S=Z_{\nu}+\left(  -N\right)  $ is lacunar (by
+(\ref{lacunar-plus}) (applied to $K=Z_{\nu}$ and $a=-N$), because $Z_{\nu}$ is
+a lacunar subset of $\mathbb{Z}$) and finite (since $Z_{\nu}$ is finite), and
+satisfies%
 \begin{align*}
 \nu &  =\sum\limits_{t\in Z_{\nu}}f_{t}=\sum\limits_{s\in Z_{\nu}+\left(
 -N\right)  }f_{N+s}\ \ \ \ \ \ \ \ \ \ \left(
@@ -877,12 +881,13 @@ $n=m$, we have $\sum\limits_{t\in T}f_{m+a_{t}}=\sum\limits_{s\in S}f_{m+s}$.
 Now,%
 \begin{align*}
 &  \sum\limits_{t\in T}\underbrace{f_{\left(  m+1\right)  +a_{t}}%
-}_{\substack{=f_{m+a_{t}+1}\\=f_{m+a_{t}+1}-\phi f_{m+a_{t}}+\phi f_{m+a_{t}}%
-}}-\sum\limits_{s\in S}\underbrace{f_{\left(  m+1\right)  +s}}_{=f_{m+s+1}}\\
-&  =\underbrace{\sum\limits_{t\in T}\left(  f_{m+a_{t}+1}-\phi f_{m+a_{t}%
-}+\phi f_{m+a_{t}}\right)  }_{=\sum\limits_{t\in T}\left(  f_{m+a_{t}+1}-\phi
-f_{m+a_{t}}\right)  +\phi\sum\limits_{t\in T}f_{m+a_{t}}}-\sum\limits_{s\in
-S}f_{m+s+1}\\
+}_{\substack{=f_{m+a_{t}+1}\\=\left(  f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right)
++\phi f_{m+a_{t}}}}-\sum\limits_{s\in S}\underbrace{f_{\left(  m+1\right)
++s}}_{=f_{m+s+1}}\\
+&  =\underbrace{\sum\limits_{t\in T}\left(  \left(  f_{m+a_{t}+1}-\phi
+f_{m+a_{t}}\right)  +\phi f_{m+a_{t}}\right)  }_{=\sum\limits_{t\in T}\left(
+f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right)  +\phi\sum\limits_{t\in T}f_{m+a_{t}}%
+}-\sum\limits_{s\in S}f_{m+s+1}\\
 &  =\sum\limits_{t\in T}\left(  f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right)
 +\phi\underbrace{\sum\limits_{t\in T}f_{m+a_{t}}}_{=\sum\limits_{s\in
 S}f_{m+s}}-\sum\limits_{s\in S}f_{m+s+1}\\
@@ -904,8 +909,8 @@ so that%
 }\right)  \right\vert +\left\vert \sum\limits_{s\in S}\left(  f_{m+s+1}-\phi
 f_{m+s}\right)  \right\vert \label{Estimate1}%
 \end{align}
-(by (\ref{pf.thm.8.triangle1}), applied to $u = \sum\limits_{t\in T}\left(
-f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right)  $ and $v = \sum\limits_{s\in S}\left(
+(by (\ref{pf.thm.8.triangle1}), applied to $u=\sum\limits_{t\in T}\left(
+f_{m+a_{t}+1}-\phi f_{m+a_{t}}\right)  $ and $v=\sum\limits_{s\in S}\left(
 f_{m+s+1}-\phi f_{m+s}\right)  $).
 
 Now, the triangle inequality yields%
