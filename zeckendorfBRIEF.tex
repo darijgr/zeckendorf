@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 17:50:30}
+%TCIDATA{LastRevised=Friday, February 23, 2018 21:20:20}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -315,8 +315,8 @@ in the form $\left\{  s_{1},s_{2},\ldots,s_{k}\right\}  $ with $s_{1}%
 f_{s_{i}+1}-f_{s_{i+1}-1}\right)  +\underbrace{f_{s_{k}+1}}_{=f_{\max S+1}%
 }-\underbrace{f_{s_{1}-1}}_{>0},
 \]
-and use $s_{i}+1\leq s_{i+1}-1$ since the set $S$ is lacunar) or by induction
-over $\max S$ (use $f_{\max S+1}=f_{\max S}+f_{\max S-1}$ here).
+and use $s_{i}+1\leq s_{i+1}-1$ since the set $S$ is lacunar) or by strong
+induction over $\max S$ (use $f_{\max S+1}=f_{\max S}+f_{\max S-1}$ here).
 \end{proof}
 
 \begin{lemma}
@@ -326,7 +326,7 @@ $n=\sum\limits_{t\in T}f_{t}$.
 \end{lemma}
 
 \begin{proof}
-Induction over $n$. The main idea here is to let $t_{1}$ be the maximal
+Strong induction over $n$. The main idea here is to let $t_{1}$ be the maximal
 $\tau\in\mathbb{N}_{2}$ satisfying $f_{\tau}\leq n$, and apply
 Lemma~\ref{lem.3} to $n-t_{1}$ instead of $n$. The details are left to the
 reader (and can be found in \cite{this.long}).
@@ -340,11 +340,11 @@ such that $n=\sum\limits_{t\in T}f_{t}$ and $n=\sum\limits_{t\in T^{\prime}%
 \end{lemma}
 
 \begin{proof}
-Induction over $n$. Use Lemma~\ref{lem.2} to show that $\max T<\max T^{\prime
-}+1$ and $\max T^{\prime}<\max T+1$, resulting in $\max T=\max T^{\prime}$.
-Hence, the sets $T$ and $T^{\prime}$ have an element in common, and we can
-reduce the situation to one with a smaller $n$ by removing this common element
-from both sets.
+Strong induction over $n$. Use Lemma~\ref{lem.2} to show that $\max T<\max
+T^{\prime}+1$ and $\max T^{\prime}<\max T+1$; these together result in $\max
+T=\max T^{\prime}$. Hence, the sets $T$ and $T^{\prime}$ have an element in
+common, and we can reduce the situation to one with a smaller $n$ by removing
+this common element from both sets.
 \end{proof}
 
 Lemmata~\ref{lem.3} and~\ref{lem.4} together yield the following theorem:
@@ -462,7 +462,7 @@ at the moment we cannot be sure yet whether different $N$'s wouldn't produce
 \textit{different} sets $S$. And, in fact, different $N$'s \textit{can}
 produce different sets $S$, but (fortunately!) only if the $N$'s are too
 small. If we take $N$ high enough, the set $S$ that we obtained turns out to
-be \textit{universal}, i. e. it satisfies
+be \textit{universal}, i.e., it satisfies
 \begin{align}
 \sum\limits_{t\in T}f_{n+a_{t}}  &  =\sum\limits_{s\in S}f_{n+s}%
 \ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{Z}\text{ which}\nonumber\\
@@ -473,23 +473,27 @@ We are now going to prove this.
 
 In order to prove (\ref{BigLemma}), we need two assertions:
 
+\begin{statement}
 \textit{Assertion 1:} If some $n\in\mathbb{Z}$ satisfies $n\geq N$ and
 $\sum\limits_{t\in T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$, then
 $\sum\limits_{t\in T}f_{\left(  n+1\right)  +a_{t}}=\sum\limits_{s\in
 S}f_{\left(  n+1\right)  +s}$.
+\end{statement}
 
+\begin{statement}
 \textit{Assertion 2:} If some $n\in\mathbb{Z}$ satisfies $\sum\limits_{t\in
 T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$ and $\sum\limits_{t\in T}f_{\left(
 n+1\right)  +a_{t}}=\sum\limits_{s\in S}f_{\left(  n+1\right)  +s}$, then
 $\sum\limits_{t\in T}f_{\left(  n-1\right)  +a_{t}}=\sum\limits_{s\in
-S}f_{\left(  n-1\right)  +s}$ (if $n-1>\max\left(  \left\{  -a_{t}\mid t\in
-T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $).
+S}f_{\left(  n-1\right)  +s}$ (if \newline$n-1>\max\left(  \left\{  -a_{t}\mid
+t\in T\right\}  \cup\left\{  -s\mid s\in S\right\}  \right)  $).
+\end{statement}
 
-Obviously, Assertion 1 yields (by induction) that $\sum\limits_{t\in
+Obviously, Assertion 1 yields (by induction) the equality $\sum\limits_{t\in
 T}f_{n+a_{t}}=\sum\limits_{s\in S}f_{n+s}$ for every $n\geq N$, and Assertion
-2 then finishes off the remaining $n$'s (by backwards induction, or, to be
-more precise, by an induction step from $n+1$ and $n$ to $n-1$). Thus, once
-both Assertions 1 and 2 are proven, (\ref{BigLemma}) will follow and thus
+2 then proves it for the remaining values of $n$ (by backwards induction, or,
+to be more precise, by an induction step from $n+1$ and $n$ to $n-1$). Thus,
+once both Assertions 1 and 2 are proven, (\ref{BigLemma}) will follow and thus
 Theorem~\ref{thm.8} will be proven.
 
 Assertion 2 is almost trivial (just notice that%
