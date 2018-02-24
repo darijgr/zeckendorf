@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, February 23, 2018 17:53:23}
+%TCIDATA{LastRevised=Friday, February 23, 2018 18:15:09}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -702,29 +702,32 @@ yields $\psi^{2}=\left(  \phi-1\right)  ^{2}=\underbrace{\phi^{2}}_{=\phi
 
 Let us write the set $S$ in the form $\left\{  s_{1},s_{2},\ldots
 ,s_{k}\right\}  $, where $s_{1}<s_{2}<\cdots<s_{k}$. Then, $\sum\limits_{s\in
-S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{k}}$. On the other hand, every
-$i\in\left\{  1,2,\ldots,k-1\right\}  $ satisfies $s_{i}+2\leq s_{i+1}$ (this
-was proven during the proof of Lemma~\ref{lem.2}) and thus $\psi^{s_{i}+2}%
-\geq\psi^{s_{i}+1}$ (since $0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in
-S\subseteq\mathbb{N}_{2}$) and thus $\psi^{s_{1}}\leq\psi^{2}$ (since
-$0<\psi<1$). Now, $\sum\limits_{s\in S}\psi^{s}=\sum\limits_{i=1}^{k}%
-\psi^{s_{k}}$ yields%
+S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{k}}$. Also, $k\geq1$ (since the set
+$S$ is nonempty). On the other hand, every $i\in\left\{  1,2,\ldots
+,k-1\right\}  $ satisfies $s_{i}+1\leq s_{i+1}-1$ (this was proven during the
+proof of Lemma~\ref{lem.2}) and thus $s_{i}+2\leq s_{i+1}$ and therefore%
+\begin{equation}
+\psi^{s_{i}+2}\geq\psi^{s_{i+1}}\label{pf.lem.7.ineq1}%
+\end{equation}
+(since $0<\psi<1$). Besides, $s_{1}\geq2$ (since $s_{1}\in S\subseteq
+\mathbb{N}_{2}$) and thus $\psi^{s_{1}}\leq\psi^{2}$ (since $0<\psi<1$). Now,
+$\sum\limits_{s\in S}\psi^{s}=\sum\limits_{i=1}^{k}\psi^{s_{k}}$ yields%
 \begin{align*}
-\left(  1-\psi^{2}\right)  \sum\limits_{s\in S}\psi^{s}  &  =\left(
-1-\psi^{2}\right)  \sum\limits_{i=1}^{k}\psi^{s_{i}}=\underbrace{\sum
-\limits_{i=1}^{k}\psi^{s_{i}}}_{=\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi
-^{s_{i}}}-\underbrace{\psi^{2}\sum\limits_{i=1}^{k}\psi^{s_{i}}}%
-_{=\sum\limits_{i=1}^{k}\psi^{2}\psi^{s_{i}}=\sum\limits_{i=1}^{k}\psi
-^{s_{i}+2}=\sum\limits_{i=1}^{k-1}\psi^{s_{i}+2}+\psi^{s_{k}+2}}\\
+\left(  1-\psi^{2}\right)  \sum\limits_{s\in S}\psi^{s} &  =\left(  1-\psi
+^{2}\right)  \sum\limits_{i=1}^{k}\psi^{s_{i}}=\underbrace{\sum\limits_{i=1}%
+^{k}\psi^{s_{i}}}_{=\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}%
+}-\underbrace{\psi^{2}\sum\limits_{i=1}^{k}\psi^{s_{i}}}_{=\sum\limits_{i=1}%
+^{k}\psi^{2}\psi^{s_{i}}=\sum\limits_{i=1}^{k}\psi^{s_{i}+2}=\sum
+\limits_{i=1}^{k-1}\psi^{s_{i}+2}+\psi^{s_{k}+2}}\\
 &  =\left(  \psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}\right)  -\left(
-\sum\limits_{i=1}^{k-1}\underbrace{\psi^{s_{i}+2}}_{\geq\psi^{s_{i+1}}}%
-+\psi^{s_{k}+2}\right) \\
+\sum\limits_{i=1}^{k-1}\underbrace{\psi^{s_{i}+2}}_{\substack{\geq
+\psi^{s_{i+1}}\\\text{(by (\ref{pf.lem.7.ineq1}))}}}+\psi^{s_{k}+2}\right)  \\
 &  \leq\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}-\sum\limits_{i=1}%
 ^{k-1}\psi^{s_{i+1}}-\psi^{s_{k}+2}\\
 &  =\psi^{s_{1}}+\sum\limits_{i=2}^{k}\psi^{s_{i}}-\sum\limits_{i=2}^{k}%
 \psi^{s_{i}}-\psi^{s_{k}+2}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
-}i+1\text{ in the second sum}\right) \\
+}i+1\text{ in the second sum}\right)  \\
 &  =\underbrace{\psi^{s_{1}}}_{\leq\psi^{2}}-\underbrace{\psi^{s_{k}+2}}%
 _{\geq0}\leq\psi^{2}-0=\psi^{2}.
 \end{align*}
