@@ -31,7 +31,7 @@
 \usepackage[breaklinks=true]{hyperref}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, February 24, 2018 11:30:17}
+%TCIDATA{LastRevised=Saturday, February 24, 2018 13:24:02}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -655,23 +655,23 @@ f_{n+1}=\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 \]
 These two equalities yield%
 \begin{align*}
-f_{n+1}-\phi f_{n} &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
+f_{n+1}-\phi f_{n}  &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\underbrace{\phi\cdot\dfrac{1}{\sqrt{5}}\phi^{n}%
-}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right)  \\
+}_{=\dfrac{1}{\sqrt{5}}\phi\phi^{n}}\left(  1-\phi^{-2n}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
 }\right)  -\dfrac{1}{\sqrt{5}}\underbrace{\phi\phi^{n}}_{=\phi^{n+1}}\left(
-1-\phi^{-2n}\right)  \\
+1-\phi^{-2n}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2\left(  n+1\right)
-}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right)  \\
+}\right)  -\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  1-\phi^{-2n}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \underbrace{\left(  1-\phi^{-2\left(
 n+1\right)  }\right)  -\left(  1-\phi^{-2n}\right)  }_{=\phi^{-2n}%
--\phi^{-2\left(  n+1\right)  }}\right)  \\
+-\phi^{-2\left(  n+1\right)  }}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\underbrace{\phi
-^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}=\phi^{-2n}\phi^{-2}}\right)  \\
+^{-2\left(  n+1\right)  }}_{=\phi^{-2n-2}=\phi^{-2n}\phi^{-2}}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\phi^{n+1}\left(  \phi^{-2n}-\phi^{-2n}\phi
 ^{-2}\right)  =\dfrac{1}{\sqrt{5}}\underbrace{\phi^{n+1}\phi^{-2n}}%
 _{=\phi^{\left(  n+1\right)  +\left(  -2n\right)  }=\phi^{-\left(  n-1\right)
-}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right)  \\
+}=\left(  \phi^{-1}\right)  ^{n-1}}\left(  1-\phi^{-2}\right) \\
 &  =\dfrac{1}{\sqrt{5}}\left(  \underbrace{\phi^{-1}}_{=\phi-1}\right)
 ^{n-1}\underbrace{\left(  1-\phi^{-2}\right)  }_{=\phi-1}=\dfrac{1}{\sqrt{5}%
 }\underbrace{\left(  \phi-1\right)  ^{n-1}\left(  \phi-1\right)  }_{=\left(
@@ -937,12 +937,15 @@ $S+m$ is lacunar as well (by (\ref{lacunar-plus}), applied to $S$ and $m$
 instead of $K$ and $a$), and besides $\underbrace{S}_{=Z_{\nu}+\left(
 -N\right)  }+m=\left(  Z_{\nu}+\left(  -N\right)  \right)  +m=Z_{\nu}+\left(
 \left(  -N\right)  +m\right)  =\left\{  z+\left(  \left(  -N\right)
-+m\right)  \ \mid\ z\in Z_{\nu}\right\}  \subseteq\mathbb{N}_{2}$ (because
-every $z\in Z_{\nu}$ satisfies $\underbrace{z}_{\geq2}+\left(  \left(
--N\right)  +\underbrace{m}_{\geq N}\right)  \geq2+\left(  \left(  -N\right)
-+N\right)  =2$ and thus $z\in\mathbb{N}_{2}$). Thus, $S+m$ is a lacunar finite
-subset of $\mathbb{N}_{2}$. Hence, Lemma~\ref{lem.7} (applied to $S+m$ instead
-of $S$) yields $\sum\limits_{s\in S+m}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
++m\right)  \ \mid\ z\in Z_{\nu}\right\}  \subseteq\mathbb{N}_{2}%
+$\ \ \ \ \footnote{because every $z\in Z_{\nu}$ satisfies $\underbrace{z}%
+_{\substack{\geq2\\\text{(since }z\in Z_{\nu}\subseteq\mathbb{N}_{2}\text{)}%
+}}+\left(  \left(  -N\right)  +\underbrace{m}_{\geq N}\right)  \geq2+\left(
+\left(  -N\right)  +N\right)  =2$ and thus $z+\left(  \left(  -N\right)
++m\right)  \in\mathbb{N}_{2}$}. Thus, $S+m$ is a finite lacunar subset of
+$\mathbb{N}_{2}$ (indeed, the set $S+m$ is finite since $S$ is finite). Hence,
+Lemma~\ref{lem.7} (applied to $S+m$ instead of $S$) yields $\sum\limits_{s\in
+S+m}\left(  \phi-1\right)  ^{s}\leq\phi-1$.
 
 The triangle inequality yields%
 \begin{align*}
@@ -962,14 +965,14 @@ S\rightarrow S+m,\ s\mapsto m+s\text{ is a bijection}%
 \end{array}
 \right) \\
 &  \leq\underbrace{\dfrac{1}{\sqrt{5}}}_{<1}\cdot\left(  \phi-1\right)
-<\phi-1.
+<\phi-1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\phi-1>0\right)  .
 \end{align*}
 Thus, (\ref{Estimate1}) becomes%
 \begin{align}
 \left\vert \sum\limits_{t\in T}f_{\left(  m+1\right)  +a_{t}}-\sum
 \limits_{s\in S}f_{\left(  m+1\right)  +s}\right\vert  &  \leq
 \underbrace{\left\vert \sum\limits_{t\in T}\left(  f_{m+a_{t}+1}-\phi
-f_{m+a_{t}}\right)  \right\vert }_{\leq2-\phi}+\underbrace{\left\vert
+f_{m+a_{t}}\right)  \right\vert }_{<2-\phi}+\underbrace{\left\vert
 \sum\limits_{s\in S}\left(  f_{m+s+1}-\phi f_{m+s}\right)  \right\vert
 }_{<\phi-1}\nonumber\\
 &  <\left(  2-\phi\right)  +\left(  \phi-1\right)  =1.\nonumber
@@ -1013,7 +1016,7 @@ $n$ are not all $\geq N$. What remains to do is ``backwards induction'' or an
 application of the maximum principle. Here are the details:
 
 Let $M=\max\left(  \left\{  -a_{t}\mid t\in T\right\}  \cup\left\{  -s\mid
-s\in S\right\}  \right)  $. We want to show that (\ref{main}) holds for all
+s\in S\right\}  \right)  $. We thus must show that (\ref{main}) holds for all
 $n>M$. In order to prove this, we assume the contrary, i.e., we assume that
 there exists some $n>M$ such that (\ref{main}) does not hold. In other words,
 the set $\left\{  n\in\mathbb{Z}\ \mid\ \text{we have }n>M\text{, and
@@ -1027,7 +1030,7 @@ hold}\right\}  $. Therefore, $\lambda$ itself satisfies $\lambda>M$, and
 (\ref{main}) doesn't hold for $n=\lambda$. On the other hand,%
 \begin{equation}
 \text{for every integer }\mu>\lambda\text{, the equation (\ref{main}) holds
-for }n=\mu. \label{back-induct}%
+for }n=\mu.\label{back-induct}%
 \end{equation}
 \footnote{\textit{Proof.} Assume the opposite. Then, not for every integer
 $\mu>\lambda$, the equation (\ref{main}) holds for $n=\mu$. So there exists
@@ -1223,6 +1226,13 @@ identities generalized},
 \url{http://www.cip.ifi.lmu.de/~grinberg/zeckendorfBRIEF.pdf}\newline Also
 available as \href{https://arxiv.org/abs/1103.4507v2}{arXiv preprint
 arXiv:1103.4507v2}.
+
+\bibitem[GuzKli14]{GuzKli14}Johnny Guzm\'{a}n, Caroline Klivans,
+\textit{Chip-firing and energy minimization on M-matrices}, Journal of
+Combinatorial Theory, Series A, Volume 132, May 2015, pp. 14--31.\newline%
+\url{https://doi.org/10.1016/j.jcta.2014.12.002}\newline A preprint is
+available as \href{https://arxiv.org/abs/1403.1635v2}{arXiv preprint
+arXiv:1403.1635v2}.
 
 \bibitem[Hender16]{Hender16}Nik Henderson, \textit{What is Zeckendorf's
 Theorem?}, 23 July 2016.\newline\url{https://math.osu.edu/sites/math.osu.edu/files/henderson_zeckendorf.pdf}
